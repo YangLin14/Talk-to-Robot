@@ -15,11 +15,11 @@ Following Pitch 1 feedback from the instructor, we have refocused this proposal.
 
 ## Abstract
 
-A robot deployed in a real environment will not be commanded by coordinate vectors — it will be told things like "push it into the corner," "move it next to the marker," or "put it somewhere safer." The hard part of language-driven robotics is not formatting an LLM's output as JSON. The hard part is the **language-to-coordinate transition itself**: how reliably does a Large Language Model ground a free-form spatial instruction into a target position in the robot's frame, and how does that reliability degrade as instructions move from literal coordinates to abstract intent?
+A robot deployed in a real environment will not be commanded with coordinate vectors; it will be told things like "push it into the corner," "move it next to the marker," or "put it somewhere safer." The hard part of language-driven robotics is not formatting an LLM's output as JSON. The hard part is the **language-to-coordinate transition itself**; how reliably does a Large Language Model ground a free-form spatial instruction into a target position in the robot's frame? And how does that reliability degrade as instructions move from literal coordinates to abstract intent?
 
 This project studies that transition empirically, in simulation. We define a five-tier hierarchy of instruction abstraction, from explicit coordinates (Tier 0) to functional/intent-level instructions (Tier 4). For each tier, we measure (a) the LLM's grounding accuracy against ground-truth target positions, (b) the failure-mode distribution (coordinate drift, region misidentification, refusal, hallucination), and (c) the propagation of grounding error into downstream task success when the LLM-emitted goal is executed by a goal-conditioned RL policy.
 
-We implement the system on the FetchPush-v3 MuJoCo environment using SAC with Hindsight Experience Replay (HER) as the controller and Gemini 2.5 Flash as the grounding frontend. Our central contributions are: (1) the explicit instruction-tier hierarchy as an evaluation tool, (2) per-tier grounding-accuracy and failure-mode characterization for a frontier LLM, and (3) end-to-end measurement of how grounding error translates into manipulation outcomes. We position this work as an empirical first step toward language-driven robotics, conducted entirely in simulation, and we do not claim novelty for the pipeline architecture itself.
+The system will be implemented on the FetchPush-v3 MuJoCo environment using SAC with Hindsight Experience Replay (HER) as the controller and Gemini 2.5 Flash as the grounding frontend. Our central contributions are: (1) the explicit instruction-tier hierarchy as an evaluation tool, (2) per-tier grounding-accuracy and failure-mode characterization for a frontier LLM, and (3) end-to-end measurement of how grounding error translates into manipulation outcomes. We position this work as an empirical first step toward language-driven robotics, conducted entirely in simulation, and we do not claim novelty for the pipeline architecture itself.
 
 ---
 
@@ -37,7 +37,7 @@ We study **language-conditioned goal grounding for robotic pushing**. A user iss
 | **T3** | Reference object | "push it next to the marker" | Resolve a reference object, then ground a relational predicate ("next to"). Requires multi-object reasoning. |
 | **T4** | Functional / intent | "put it somewhere out of the way" | Infer intent, generate a plausible goal under under-specification. Requires open-ended commonsense. |
 
-For each tier we generate **20 distinct instructions**, each evaluated against a ground-truth target position. Tier difficulty is operationalized by what the LLM must reason over, not by surface complexity of the sentence.
+For each tier, we generate **20 distinct instructions**, each evaluated against a ground-truth target position. Tier difficulty is operationalized by what the LLM must reason over, not by the surface complexity of the sentence.
 
 ### 1.2 Stage 2: Control
 
@@ -64,7 +64,7 @@ The distribution of these modes, per tier, is itself a contribution.
 
 **Secondary RQ-B (Error Propagation).** Given a grounding error of magnitude *δ*, what is the downstream task success rate? Does the RL policy tolerate small grounding errors gracefully, or is the manipulation task brittle to coordinate noise?
 
-**Secondary RQ-C (Prompt Sensitivity).** For tiers that show high failure rates, can prompt restructuring (chain-of-thought, few-shot exemplars, explicit coordinate frame description) shift the failure curve? This tier-specific intervention question gives us a methods contribution beyond pure evaluation.
+**Secondary RQ-C (Prompt Sensitivity).** For tiers that show high failure rates, can prompt restructuring (chain-of-thought, few-shot exemplars, explicit coordinate frame description) shift the failure curve? This tier-specific intervention question gives us a methodological contribution beyond pure evaluation.
 
 ---
 
@@ -92,7 +92,7 @@ The distribution of these modes, per tier, is itself a contribution.
 
 **Gemini 2.5 Flash via Google AI Studio.** Free indefinite tier (15 RPM, 1M tokens/day, no expiration, no credit card). Each call ~300 tokens; the daily cap supports thousands of evaluations. Fallback: Groq Llama-3.3-70B free tier.
 
-Each call uses structured output mode forcing JSON: `{"goal_x": ..., "goal_y": ..., "goal_z": ..., "reasoning": "..."}`. The `reasoning` field gives us an interpretable trace for failure-mode analysis. **Note:** structured output guarantees valid JSON; format violations come from the LLM refusing or returning out-of-range coordinates, not from parsing failures.
+Each call uses structured output mode, forcing JSON: `{"goal_x": ..., "goal_y": ..., "goal_z": ..., "reasoning": "..."}`. The `reasoning` field gives us an interpretable trace for failure-mode analysis. **Note:** structured output guarantees valid JSON; format violations come from the LLM refusing or returning out-of-range coordinates, not from parsing failures.
 
 ---
 
@@ -115,8 +115,8 @@ We claim:
 
 ### 4.3 Who Will Care
 
-- Anyone deploying robots that humans will instruct in natural language. The grounding-accuracy curve directly determines what instruction styles are safe to expose to users.
-- Researchers studying LLM spatial reasoning. Continuous-control manipulation gives a different test surface than the gridworld and navigation benchmarks where most current grounding-accuracy work sits.
+- Anyone deploying robots that humans will instruct with natural language. The grounding-accuracy curve directly determines what instruction styles are safe to expose to users.
+- Researchers studying LLM spatial reasoning. Continuous-control manipulation gives a different test surface than the gridworld and navigation benchmarks, where most current grounding-accuracy work sits.
 - Course staff and the PEARLS Lab. The work engages the LLM-agent and simulation-environment lecture content directly, with rigorous empirical claims rather than architectural rebranding.
 
 ### 4.4 Course Topic Mapping
@@ -139,10 +139,10 @@ SAC + HER on FetchPush-v3 with ground-truth coordinate goals, target ≥ 70% suc
 20 instructions per tier × 5 tiers = 100 instructions. Each instruction is paired with a ground-truth coordinate (or set of acceptable coordinates for the abstract tiers). For T4 (functional/intent), the "ground truth" is the *set* of coordinates a panel of three humans agrees would satisfy the instruction; the LLM is correct if its output falls within this set. **This is the most fragile design choice and is described in detail in Section 5.4.**
 
 **Step 3 — Run grounding evaluation.**
-For each instruction, query Gemini, log output, classify failure mode if any, compute coordinate error magnitude.
+For each instruction, query Gemini, log output, classify failure mode if any, and compute coordinate error magnitude.
 
 **Step 4 — Run end-to-end evaluation.**
-Take each LLM-emitted goal, execute the RL policy 10 times, record success rate. This produces the error-propagation curve.
+Take each LLM-emitted goal, execute the RL policy 10 times, and record the success rate. This produces the error-propagation curve.
 
 **Step 5 — Prompt-sensitivity intervention.**
 For the worst-performing tier(s), test 3 prompt variants (zero-shot, few-shot with 3 exemplars, chain-of-thought with explicit coordinate-frame description) and report the per-variant failure curve.
@@ -166,17 +166,17 @@ Condition F is intentionally limited to T0–T2 because regex parsing cannot mea
 Not a project failure. Refusal rate is itself a measured failure mode (Secondary RQ-A). We report it.
 
 **Failure mode: Gemini saturates near 100% even on T4.**
-Unlikely given current LLM literature on spatial grounding, but if this happens we extend the hierarchy with harder tiers (e.g., counterfactual references, instruction-with-distractors). Document the extension.
+Unlikely given current LLM literature on spatial grounding, but if this happens, we extend the hierarchy with harder tiers (e.g., counterfactual references, instruction-with-distractors). Document the extension.
 
 **Failure mode: Gemini quota exhausted.**
 Switch to Groq Llama-3.3-70B. Re-run T0 on both providers as a calibration check; report any cross-model differences.
 
 ### 5.4 What If the RL Doesn't Converge
 
-**Hard fallback by end of Week 2.**
+**Hard fallback by the end of Week 2.**
 If SAC + HER does not reach 70% on FetchPush, switch to **FetchReach-v3** (reaching task). The instruction-tier methodology transfers identically; only the action target changes from "push cube to coordinate" to "move end-effector to coordinate." Reaching is provably solvable by SAC + HER in well under 1M timesteps.
 
-**The grounding study is the contribution; the controller is infrastructure.** Switching tasks does not change the research narrative.
+**The grounding study is the contribution; the controller is the infrastructure.** Switching tasks does not change the research narrative.
 
 ### 5.5 What If T4 Ground Truth Is Too Subjective
 
@@ -205,7 +205,7 @@ This is the most exposed methodological risk. Mitigation:
 | **W4 (5/19–5/25)** | Final runs (3 seeds where applicable). Prompt-sensitivity intervention on worst tier. Regex baseline on T0–T2. Begin report. | Master results: tier × accuracy, tier × failure mode, intervention curve. Draft report sections 1–4. | Compute and time on track? |
 | **W5 (5/26–5/30)** | Demo video (voice instruction → robot motion across tiers). Polish GitHub. Final report and slides. Submit by 5/30. | Final report, demo video, GitHub repo, slides | Final submission |
 
-Submitting on 5/30 leaves week of 6/1 finals untouched.
+Submitting on 5/30 leaves the week of 6/1 finals untouched.
 
 ---
 
@@ -214,7 +214,7 @@ Submitting on 5/30 leaves week of 6/1 finals untouched.
 | Member | Role | Primary Outputs |
 |---|---|---|
 | **Yang (Tech Lead)** | Architecture, RL pipeline, tier-library design, supercomputer runs, technical writing | Training pipeline, tier hierarchy, final-run management, Methods + Results sections |
-| **Coder #2** | LLM wrapper, evaluation harness, prompt engineering for intervention experiments | Grounding wrapper, evaluation harness, prompt variants for Section 5.1 Step 5 |
+| **Joseph** | LLM wrapper, evaluation harness, prompt engineering for intervention experiments | Grounding wrapper, evaluation harness, prompt variants for Section 5.1 Step 5 |
 | **Member #3** | Failure-mode classifier, plotting, statistical analysis | Failure-mode taxonomy, per-tier plots, error-propagation curves |
 | **Member #4** | Instruction-tier library curation, regex baseline, related work | 100-instruction library with ground truth, regex parser for T0–T2, related work section |
 | **Member #5** | Demo video, slide decks, README, report integration, T4 human-annotation panel coordination | Demo video showing tier progression, pitch deck, README, T4 annotator agreement check |
