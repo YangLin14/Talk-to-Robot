@@ -1,3 +1,7 @@
 .venv/
 checkpoints/
 runs/
+logs/
+*.tfevents*
+*.npz
+videos/

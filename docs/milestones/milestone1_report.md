@@ -5,6 +5,8 @@ During environment validation, we found that the installed Gymnasium-Robotics ve
 
 The environment smoke test passed using the `spatial-rl-311` Conda environment. MuJoCo 3.8.1 and Gymnasium-Robotics loaded successfully, and `FetchPush-v4` was available as the supported FetchPush environment. The environment reset successfully with a fixed seed and was stepped through random actions without errors. The observation dictionary contained the expected goal-conditioned fields: `observation`, `achieved_goal`, and `desired_goal`, with shapes `(25,)`, `(3,)`, and `(3,)`, respectively. The action space was confirmed to be a 4-dimensional continuous Box space. This validates that the simulation environment is ready for SAC + HER training.
 
+Achieve 95% success rate at about 600,000 timesteps and reached 100% success rate round 700,000. And the success rate drops back down to 94% at around 890,000 timesteps.
+
 ## Troubleshooting Notes
 ### Problem: `FetchPush-v3` is deprecated or unavailable
 
