@@ -30,7 +30,6 @@ def parse_goal(raw_text: str) -> dict:
     if not text:
         return {"goal": None, "reasoning": None, "parse_error": "empty response"}
 
-    # Strip ```json fences if present.
     stripped = _FENCE_RE.sub("", text).strip()
 
     obj, err = _try_load(stripped)

@@ -1,21 +1,12 @@
 """Top-level LLM grounder.
 
-`ground(instruction, tier, context=None, prompt_variant="zero-shot",
-client=None)` mirrors the regex grounder's signature and returns a dict
-with the same shared schema, plus LLM-specific fields:
-    {
-      instruction, tier, goal, grounder, prompt_variant,
-      success, failure_mode, reasoning, raw_response,
-      parse_error, usage, finish_reason, notes,
-    }
-
-Client is lazily constructed on first call so importing the module does
-not require GEMINI_API_KEY.
+`ground()` mirrors the regex grounder's signature so the eval harness
+can swap them. The default client is lazily constructed on first call
+so importing this module does not require GEMINI_API_KEY.
 """
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 from typing import Optional
@@ -64,7 +55,7 @@ def ground(
 
     try:
         raw = c.generate(prompt, json_mode=True)
-    except Exception as e:  # noqa: BLE001 -- surface any SDK error verbatim
+    except Exception as e:  # noqa: BLE001
         return {
             **base,
             "goal": None,

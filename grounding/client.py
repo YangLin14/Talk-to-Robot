@@ -11,13 +11,10 @@ except ImportError:
 
 
 class GeminiClient:
-    """Thin wrapper around google-genai for one-shot JSON generation.
+    """One-shot Gemini JSON generation.
 
-    We use plain `generate_content` with response_mime_type='application/json'
-    and parse the returned text in `grounding.parser`. We do not use the
-    SDK's structured-output (response_schema) feature yet -- response_mime_type
-    is enough to keep parsing tolerant and lets the CoT variant include a
-    `reasoning` field freely.
+    Uses response_mime_type='application/json' rather than response_schema
+    so the CoT variant can include a free-form `reasoning` field.
     """
 
     def __init__(

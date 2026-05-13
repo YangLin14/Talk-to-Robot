@@ -29,8 +29,6 @@ _OUTPUT_FORMAT_COT = (
     "explicitly before choosing the goal."
 )
 
-# Hand-crafted exemplars for the few-shot variant. Coordinates are
-# consistent with workspace.py.
 _FEWSHOT_EXAMPLES = [
     {
         "context_text": None,
