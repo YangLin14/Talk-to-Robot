@@ -1,59 +1,30 @@
 """Regex grounder for T0-T2 instructions.
 
-Output shape matches the (to-be-written) LLM grounder so the eval harness
-can stay grounder-agnostic. T3-T4 deliberately return success=False with
-failure_mode='unsupported_tier' -- per proposal section 8 (condition F),
-regex is not a fair baseline for reference-object or intent reasoning.
+Output shape matches the LLM grounder (`grounding.ground`) so the eval
+harness stays grounder-agnostic. T3-T4 deliberately return success=False
+with failure_mode='unsupported_tier' -- per proposal section 8
+(condition F), regex is not a fair baseline for reference-object or
+intent reasoning.
 
-The WORKSPACE and DIR_VECTORS constants encode coordinate-frame
-assumptions for FetchPush-v4. These should be confirmed when the team
-finalizes the instruction library (Step 2); centralizing them here so the
-rest of the grounder stays pure logic.
+Workspace + axis constants are imported from the project-root
+`workspace.py` (single source of truth shared with the LLM grounder).
 """
 
 import argparse
 import json
 import re
+import sys
+from pathlib import Path
 from typing import Optional
 
 import numpy as np
 
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+from workspace import WORKSPACE, DIR_VECTORS as _DIR_TUPLES, REGIONS  # noqa: E402
 
-# FetchPush-v4 table workspace. Table center sits near (1.30, 0.75, 0.42)
-# and the env samples goals within roughly +/-15 cm of center on x/y.
-WORKSPACE = {
-    "x_min": 1.15, "x_max": 1.45,
-    "y_min": 0.55, "y_max": 0.95,
-    "z": 0.42,
-}
-
-# Robot frame: +x is forward (away from base), +y is to the robot's left,
-# +z is up. "Right" therefore maps to -y. Team to confirm before locking
-# the instruction library.
-DIR_VECTORS = {
-    "right":     np.array([0.0, -1.0, 0.0]),
-    "east":      np.array([0.0, -1.0, 0.0]),
-    "left":      np.array([0.0,  1.0, 0.0]),
-    "west":      np.array([0.0,  1.0, 0.0]),
-    "forward":   np.array([1.0,  0.0, 0.0]),
-    "north":     np.array([1.0,  0.0, 0.0]),
-    "back":      np.array([-1.0, 0.0, 0.0]),
-    "backward":  np.array([-1.0, 0.0, 0.0]),
-    "backwards": np.array([-1.0, 0.0, 0.0]),
-    "south":     np.array([-1.0, 0.0, 0.0]),
-}
-
-# Region keywords -> (x_key, y_key) into WORKSPACE.
-REGIONS = {
-    ("upper",  "left"):  ("x_min", "y_max"),
-    ("top",    "left"):  ("x_min", "y_max"),
-    ("upper",  "right"): ("x_max", "y_max"),
-    ("top",    "right"): ("x_max", "y_max"),
-    ("lower",  "left"):  ("x_min", "y_min"),
-    ("bottom", "left"):  ("x_min", "y_min"),
-    ("lower",  "right"): ("x_max", "y_min"),
-    ("bottom", "right"): ("x_max", "y_min"),
-}
+DIR_VECTORS = {k: np.array(v) for k, v in _DIR_TUPLES.items()}
 
 # T0: "(1.20, 0.50)" or "1.20, 0.50" or "(1.20, 0.50, 0.42)".
 COORD_RE = re.compile(

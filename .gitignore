@@ -5,3 +5,6 @@ logs/
 *.tfevents*
 *.npz
 videos/
+.env
+__pycache__/
+*.pyc
