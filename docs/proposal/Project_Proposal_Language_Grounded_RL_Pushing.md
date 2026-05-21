@@ -1,6 +1,6 @@
 # Language-Grounded Goal-Conditioned Reinforcement Learning for Robotic Pushing
 
-**Course:** CSE 190 — Intro to Deep RL (Spring 2026, UCSD)
+**Course:** CSE 190 -- Intro to Deep RL (Spring 2026, UCSD)
 **Team Size:** 5
 **Timeline:** 5 weeks (April 28 – May 30, 2026)
 
@@ -8,7 +8,7 @@
 
 ## Abstract
 
-When humans ask each other for help, they speak in natural language: "put it in the corner," "move it forward," "send it over there." But the robots we train today expect structured goal vectors — explicit coordinates in a known frame. As robots move closer to operating alongside humans in homes, warehouses, and labs, the gap between how humans give instructions and how robots interpret them becomes a deployment bottleneck. **This project studies, in simulation, how to bridge that gap with the simplest architecture that works.**
+When humans ask each other for help, they speak in natural language: "put it in the corner," "move it forward," "send it over there." But the robots we train today expect structured goal vectors -- explicit coordinates in a known frame. As robots move closer to operating alongside humans in homes, warehouses, and labs, the gap between how humans give instructions and how robots interpret them becomes a deployment bottleneck. **This project studies, in simulation, how to bridge that gap with the simplest architecture that works.**
 
 We focus on a **decoupled pipeline architecture**, where a Large Language Model (LLM) is queried **once per task** to translate a free-form natural language instruction (e.g., *"push the cube to the upper-left corner"*) into a structured goal vector, and a separately-trained goal-conditioned reinforcement learning (RL) policy executes the task autonomously thereafter. This contrasts with the current trend in robotics-LLM research toward tightly-coupled systems (SayCan, Inner Monologue, ReAct) that query the LLM throughout execution, paying for that flexibility with latency, API cost, and runtime brittleness.
 
@@ -22,7 +22,7 @@ Our **primary research question** asks under what task conditions one-shot LLM g
 
 A robot must push a block to a target location specified by a free-form natural language instruction. The pipeline has two stages:
 
-1. **Stage 1 (Language Grounding):** A user provides an instruction in natural language. An LLM translates the instruction into a structured goal — specifically, a 3D target position vector for the cube.
+1. **Stage 1 (Language Grounding):** A user provides an instruction in natural language. An LLM translates the instruction into a structured goal -- specifically, a 3D target position vector for the cube.
 2. **Stage 2 (Control):** A goal-conditioned RL policy, trained with SAC + HER on FetchPush-v3, accepts the target position and executes a sequence of end-effector displacements until the cube is pushed to the goal or the episode terminates.
 
 Once Stage 1 emits the goal, the LLM is no longer in the loop. The RL policy executes autonomously based purely on physical state and the static goal vector.
@@ -51,7 +51,7 @@ The Stage 2 control problem requires continuous closed-loop control over a 7-DoF
 
 - **Observation:** robot end-effector state, cube position, desired goal (continuous, ~25 dimensions)
 - **Action:** 4-dimensional continuous Cartesian end-effector displacement (inverse kinematics handled by MuJoCo internally)
-- **Reward:** sparse binary — 1 if cube is within ε of goal at any point, else 0
+- **Reward:** sparse binary -- 1 if cube is within ε of goal at any point, else 0
 - **Episode horizon:** 50 timesteps
 
 ### 2.2 Are We Building a Simulator?
@@ -77,16 +77,16 @@ The LLM is given a system prompt describing the table coordinate frame, valid go
 ### 3.1 What Makes This Hard
 
 - **Sparse reward:** FetchPush has a binary success signal. Vanilla SAC is known to fail on this task without HER. This is precisely why HER is the right tool, and why we expect a clean ablation.
-- **LLM grounding accuracy:** The LLM must reliably translate variable natural-language instructions to a small structured goal space. Failures cascade — if Stage 1 outputs the wrong goal, Stage 2's success is irrelevant.
+- **LLM grounding accuracy:** The LLM must reliably translate variable natural-language instructions to a small structured goal space. Failures cascade -- if Stage 1 outputs the wrong goal, Stage 2's success is irrelevant.
 - **Pipeline integration:** End-to-end testing requires both components functional simultaneously. Debugging failures requires distinguishing translation errors from control errors.
 - **Hyperparameter sensitivity:** SAC + HER requires tuning of `n_sampled_goal`, `tau`, `learning_rate`, `batch_size`. Wrong choices waste training compute.
 
 ### 3.2 What Reduces Risk
 
-- FetchPush-v3 is a **standard, public benchmark** — we are not building infrastructure.
+- FetchPush-v3 is a **standard, public benchmark** -- we are not building infrastructure.
 - Stable-Baselines3 has **HER built in** as `HerReplayBuffer`. We do not implement HER from scratch.
 - Gemini 2.5 Flash is **free and accessible** with no signup friction.
-- The LLM grounding task (free-form instruction to 3D coordinate) is **well within frontier LLM capability** — no fine-tuning required.
+- The LLM grounding task (free-form instruction to 3D coordinate) is **well within frontier LLM capability** -- no fine-tuning required.
 
 ### 3.3 Estimated Effort by Component
 
@@ -115,24 +115,24 @@ The robotics-LLM literature has bifurcated into two camps:
 
 The current research consensus has drifted toward tight coupling, citing better long-horizon reasoning. However, this comes with three real costs: latency, API expense, and brittleness when the LLM hallucinates mid-execution. The pipeline approach trades long-horizon flexibility for **deployment simplicity, lower cost, and runtime independence**.
 
-Our contribution is an **empirical characterization** of when this trade-off is favorable. Specifically: for short-horizon, well-defined goal spaces like cube-pushing to a 3D target, does one-shot LLM grounding suffice? At what level of instruction ambiguity does it break? We do not claim to invent the pipeline approach — we claim to rigorously evaluate it on a continuous-control manipulation benchmark, which is underrepresented in the existing pipeline literature (most pipeline work is on navigation or gridworld).
+Our contribution is an **empirical characterization** of when this trade-off is favorable. Specifically: for short-horizon, well-defined goal spaces like cube-pushing to a 3D target, does one-shot LLM grounding suffice? At what level of instruction ambiguity does it break? We do not claim to invent the pipeline approach -- we claim to rigorously evaluate it on a continuous-control manipulation benchmark, which is underrepresented in the existing pipeline literature (most pipeline work is on navigation or gridworld).
 
 A related but distinct question we also address: **even within the pipeline paradigm, is an LLM necessary at all?** For a narrow 3D goal space, a regex or template-matching parser is a plausible substitute. By comparing LLM grounding against a regex baseline across instruction tiers (literal → paraphrased → abstract), we directly measure where the LLM contributes value rather than assuming it does. This avoids the common failure mode of LLM-augmented systems papers that never test the obvious null hypothesis.
 
 ### 4.2 Who Will Care
 
-- **Anyone deploying robots that humans will instruct.** Home robots, warehouse pickers, lab assistants — humans will speak in natural language, not coordinates. The architectural choice between one-shot grounding and per-step coupling directly affects what's deployable on what hardware budget.
+- **Anyone deploying robots that humans will instruct.** Home robots, warehouse pickers, lab assistants -- humans will speak in natural language, not coordinates. The architectural choice between one-shot grounding and per-step coupling directly affects what's deployable on what hardware budget.
 - **Robotics deployment engineers.** Anyone with a real product and a real inference budget cares whether a frontier LLM needs to sit in the inner loop or can be amortized across an entire episode.
 - **Researchers studying language grounding.** Empirical evidence on the failure modes of pipeline architectures helps calibrate when tight coupling is justified vs. when it's overkill.
 - **Course staff and the PEARLS Lab.** The work directly engages with several lecture topics (search and planning, deep RL, LLM agents, tool use, simulation environments) and connects to the lab's broader interest in how language interfaces with structured environments.
 
 ### 4.3 Direct Course Topic Mapping
 
-- **Lecture: What Are Agents?** — We design an agent with structured input/output interfaces.
-- **Lecture: Simulated Environments** — We use a public MuJoCo simulator and discuss its abstraction choices.
-- **Lecture: Deep RL Pre-LLMs** — SAC and HER are direct lecture content.
-- **Lecture: LLM Basics** — Gemini-based grounding leverages frontier LLM capability.
-- **Lecture: Other LLM Agent Methods** — One-shot translation is an alternative agent design pattern compared to closed-loop tool use.
+- **Lecture: What Are Agents?** -- We design an agent with structured input/output interfaces.
+- **Lecture: Simulated Environments** -- We use a public MuJoCo simulator and discuss its abstraction choices.
+- **Lecture: Deep RL Pre-LLMs** -- SAC and HER are direct lecture content.
+- **Lecture: LLM Basics** -- Gemini-based grounding leverages frontier LLM capability.
+- **Lecture: Other LLM Agent Methods** -- One-shot translation is an alternative agent design pattern compared to closed-loop tool use.
 
 ---
 
@@ -155,7 +155,7 @@ A related but distinct question we also address: **even within the pipeline para
 | **D. SAC + HER + LLM goals (abstract instructions)** | Pipeline tier 2 | Where does grounding break down? |
 | **E. SAC + HER + regex parser (all instruction tiers)** | Grounding necessity test | Is the LLM actually contributing, or could a simple parser substitute? |
 
-**Condition E rationale:** A natural objection to the LLM frontend is that the goal space (3D coordinates on a table) is small enough that a regex- or template-matching parser could plausibly substitute. We test this directly. Expected outcome: regex matches LLM on literal templates ("push to coordinates X, Y"), degrades on paraphrased instructions, and fails on abstract instructions ("send it to the back"). The LLM's value is concretely measured by the gap between Conditions C/D and Condition E across tiers — not assumed.
+**Condition E rationale:** A natural objection to the LLM frontend is that the goal space (3D coordinates on a table) is small enough that a regex- or template-matching parser could plausibly substitute. We test this directly. Expected outcome: regex matches LLM on literal templates ("push to coordinates X, Y"), degrades on paraphrased instructions, and fails on abstract instructions ("send it to the back"). The LLM's value is concretely measured by the gap between Conditions C/D and Condition E across tiers -- not assumed.
 
 ### 5.3 What If the LLM Doesn't Work?
 
@@ -166,7 +166,7 @@ Mitigation: structured output mode + JSON schema validation + retry-on-fail with
 Mitigation: Groq-hosted Llama-3.3-70B as a drop-in replacement. Both expose OpenAI-compatible APIs.
 
 **Failure mode 3: LLM accuracy is bad on abstract instructions.**
-This is itself a finding, not a failure. Report it. The weakness of pipeline architectures on ambiguous language is exactly what motivates tightly-coupled systems — confirming this empirically is a contribution.
+This is itself a finding, not a failure. Report it. The weakness of pipeline architectures on ambiguous language is exactly what motivates tightly-coupled systems -- confirming this empirically is a contribution.
 
 ### 5.4 What If the RL Doesn't Work?
 
@@ -264,8 +264,8 @@ The plan has a **decision gate at end of Week 3**. If the pipeline does not prod
 - Plappert et al. 2018, *Multi-Goal RL: Challenging Robotics Environments*
 - Ahn et al. 2022, *SayCan: Grounding Language in Robotic Affordances*
 - Carta et al. 2023, *GLAM: Grounding LLMs in Interactive Environments*
-- Shah et al. 2022, *LM-Nav* — pipeline-style instruction following
-- Misra et al. 2017, *Mapping Instructions to Actions* — early pipeline work
+- Shah et al. 2022, *LM-Nav* -- pipeline-style instruction following
+- Misra et al. 2017, *Mapping Instructions to Actions* -- early pipeline work
 - Plappert et al. 2018, *Gymnasium-Robotics*
 
 ---

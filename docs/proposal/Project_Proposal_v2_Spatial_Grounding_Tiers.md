@@ -1,15 +1,15 @@
 # Where Does LLM Spatial Grounding Break? An Instruction-Tier Study for Goal-Conditioned Robotic Manipulation
 
-**Course:** CSE 190 — Intro to Deep RL (Spring 2026, UCSD)
+**Course:** CSE 190 -- Intro to Deep RL (Spring 2026, UCSD)
 **Team Size:** 5
 **Timeline:** 5 weeks (April 28 – May 30, 2026)
-**Version:** v2 — revised after Pitch 1 feedback
+**Version:** v2 -- revised after Pitch 1 feedback
 
 ---
 
 ## Revision Notes (v1 → v2)
 
-Following Pitch 1 feedback from the instructor, we have refocused this proposal. The original framing — *decoupled-pipeline-vs-coupled-architecture* — was identified as engineering territory that has been explored before, with the LLM-to-JSON extraction step being a solved problem rather than a research question. The genuine open problem lives one layer earlier: **how an LLM transitions free-form natural language into spatial coordinates, and where that grounding breaks as instructions become less literal.** The revised proposal foregrounds this as the central research question, organized around an explicit hierarchy of instruction abstraction. The pipeline architecture, RL controller, and simulation environment remain as supporting infrastructure.
+Following Pitch 1 feedback from the instructor, we have refocused this proposal. The original framing -- *decoupled-pipeline-vs-coupled-architecture* -- was identified as engineering territory that has been explored before, with the LLM-to-JSON extraction step being a solved problem rather than a research question. The genuine open problem lives one layer earlier: **how an LLM transitions free-form natural language into spatial coordinates, and where that grounding breaks as instructions become less literal.** The revised proposal foregrounds this as the central research question, organized around an explicit hierarchy of instruction abstraction. The pipeline architecture, RL controller, and simulation environment remain as supporting infrastructure.
 
 ---
 
@@ -25,7 +25,7 @@ The system will be implemented on the FetchPush-v3 MuJoCo environment using SAC 
 
 ## 1. What Task Are We Doing?
 
-We study **language-conditioned goal grounding for robotic pushing**. A user issues a natural-language instruction; an LLM translates it into a 3D goal coordinate; a pre-trained goal-conditioned RL policy pushes a cube to that goal in MuJoCo. The research question is not whether this composition works (it does, in the trivial case), but **how the LLM's grounding reliability scales — or breaks — across a structured hierarchy of instruction types**.
+We study **language-conditioned goal grounding for robotic pushing**. A user issues a natural-language instruction; an LLM translates it into a 3D goal coordinate; a pre-trained goal-conditioned RL policy pushes a cube to that goal in MuJoCo. The research question is not whether this composition works (it does, in the trivial case), but **how the LLM's grounding reliability scales -- or breaks -- across a structured hierarchy of instruction types**.
 
 ### 1.1 The Instruction Hierarchy (Central Object of Study)
 
@@ -41,7 +41,7 @@ For each tier, we generate **20 distinct instructions**, each evaluated against 
 
 ### 1.2 Stage 2: Control
 
-Once the LLM emits a goal vector, a goal-conditioned RL policy — SAC + HER trained on FetchPush-v3 — executes for up to 50 timesteps to push the cube to that goal. The policy is trained once on ground-truth coordinate goals and reused as a fixed downstream consumer for all LLM-generated goals at evaluation time. **The policy is not retrained for each tier**; we are studying the LLM's grounding behavior, not adapting the controller to language.
+Once the LLM emits a goal vector, a goal-conditioned RL policy -- SAC + HER trained on FetchPush-v3 -- executes for up to 50 timesteps to push the cube to that goal. The policy is trained once on ground-truth coordinate goals and reused as a fixed downstream consumer for all LLM-generated goals at evaluation time. **The policy is not retrained for each tier**; we are studying the LLM's grounding behavior, not adapting the controller to language.
 
 ### 1.3 Why This Is RL, Not Solvable by an LLM Alone
 
@@ -54,11 +54,11 @@ The downstream control problem requires continuous closed-loop control over a 7-
 **Primary RQ.** As instructions move up the abstraction hierarchy (T0 → T4), how does LLM grounding accuracy degrade? Is the degradation gradual or does it exhibit a cliff?
 
 **Secondary RQ-A (Failure Modes).** When the LLM fails, *how* does it fail? We classify failures into:
-- *Coordinate drift* — correct region, off-by-distance
-- *Region misidentification* — wrong region entirely
-- *Refusal / hedge* — "I cannot determine"
-- *Hallucination* — references nonexistent objects or coordinates outside the workspace
-- *Format violation* — output cannot be parsed
+- *Coordinate drift* -- correct region, off-by-distance
+- *Region misidentification* -- wrong region entirely
+- *Refusal / hedge* -- "I cannot determine"
+- *Hallucination* -- references nonexistent objects or coordinates outside the workspace
+- *Format violation* -- output cannot be parsed
 
 The distribution of these modes, per tier, is itself a contribution.
 
@@ -76,17 +76,17 @@ The distribution of these modes, per tier, is itself a contribution.
 
 - **Observation:** robot end-effector state, cube position, desired goal (~25 dims continuous)
 - **Action:** 4-D continuous Cartesian end-effector displacement (IK handled internally)
-- **Reward:** sparse binary — 1 if cube within ε of goal, else 0
+- **Reward:** sparse binary -- 1 if cube within ε of goal, else 0
 - **Episode horizon:** 50 timesteps
 
 ### 3.2 Are We Building a Simulator?
 
 **No.** FetchPush-v3 is used unmodified for control training. The novel infrastructure we build is:
 
-1. **Instruction Tier Library** — curated set of 100 instructions (20 per tier × 5 tiers) with ground-truth target positions
-2. **LLM Grounding Wrapper** — handles prompting, retries, parsing, failure-mode logging
-3. **Evaluation Harness** — for each instruction, runs the LLM, records grounding output, classifies failures, executes downstream RL policy, records task success
-4. **Failure-Mode Classifier** — rule-based + manual review for ambiguous cases
+1. **Instruction Tier Library** -- curated set of 100 instructions (20 per tier × 5 tiers) with ground-truth target positions
+2. **LLM Grounding Wrapper** -- handles prompting, retries, parsing, failure-mode logging
+3. **Evaluation Harness** -- for each instruction, runs the LLM, records grounding output, classifies failures, executes downstream RL policy, records task success
+4. **Failure-Mode Classifier** -- rule-based + manual review for ambiguous cases
 
 ### 3.3 LLM Frontend
 
@@ -110,7 +110,7 @@ We do not claim:
 We claim:
 - A **structured evaluation methodology** for LLM spatial grounding, organized around an explicit instruction-tier hierarchy
 - An **empirical characterization** of where grounding breaks for a frontier LLM (Gemini 2.5 Flash) on a continuous-control manipulation task
-- A **failure-mode taxonomy** with measured distributions per tier — not just "accuracy went down" but "failures changed character"
+- A **failure-mode taxonomy** with measured distributions per tier -- not just "accuracy went down" but "failures changed character"
 - A measurement of **error propagation** from grounding into downstream control, addressing whether grounding accuracy thresholds matter for end-to-end success
 
 ### 4.3 Who Will Care
@@ -121,10 +121,10 @@ We claim:
 
 ### 4.4 Course Topic Mapping
 
-- Simulated Environments — we use FetchPush-v3 and discuss its abstraction limits
-- Deep RL (pre-LLM) — SAC and HER directly
-- LLM Basics — Gemini grounding leverages frontier LLM capability
-- LLM Agent Methods — structured tool use, prompt engineering, failure analysis
+- Simulated Environments -- we use FetchPush-v3 and discuss its abstraction limits
+- Deep RL (pre-LLM) -- SAC and HER directly
+- LLM Basics -- Gemini grounding leverages frontier LLM capability
+- LLM Agent Methods -- structured tool use, prompt engineering, failure analysis
 
 ---
 
@@ -132,19 +132,19 @@ We claim:
 
 ### 5.1 Approach
 
-**Step 1 — Train the controller.**
+**Step 1 -- Train the controller.**
 SAC + HER on FetchPush-v3 with ground-truth coordinate goals, target ≥ 70% success on standard test. This is well-established and not a research output, only infrastructure.
 
-**Step 2 — Build the instruction-tier library.**
+**Step 2 -- Build the instruction-tier library.**
 20 instructions per tier × 5 tiers = 100 instructions. Each instruction is paired with a ground-truth coordinate (or set of acceptable coordinates for the abstract tiers). For T4 (functional/intent), the "ground truth" is the *set* of coordinates a panel of three humans agrees would satisfy the instruction; the LLM is correct if its output falls within this set. **This is the most fragile design choice and is described in detail in Section 5.4.**
 
-**Step 3 — Run grounding evaluation.**
+**Step 3 -- Run grounding evaluation.**
 For each instruction, query Gemini, log output, classify failure mode if any, and compute coordinate error magnitude.
 
-**Step 4 — Run end-to-end evaluation.**
+**Step 4 -- Run end-to-end evaluation.**
 Take each LLM-emitted goal, execute the RL policy 10 times, and record the success rate. This produces the error-propagation curve.
 
-**Step 5 — Prompt-sensitivity intervention.**
+**Step 5 -- Prompt-sensitivity intervention.**
 For the worst-performing tier(s), test 3 prompt variants (zero-shot, few-shot with 3 exemplars, chain-of-thought with explicit coordinate-frame description) and report the per-variant failure curve.
 
 ### 5.2 Ablation Table
@@ -156,7 +156,7 @@ For the worst-performing tier(s), test 3 prompt variants (zero-shot, few-shot wi
 | **C. Failure-mode distribution** | T0–T4 | Secondary RQ-A |
 | **D. Error propagation** | T0–T4 | Secondary RQ-B |
 | **E. Prompt-sensitivity intervention** | Worst tier(s) | Secondary RQ-C |
-| **F. Regex-baseline comparison** | T0–T2 only | Sanity bound — does LLM beat regex on tiers regex *can* address? |
+| **F. Regex-baseline comparison** | T0–T2 only | Sanity bound -- does LLM beat regex on tiers regex *can* address? |
 
 Condition F is intentionally limited to T0–T2 because regex parsing cannot meaningfully address T3–T4; including it everywhere would make the LLM look artificially better. We are honest about where the comparison is fair.
 
@@ -272,12 +272,12 @@ Submitting on 5/30 leaves the week of 6/1 finals untouched.
 - Andrychowicz et al. 2017, *Hindsight Experience Replay*
 - Haarnoja et al. 2018, *Soft Actor-Critic*
 - Plappert et al. 2018, *Multi-Goal RL: Challenging Robotics Environments*
-- Misra et al. 2017, *Mapping Instructions to Actions* — early instruction grounding
-- Shah et al. 2022, *LM-Nav* — pipeline-style grounding
-- Chevalier-Boisvert et al. 2019, *BabyAI* — grounding evaluation methodology
-- Ahn et al. 2022, *SayCan* — closed-loop grounding (contrast)
+- Misra et al. 2017, *Mapping Instructions to Actions* -- early instruction grounding
+- Shah et al. 2022, *LM-Nav* -- pipeline-style grounding
+- Chevalier-Boisvert et al. 2019, *BabyAI* -- grounding evaluation methodology
+- Ahn et al. 2022, *SayCan* -- closed-loop grounding (contrast)
 - Gemini 2.5 documentation, Google AI Studio
-- Recent literature on LLM spatial reasoning evaluation (SpatialRGPT, SpatialBot, 2024–2025) — to be added in W1 lit review
+- Recent literature on LLM spatial reasoning evaluation (SpatialRGPT, SpatialBot, 2024–2025) -- to be added in W1 lit review
 
 ---
 
