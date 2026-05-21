@@ -26,10 +26,17 @@ from workspace import WORKSPACE, DIR_VECTORS as _DIR_TUPLES, REGIONS  # noqa: E4
 
 DIR_VECTORS = {k: np.array(v) for k, v in _DIR_TUPLES.items()}
 
-# T0: "(1.20, 0.50)" or "1.20, 0.50" or "(1.20, 0.50, 0.42)".
+# T0: "(1.20, 0.50)" or "1.20, 0.50" or "(1.20, 0.50, 0.42)" or "[1.20, 0.50]".
 COORD_RE = re.compile(
-    r"\(?\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)"
-    r"(?:\s*,\s*(-?\d+(?:\.\d+)?))?\s*\)?"
+    r"[\(\[]?\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)"
+    r"(?:\s*,\s*(-?\d+(?:\.\d+)?))?\s*[\)\]]?"
+)
+
+# T0 named variant: "x=1.30, y=0.85" or "x=1.30 y=0.85 z=0.42".
+NAMED_COORD_RE = re.compile(
+    r"x\s*=\s*(-?\d+(?:\.\d+)?)\s*,?\s*y\s*=\s*(-?\d+(?:\.\d+)?)"
+    r"(?:\s*,?\s*z\s*=\s*(-?\d+(?:\.\d+)?))?",
+    re.IGNORECASE,
 )
 
 # T2: "<n> <unit> [to the] <direction>".
@@ -52,7 +59,7 @@ def _result(goal, *, success, failure_mode=None, raw_match=None, notes=None):
 
 
 def ground_t0(instruction: str) -> dict:
-    m = COORD_RE.search(instruction)
+    m = NAMED_COORD_RE.search(instruction) or COORD_RE.search(instruction)
     if not m:
         return _result(None, success=False, failure_mode="parse_error",
                        notes="no coordinate-like substring found")

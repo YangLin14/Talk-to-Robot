@@ -25,9 +25,10 @@ Usage:
   # Use regex grounder instead of LLM
   python eval/harness.py --grounder regex
 
-Some Design Decisions/Current issues as of 5/18/26:
-  - T2: Is currently broken for a live evail. Cube pos is random for every sim run, cube_pos in JSON is fixed. Harness uses it as-is currently so it doesn't crash, will need to fix.
-    TODO: replace with obs['achieved_goal'] after env.reset() for live eval.
+Some Design Decisions/Notes:
+  - T2: Before grounding, the harness resets the env to get the live cube position,
+    recomputes ground truth by preserving the original offset, and passes the live
+    cube_pos as context so grounding is evaluated against the actual sim state.
   - T4: entries with annotation_status != 'confirmed' are not run
   - Scoring has three layers: grounder success, policy success, and end-to-end success (strict, grounding failure = e2e failure) tracked separately.
   - Acceptable tolerance for T0/T1 exact-match is within 0.05m (same as T3 default).
@@ -152,6 +153,19 @@ def run_eval(
         tier       = entry["tier"]
         instruction = entry["instruction"]
         context    = entry.get("context")
+
+        # T2: replace fixed cube_pos with live position from env reset
+        if tier == "T2" and context and "cube_pos" in context:
+            obs_pre, _ = env.reset(seed=seed)
+            live_cube_pos = list(map(float, obs_pre["achieved_goal"]))
+            old_cube = np.array(context["cube_pos"])
+            old_gt = np.array(entry["ground_truth_goal"])
+            offset = old_gt - old_cube
+            context = dict(context)
+            context["cube_pos"] = live_cube_pos
+            entry = dict(entry)
+            entry["ground_truth_goal"] = list(map(float,
+                np.array(live_cube_pos) + offset))
 
         print(f"\n[{i+1}/{len(all_entries)}] {entry_id}: \"{instruction}\"")
 
