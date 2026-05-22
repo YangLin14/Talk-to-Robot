@@ -246,8 +246,6 @@ def run_eval(
             mean_distance = float(np.mean(
                 [r["final_distance"] for r in policy_records]
             ))
-            print(f"  policy success={policy_success_rate:.0%} "
-                  f"| mean_dist={mean_distance:.4f}m")
             # End-to-end scoring
             if goal is not None and entry.get("ground_truth_goal") is not None:
                 tolerance = entry.get("tolerance_m") or DEFAULT_TOLERANCE_M
@@ -258,6 +256,9 @@ def run_eval(
                 e2e_success_rate = sum(e2e_successes) / len(e2e_successes)
             else:
                 e2e_success_rate = None
+            print(f"  policy success={policy_success_rate:.0%} "
+                    f"| mean_dist={mean_distance:.4f}m "
+                    f"| e2e={e2e_success_rate:.0%}")
 
         else:
             policy_success_rate = None
