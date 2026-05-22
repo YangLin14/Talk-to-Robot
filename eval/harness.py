@@ -6,10 +6,10 @@ Overall workflow:
         A. Build context if necessary for the entry, call ground(), get back goal + failure_mode
         B. Check if the ground was successful, feed goal -> eval_policy_fetchpush
         C. Check for policy success and end-to-end success; Record output for the given instruction tier
-            # T0/T1 tolerate within 0.05m 
-            # T2 tolerance computed w/ offset
-            # T3 tolerance of tolerance_m of ground_truth_goal
-            # T4 is the same but based off of mean annotators
+            # Per-entry tolerance: entry.get("tolerance_m") or DEFAULT_TOLERANCE_M (0.05m).
+            # T0/T1/T2 entries omit tolerance_m and fall back to 0.05m.
+            # T3 entries set tolerance_m=0.08m (proximity ambiguity).
+            # T4 entries set tolerance_m from annotator spread (mean pairwise + 0.03m).
             Also record if it failed
     3. Write results to json file
 Usage:
@@ -34,16 +34,15 @@ Some Design Decisions/Notes:
     cube_pos as context so grounding is evaluated against the actual sim state.
   - T4: entries with annotation_status != 'confirmed' are not run
   - Scoring has three layers: grounder success, policy success, and end-to-end success (strict, grounding failure = e2e failure) tracked separately.
-  - Acceptable tolerance for T0/T1 exact-match is within 0.05m (same as T3 default).
+  - Default tolerance is 0.05m (T0/T1/T2). T3 entries override to 0.08m; T4 to annotator spread.
 """
 
 import argparse
 import json
 import sys
 import numpy as np
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
-import time
 
 #path setup
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -101,7 +100,7 @@ def score_grounder(entry, ground_result):
 
     dist = _goal_distance(predicted, ground_truth)
 
-    # Evaluate tolerance: T3 and T4 use an entry-level tolerance_m, t2,t1,t0 use default
+    # T3 and T4 set tolerance_m per entry; T0/T1/T2 fall back to DEFAULT_TOLERANCE_M (0.05m).
     tolerance = entry.get("tolerance_m") or DEFAULT_TOLERANCE_M
     if dist <= tolerance:
         grounder_success = True
@@ -198,17 +197,12 @@ def run_eval(
         if grounder_name == "regex":
             ground_result = regex_ground(instruction, tier, context)
         else:
-             #LLM Grounding
+             #LLM Grounding (rate limiting + retry handled inside GeminiClient)
             ground_result = llm_ground(
                 instruction, tier,
                 context=context,
                 prompt_variant=variant,
             )
-        
-        # Looks like Gemini 2.5 Flash has a rate limit of 5 req/min and if you fire off requests too fast grounding fails
-        # This should hopefully mitigate that
-        if grounder_name == "llm":
-            time.sleep(13) #keeps us under 5 per minute
 
         #B + C, Score
         grounder_success, grounder_dist, skip_reason = score_grounder(
@@ -443,7 +437,7 @@ def main():
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         output = {
-            "run_timestamp": datetime.utcnow().isoformat(),
+            "run_timestamp": datetime.now(timezone.utc).isoformat(),
             "grounder": args.grounder,
             "prompt_variant": args.variant,
             "tiers": args.tier or ["T0","T1","T2","T3","T4"],
