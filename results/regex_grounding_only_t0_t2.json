@@ -1,0 +1,1721 @@
+{
+  "run_timestamp": "2026-05-21T23:19:14.631001",
+  "grounder": "regex",
+  "prompt_variant": "zero-shot",
+  "tiers": [
+    "T0",
+    "T1",
+    "T2"
+  ],
+  "n_episodes": 3,
+  "device": "auto",
+  "skip_policy": true,
+  "summary": {
+    "T0": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": null,
+      "e2e_success_rate": null,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.0
+    },
+    "T1": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": null,
+      "e2e_success_rate": null,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 4.4408920985006264e-17
+    },
+    "T2": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": null,
+      "e2e_success_rate": null,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 2.2204460492503132e-17
+    }
+  },
+  "results": [
+    {
+      "id": "T0_001",
+      "tier": "T0",
+      "instruction": "push to (1.30, 0.85)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_002",
+      "tier": "T0",
+      "instruction": "move to [1.30, 0.85]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_003",
+      "tier": "T0",
+      "instruction": "go to 1.30, 0.85",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_004",
+      "tier": "T0",
+      "instruction": "place it at x=1.30, y=0.85",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_005",
+      "tier": "T0",
+      "instruction": "push to (1.45, 0.65)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_006",
+      "tier": "T0",
+      "instruction": "move to [1.45, 0.65]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_007",
+      "tier": "T0",
+      "instruction": "go to 1.45, 0.65",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_008",
+      "tier": "T0",
+      "instruction": "place it at x=1.45, y=0.65",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_009",
+      "tier": "T0",
+      "instruction": "push to (1.25, 0.80)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_010",
+      "tier": "T0",
+      "instruction": "move to [1.25, 0.80]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_011",
+      "tier": "T0",
+      "instruction": "go to 1.25, 0.80",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_012",
+      "tier": "T0",
+      "instruction": "place it at x=1.25, y=0.80",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_013",
+      "tier": "T0",
+      "instruction": "push to (1.40, 0.70)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_014",
+      "tier": "T0",
+      "instruction": "move to [1.40, 0.70]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_015",
+      "tier": "T0",
+      "instruction": "go to 1.40, 0.70",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_016",
+      "tier": "T0",
+      "instruction": "place it at x=1.40, y=0.70",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_017",
+      "tier": "T0",
+      "instruction": "push to (1.34, 0.75)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_018",
+      "tier": "T0",
+      "instruction": "move to [1.34, 0.75]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_019",
+      "tier": "T0",
+      "instruction": "go to 1.34, 0.75",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T0_020",
+      "tier": "T0",
+      "instruction": "place it at x=1.34, y=0.75",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_001",
+      "tier": "T1",
+      "instruction": "push to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_002",
+      "tier": "T1",
+      "instruction": "push the block to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_003",
+      "tier": "T1",
+      "instruction": "move the cube to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_004",
+      "tier": "T1",
+      "instruction": "send the box to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_005",
+      "tier": "T1",
+      "instruction": "push to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_006",
+      "tier": "T1",
+      "instruction": "push the block to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_007",
+      "tier": "T1",
+      "instruction": "move the cube to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_008",
+      "tier": "T1",
+      "instruction": "send the box to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_009",
+      "tier": "T1",
+      "instruction": "push to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_010",
+      "tier": "T1",
+      "instruction": "push the block to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_011",
+      "tier": "T1",
+      "instruction": "move the cube to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_012",
+      "tier": "T1",
+      "instruction": "send the box to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_013",
+      "tier": "T1",
+      "instruction": "push to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_014",
+      "tier": "T1",
+      "instruction": "push the block to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_015",
+      "tier": "T1",
+      "instruction": "move the cube to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_016",
+      "tier": "T1",
+      "instruction": "send the box to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_017",
+      "tier": "T1",
+      "instruction": "push to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 2.220446049250313e-16,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3399999999999999,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_018",
+      "tier": "T1",
+      "instruction": "push the block to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 2.220446049250313e-16,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3399999999999999,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_019",
+      "tier": "T1",
+      "instruction": "move the cube to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 2.220446049250313e-16,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3399999999999999,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T1_020",
+      "tier": "T1",
+      "instruction": "send the box to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 2.220446049250313e-16,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3399999999999999,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_001",
+      "tier": "T2",
+      "instruction": "push it 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_002",
+      "tier": "T2",
+      "instruction": "move the block 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_003",
+      "tier": "T2",
+      "instruction": "slide the cube 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_004",
+      "tier": "T2",
+      "instruction": "push the box 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_005",
+      "tier": "T2",
+      "instruction": "push it 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 1.1102230246251565e-16,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.8899999999999999,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.89,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_006",
+      "tier": "T2",
+      "instruction": "move the block 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 1.1102230246251565e-16,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.8899999999999999,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.89,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_007",
+      "tier": "T2",
+      "instruction": "slide the cube 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 1.1102230246251565e-16,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.8899999999999999,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.89,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_008",
+      "tier": "T2",
+      "instruction": "push the box 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 1.1102230246251565e-16,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.8899999999999999,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.89,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_009",
+      "tier": "T2",
+      "instruction": "push it 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.48,
+        0.68,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.48,
+        0.68,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_010",
+      "tier": "T2",
+      "instruction": "move the block 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.48,
+        0.68,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.48,
+        0.68,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_011",
+      "tier": "T2",
+      "instruction": "slide the cube 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.48,
+        0.68,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.48,
+        0.68,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_012",
+      "tier": "T2",
+      "instruction": "push the box 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.48,
+        0.68,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.48,
+        0.68,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_013",
+      "tier": "T2",
+      "instruction": "push it 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.16,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.16,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_014",
+      "tier": "T2",
+      "instruction": "move the block 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.16,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.16,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_015",
+      "tier": "T2",
+      "instruction": "slide the cube 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.16,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.16,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_016",
+      "tier": "T2",
+      "instruction": "push the box 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.16,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.16,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_017",
+      "tier": "T2",
+      "instruction": "push it 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.38,
+        0.62,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.38,
+        0.62,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_018",
+      "tier": "T2",
+      "instruction": "move the block 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.38,
+        0.62,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.38,
+        0.62,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_019",
+      "tier": "T2",
+      "instruction": "slide the cube 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.38,
+        0.62,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.38,
+        0.62,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    },
+    {
+      "id": "T2_020",
+      "tier": "T2",
+      "instruction": "push the box 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "regex",
+      "prompt_variant": null,
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.38,
+        0.62,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.38,
+        0.62,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": null,
+      "policy_success_rate": null,
+      "policy_mean_distance_m": null,
+      "policy_episodes": [],
+      "e2e_success_rate": null
+    }
+  ]
+}

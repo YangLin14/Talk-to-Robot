@@ -60,6 +60,12 @@ def _format_context(context):
             parts.append(
                 f"Reference object '{name}' at: [{pos[0]:.3f}, {pos[1]:.3f}, {pos[2]:.3f}]"
             )
+        parts.append(
+            "Reference-object side rule: choose a nearby point about 0.06 meters "
+            "from the named object. 'right side of' means -y from the object; "
+            "'left side of' means +y; 'in front of' / 'forward of' means +x; "
+            "'behind' / 'back of' means -x. Keep the goal inside the workspace."
+        )
     return "\n".join(parts) if parts else None
 
 

@@ -25,6 +25,9 @@ Usage:
   # Use regex grounder instead of LLM
   python eval/harness.py --grounder regex
 
+  # Grounding-only regex baseline, no SAC model rollout
+  python eval/harness.py --grounder regex --tier T0 T1 T2 --skip-policy
+
 Some Design Decisions/Notes:
   - T2: Before grounding, the harness resets the env to get the live cube position,
     recomputes ground truth by preserving the original offset, and passes the live
@@ -49,10 +52,6 @@ if str(_PROJECT_ROOT) not in sys.path:
 
 from grounding.grounder import ground as llm_ground          # noqa: E402
 from baselines.regex_grounder import ground as regex_ground  # noqa: E402
-from scripts.eval_policy_fetchpush import make_env, rollout  # noqa: E402
-from stable_baselines3 import SAC                            # noqa: E402
-import gymnasium as gym                                       # noqa: E402
-import gymnasium_robotics                                     # noqa: E402
 
 
 # Constants:
@@ -124,6 +123,8 @@ def run_eval(
     n_episodes,
     max_steps,
     seed,
+    device,
+    skip_policy,
 ):
     # Load instructions
     with open(instructions_path) as f:
@@ -140,11 +141,34 @@ def run_eval(
     print(f"Loaded {len(all_entries)} instructions "
           f"(tiers={tiers or 'all'}, grounder={grounder_name}, variant={variant})")
 
-    # Set up environment and model once
-    gym.register_envs(gymnasium_robotics)
-    env = make_env(env_id, seed)
-    model = SAC.load(model_path, env=env, device="auto")
-    print(f"Model loaded: {model_path.name}")
+    env = None
+    model = None
+    needs_env = (not skip_policy) or any(e.get("tier") == "T2" for e in all_entries)
+    make_env = rollout = None
+
+    if needs_env:
+        try:
+            import gymnasium as gym
+            import gymnasium_robotics
+            from scripts.eval_policy_fetchpush import make_env, rollout
+
+            gym.register_envs(gymnasium_robotics)
+            env = make_env(env_id, seed)
+        except ModuleNotFoundError as e:
+            if not skip_policy:
+                raise
+            print(
+                "Gymnasium is unavailable; running --skip-policy without live "
+                f"T2 cube context ({e})."
+            )
+
+    if skip_policy:
+        print("Policy rollout skipped; running grounding/scoring only.")
+    else:
+        from stable_baselines3 import SAC
+
+        model = SAC.load(model_path, env=env, device=device)
+        print(f"Model loaded: {model_path.name} (device={device})")
 
     results = []
 
@@ -153,10 +177,11 @@ def run_eval(
         tier       = entry["tier"]
         instruction = entry["instruction"]
         context    = entry.get("context")
+        entry_seed = seed + i * max(n_episodes, 1)
 
         # T2: replace fixed cube_pos with live position from env reset
-        if tier == "T2" and context and "cube_pos" in context:
-            obs_pre, _ = env.reset(seed=seed)
+        if env is not None and tier == "T2" and context and "cube_pos" in context:
+            obs_pre, _ = env.reset(seed=entry_seed)
             live_cube_pos = list(map(float, obs_pre["achieved_goal"]))
             old_cube = np.array(context["cube_pos"])
             old_gt = np.array(entry["ground_truth_goal"])
@@ -208,13 +233,18 @@ def run_eval(
               f"| dist={f'{grounder_dist:.4f}m' if grounder_dist is not None else 'N/A'}")
 
         policy_records = []
-        if goal is not None:
+        if skip_policy:
+            policy_success_rate = None
+            mean_distance = None
+            e2e_success_rate = None
+            print("  policy: skipped (--skip-policy)")
+        elif goal is not None:
             policy_records = rollout(
                 model, env,
                 goal=goal,
                 n_episodes=n_episodes,
                 max_steps=max_steps,
-                seed=seed,
+                seed=entry_seed,
             )
             policy_success_rate = sum(
                 r["success"] for r in policy_records
@@ -266,7 +296,8 @@ def run_eval(
             "e2e_success_rate": e2e_success_rate
         })
 
-    env.close()
+    if env is not None:
+        env.close()
     return results
 
 
@@ -362,6 +393,15 @@ def main():
         "--seed", type=int, default=DEFAULT_SEED,
     )
     parser.add_argument(
+        "--device", type=str, default="auto",
+        choices=["auto", "cpu", "cuda"],
+        help="Device for SAC policy rollout. Regex grounding itself does not need a GPU."
+    )
+    parser.add_argument(
+        "--skip-policy", action="store_true",
+        help="Only run the grounder and ground-truth scoring; do not load or roll out the SAC policy."
+    )
+    parser.add_argument(
         "--output", type=Path, default=None,
         help="Write full results JSON here"
     )
@@ -377,6 +417,8 @@ def main():
         n_episodes=args.n_episodes,
         max_steps=args.max_steps,
         seed=args.seed,
+        device=args.device,
+        skip_policy=args.skip_policy,
     )
 
     summary = aggregate(results)
@@ -406,6 +448,8 @@ def main():
             "prompt_variant": args.variant,
             "tiers": args.tier or ["T0","T1","T2","T3","T4"],
             "n_episodes": args.n_episodes,
+            "device": args.device,
+            "skip_policy": args.skip_policy,
             "summary": summary,
             "results": results,
         }
