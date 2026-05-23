@@ -1,6 +1,5 @@
 e2e_success_rate,failure_mode_counts,grounder,grounder_success_rate,mean_grounder_distance_m,n,policy_success_rate,prompt_variant,run,run_timestamp,skip_policy,source_file,tier
-,{},regex,1.0,0.0,20,,zero-shot,regex_T0-T1-T2,2026-05-21T23:13:50.898027,True,results/regex_grounding_only_t0_t2.json,T0
-,{},regex,1.0,4.4408920985006264e-17,20,,zero-shot,regex_T0-T1-T2,2026-05-21T23:13:50.898027,True,results/regex_grounding_only_t0_t2.json,T1
-,{},regex,1.0,2.2204460492503132e-17,20,,zero-shot,regex_T0-T1-T2,2026-05-21T23:13:50.898027,True,results/regex_grounding_only_t0_t2.json,T2
-0.75,"{""parse_error"": 5}",regex,0.75,0.0,20,1.0,zero-shot,regex_T0,2026-05-19T05:26:08.846611,False,results/t0_regex.json,T0
-1.0,{},regex,1.0,4.4408920985006264e-17,20,1.0,zero-shot,regex_T1,2026-05-19T05:22:50.318862,False,results/t1_regex.json,T1
+0.9833333333333334,{},llm,1.0,0.0,20,1.0,few-shot,llm_few-shot_T0-T1-T2-T3,2026-05-23T00:07:07.158419+00:00,False,results\t0123_llm_fewshot_joseph_5_22.json,T0
+0.9333333333333332,{},llm,1.0,0.0,20,0.9666666666666666,few-shot,llm_few-shot_T0-T1-T2-T3,2026-05-23T00:07:07.158419+00:00,False,results\t0123_llm_fewshot_joseph_5_22.json,T1
+0.7666666666666666,"{""out_of_workspace"": 8}",llm,0.45,0.033735650324342115,20,0.95,few-shot,llm_few-shot_T0-T1-T2-T3,2026-05-23T00:07:07.158419+00:00,False,results\t0123_llm_fewshot_joseph_5_22.json,T2
+0.7333333333333333,{},llm,1.0,0.059999999999999984,20,0.9666666666666666,few-shot,llm_few-shot_T0-T1-T2-T3,2026-05-23T00:07:07.158419+00:00,False,results\t0123_llm_fewshot_joseph_5_22.json,T3
