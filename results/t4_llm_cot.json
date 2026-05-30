@@ -1,0 +1,1643 @@
+{
+  "run_timestamp": "2026-05-29T17:58:05.622594+00:00",
+  "grounder": "llm",
+  "prompt_variant": "cot",
+  "tiers": [
+    "T4"
+  ],
+  "n_episodes": 3,
+  "device": "auto",
+  "skip_policy": false,
+  "summary": {
+    "T4": {
+      "n": 20,
+      "grounder_success_rate": 0.45,
+      "policy_success_rate": 0.9666666666666666,
+      "e2e_success_rate": 0.45,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.19476565073685198
+    }
+  },
+  "results": [
+    {
+      "id": "T4_001",
+      "tier": "T4",
+      "instruction": "get it out of the way",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.26843165900384336,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4266666666666667,
+        0.7266666666666667,
+        0.42
+      ],
+      "reasoning": "The instruction 'get it out of the way' implies moving the object to a position that minimizes interference with the workspace. Given the workspace bounds [1.19, 1.49] for x and [0.60, 0.90] for y, the 'lower-right' corner (x_min, y_min) is the most peripheral location relative to the robot's center-forward reach. Therefore, I will map this to (1.19, 0.60, 0.42).",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 149,
+        "total_tokens": 520
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03437732248099807,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03598444681783991,
+          "steps": 50,
+          "achieved_goal": [
+            1.2254187262464569,
+            0.6040576231172858,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.030327153334471314,
+          "steps": 50,
+          "achieved_goal": [
+            1.2153830920797102,
+            0.615858888409467,
+            0.42489224457978275
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.036820367290682984,
+          "steps": 50,
+          "achieved_goal": [
+            1.180050451066657,
+            0.5648886211431301,
+            0.4248922445797813
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_002",
+      "tier": "T4",
+      "instruction": "move it out of the way",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.13605554421305704,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.26,
+        0.7166666666666667,
+        0.42
+      ],
+      "reasoning": "The instruction 'move it out of the way' is ambiguous. In a workspace defined by x in [1.19, 1.49] and y in [0.60, 0.90], moving an object 'out of the way' typically implies placing it at the extreme edge of the workspace to clear the center. I will select the lower-right corner (x_min, y_min) as a standard 'out of the way' position.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 133,
+        "total_tokens": 504
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02952887737037307,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.027892713803417405,
+          "steps": 50,
+          "achieved_goal": [
+            1.1653547500545856,
+            0.5878889490470147,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02591850427425731,
+          "steps": 50,
+          "achieved_goal": [
+            1.166867295216485,
+            0.6106165204650088,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.034775414033444495,
+          "steps": 50,
+          "achieved_goal": [
+            1.2183287446174262,
+            0.5804326861017834,
+            0.42489224457931757
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T4_003",
+      "tier": "T4",
+      "instruction": "push it somewhere out of the way",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.34138606363535756,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.39,
+        0.8766666666666666,
+        0.42
+      ],
+      "reasoning": "The instruction 'out of the way' implies moving the object to a peripheral location within the workspace to clear the central area. Given the workspace bounds x in [1.19, 1.49] and y in [0.60, 0.90], the 'lower-right' corner (x_min, y_min) is a standard location for clearing objects. Setting x to 1.19 and y to 0.60 places the object at the near-right corner of the table.",
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 144,
+        "total_tokens": 516
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02600797190964134,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.027778630579519088,
+          "steps": 50,
+          "achieved_goal": [
+            1.1632230978581377,
+            0.5944581307673594,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.014354939839605674,
+          "steps": 50,
+          "achieved_goal": [
+            1.1849729027373623,
+            0.6125243134532078,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03589034530979926,
+          "steps": 50,
+          "achieved_goal": [
+            1.1544451977189345,
+            0.6001862144717797,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_004",
+      "tier": "T4",
+      "instruction": "clear it out of the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.29093718298705745,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4666666666666668,
+        0.6900000000000001,
+        0.42
+      ],
+      "reasoning": "The instruction 'clear it out of the center' implies moving an object from the center of the workspace to a position outside of it. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The center is (1.34, 0.75). To clear it, I will move the object to the lower-right corner of the workspace, which is (1.19, 0.60).",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 142,
+        "total_tokens": 513
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020887506936935443,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.025836818170770843,
+          "steps": 50,
+          "achieved_goal": [
+            1.1972053235304887,
+            0.6243247257980631,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.022256454200059207,
+          "steps": 50,
+          "achieved_goal": [
+            1.1776167215778635,
+            0.6178345007500642,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.014569248439976269,
+          "steps": 50,
+          "achieved_goal": [
+            1.1876246886501454,
+            0.6135161785808398,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_005",
+      "tier": "T4",
+      "instruction": "get it out of the middle",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.22533925041540756,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.22,
+        0.8233333333333333,
+        0.42
+      ],
+      "reasoning": "The instruction 'get it out of the middle' implies moving an object from the center of the workspace to a position near the edge. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The center is (1.34, 0.75). To move it 'out' of the middle, I will target a corner position, specifically the lower-right corner (x_min, y_min) to ensure it is clearly away from the center.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 150,
+        "total_tokens": 521
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02510628360025294,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02855328006380447,
+          "steps": 50,
+          "achieved_goal": [
+            1.1728553274878653,
+            0.577697246896698,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01751412545575203,
+          "steps": 50,
+          "achieved_goal": [
+            1.1833178881478779,
+            0.6154324255224923,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.029251445281202323,
+          "steps": 50,
+          "achieved_goal": [
+            1.208667674238285,
+            0.6219825837606239,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_006",
+      "tier": "T4",
+      "instruction": "push it to the far side",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.08137703743822454,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4233333333333336,
+        0.7966666666666667,
+        0.42
+      ],
+      "reasoning": "The instruction 'push it to the far side' refers to moving the object to the maximum extent of the workspace along the x-axis. The workspace bounds for x are [1.19, 1.49]. The 'far side' corresponds to x_max = 1.49. Since no specific y-coordinate is provided, I will maintain the current center of the workspace for y, which is 0.75. The z-coordinate is fixed at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 142,
+        "total_tokens": 513
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026058103130547055,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02121574480511114,
+          "steps": 50,
+          "achieved_goal": [
+            1.4695383028320885,
+            0.7527371885275732,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02048933935548566,
+          "steps": 50,
+          "achieved_goal": [
+            1.5066800975956018,
+            0.7388627172201112,
+            0.42418909441171015
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03646922523104435,
+          "steps": 50,
+          "achieved_goal": [
+            1.4899839745830417,
+            0.7138604102610435,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T4_007",
+      "tier": "T4",
+      "instruction": "move it to the far end",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06871842709362762,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4266666666666667,
+        0.7766666666666667,
+        0.42
+      ],
+      "reasoning": "The instruction 'far end' refers to the maximum extent of the workspace along the x-axis (forward direction). Given the workspace bounds x in [1.19, 1.49], the far end is x = 1.49. Since no specific y-coordinate is provided, I will default to the center of the y-range, which is (0.60 + 0.90) / 2 = 0.75. The z-coordinate is fixed at the table surface, z = 0.42.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 150,
+        "total_tokens": 521
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.017525837233889757,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0173580478850991,
+          "steps": 50,
+          "achieved_goal": [
+            1.4774238841414926,
+            0.7390817258187958,
+            0.4248922445793302
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.013970856394384707,
+          "steps": 50,
+          "achieved_goal": [
+            1.4861413377952335,
+            0.7625044510255738,
+            0.4248922445797842
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.021248607422185463,
+          "steps": 50,
+          "achieved_goal": [
+            1.4864586929661496,
+            0.7653770257825957,
+            0.43423056918041864
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T4_008",
+      "tier": "T4",
+      "instruction": "send it to the back of the table",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.24122373201840852,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4266666666666667,
+        0.7966666666666667,
+        0.42
+      ],
+      "reasoning": "The instruction 'back of the table' refers to the minimum x-coordinate in the robot's frame, as 'back' or 'toward me' corresponds to -x. The workspace x-range is [1.19, 1.49], so the back is x = 1.19. Since no y-coordinate is specified, I will target the center of the y-range [0.60, 0.90], which is 0.75. The z-coordinate is fixed at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 373,
+        "completion_tokens": 155,
+        "total_tokens": 528
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03017394273091548,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.023534197798189136,
+          "steps": 50,
+          "achieved_goal": [
+            1.2077691946046323,
+            0.7353650405776493,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.038768393474817746,
+          "steps": 50,
+          "achieved_goal": [
+            1.152034342941765,
+            0.756136667384994,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.028219236919739557,
+          "steps": 50,
+          "achieved_goal": [
+            1.175437607789914,
+            0.7263287893511464,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_009",
+      "tier": "T4",
+      "instruction": "push it away from me",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05821416398857656,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4666666666666668,
+        0.8033333333333333,
+        0.42
+      ],
+      "reasoning": "The instruction 'push it away from me' implies moving the object in the +x direction. Since no specific starting point is provided, I will assume a central position within the workspace bounds (x=1.34, y=0.75) and apply a displacement in the +x direction to move it 'away' from the robot base, resulting in a target coordinate near the far edge of the workspace.",
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 118,
+        "total_tokens": 488
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.038035261426348506,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.04941677182195186,
+          "steps": 50,
+          "achieved_goal": [
+            1.4952023797080602,
+            0.7011019581519808,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.032011917025562664,
+          "steps": 50,
+          "achieved_goal": [
+            1.4637651953457795,
+            0.7323205438238528,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03267709543153099,
+          "steps": 50,
+          "achieved_goal": [
+            1.461983714409651,
+            0.7339082136522932,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T4_010",
+      "tier": "T4",
+      "instruction": "move it as far back as possible",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.25562559426717146,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4400000000000002,
+        0.8033333333333333,
+        0.42
+      ],
+      "reasoning": "The instruction 'as far back as possible' refers to the minimum x-coordinate within the workspace bounds. The workspace x-range is [1.19, 1.49]. Therefore, 'far back' corresponds to x = 1.19. Since no y-coordinate is specified, I will maintain the center of the y-range (0.75) to ensure the goal remains within the workspace. The z-coordinate is fixed at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 138,
+        "total_tokens": 510
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026681059698300234,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.04127554091719463,
+          "steps": 50,
+          "achieved_goal": [
+            1.2069136819412782,
+            0.7126681718706747,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01233487750887458,
+          "steps": 50,
+          "achieved_goal": [
+            1.1913636380208992,
+            0.7612408035845663,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.026432760668831493,
+          "steps": 50,
+          "achieved_goal": [
+            1.215948961341451,
+            0.7511878662224677,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_011",
+      "tier": "T4",
+      "instruction": "put it somewhere safe",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.08666666666666667,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3066666666666666,
+        0.67,
+        0.42
+      ],
+      "reasoning": "The instruction 'put it somewhere safe' is ambiguous and lacks a specific spatial reference. In the context of a robot workspace, a 'safe' location is typically defined as the center of the workspace to ensure stability and avoid edges. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The center point is x = (1.19 + 1.49) / 2 = 1.34 and y = (0.60 + 0.90) / 2 = 0.75. The z-coordinate is fixed at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 369,
+        "completion_tokens": 181,
+        "total_tokens": 550
+      },
+      "policy_success_rate": 0.6666666666666666,
+      "policy_mean_distance_m": 0.03977944238927423,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": false,
+          "final_distance": 0.05153164529609563,
+          "steps": 50,
+          "achieved_goal": [
+            1.2906260199411785,
+            0.741518791394317,
+            0.4320741893281633
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.030870022682841745,
+          "steps": 50,
+          "achieved_goal": [
+            1.3388982208150375,
+            0.7195400242255329,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03693665918888531,
+          "steps": 50,
+          "achieved_goal": [
+            1.3751713242349917,
+            0.7601667549492566,
+            0.424892244579783
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T4_012",
+      "tier": "T4",
+      "instruction": "move it somewhere it won't get knocked over",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.1673652028084425,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.46,
+        0.6333333333333333,
+        0.42
+      ],
+      "reasoning": "The instruction 'somewhere it won't get knocked over' implies moving the object to a stable, safe location within the workspace. Given the workspace bounds [1.19, 1.49] for x and [0.60, 0.90] for y, the center of the workspace (1.34, 0.75) is the most stable and least prone to edge-related accidents. The z-coordinate is fixed at the table surface (0.42).",
+      "usage": {
+        "prompt_tokens": 375,
+        "completion_tokens": 141,
+        "total_tokens": 516
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03186604638559382,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.030956167973252534,
+          "steps": 50,
+          "achieved_goal": [
+            1.3694349739159783,
+            0.7417577657266687,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03943620706214017,
+          "steps": 50,
+          "achieved_goal": [
+            1.3050297625313476,
+            0.7324398064081026,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02520576412138878,
+          "steps": 50,
+          "achieved_goal": [
+            1.3616267032621678,
+            0.7619868056360943,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_013",
+      "tier": "T4",
+      "instruction": "put it out of the way somewhere",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.20808652046684822,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.31,
+        0.77,
+        0.42
+      ],
+      "reasoning": "The instruction 'put it out of the way' implies moving the object to a position that minimizes interference with the workspace. Given the workspace bounds x in [1.19, 1.49] and y in [0.60, 0.90], the corner (x_min, y_min) at (1.19, 0.60) is the closest point to the robot base and the edge of the workspace, making it the most 'out of the way' location.",
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 141,
+        "total_tokens": 513
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02637351392454342,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03296867037897089,
+          "steps": 50,
+          "achieved_goal": [
+            1.1574017356871533,
+            0.5994097066088048,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.017173018294578388,
+          "steps": 50,
+          "achieved_goal": [
+            1.1852510563955674,
+            0.6157615390982755,
+            0.42489224457978414
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.028978853100080987,
+          "steps": 50,
+          "achieved_goal": [
+            1.1651092359417463,
+            0.5859897862373615,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T4_014",
+      "tier": "T4",
+      "instruction": "tuck it away",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.33042060737456697,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.32,
+        0.6166666666666667,
+        0.42
+      ],
+      "reasoning": "The instruction 'tuck it away' implies moving the object to a position that is out of the way, typically at the furthest reachable point within the workspace. Given the workspace bounds x in [1.19, 1.49] and y in [0.60, 0.90], the 'far' position corresponds to the maximum x value (1.49). To tuck it to the side, we choose the maximum y value (0.90) to clear the center area. The z-coordinate is fixed at the table surface (0.42).",
+      "usage": {
+        "prompt_tokens": 369,
+        "completion_tokens": 157,
+        "total_tokens": 526
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.027533982302561797,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.021673430486351602,
+          "steps": 50,
+          "achieved_goal": [
+            1.4932783358544781,
+            0.8791419805624876,
+            0.42489224457978414
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03535639953165039,
+          "steps": 50,
+          "achieved_goal": [
+            1.4903346455935775,
+            0.864985281796798,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.025572116889683406,
+          "steps": 50,
+          "achieved_goal": [
+            1.4975622577567524,
+            0.8760664979582276,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_015",
+      "tier": "T4",
+      "instruction": "put it somewhere it won't be in the way",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.18027756377319962,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.36,
+        0.66,
+        0.42
+      ],
+      "reasoning": "The instruction 'somewhere it won't be in the way' implies placing the object at the periphery of the workspace to minimize interference with other tasks. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'lower-right' corner (x_min, y_min) is (1.19, 0.60), which is the closest point to the robot base and typically the least obstructive area for workspace operations.",
+      "usage": {
+        "prompt_tokens": 376,
+        "completion_tokens": 145,
+        "total_tokens": 521
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01657254738010023,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02058322554620678,
+          "steps": 50,
+          "achieved_goal": [
+            1.174633408560059,
+            0.6127906883086104,
+            0.4248922445797822
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.016756255320053745,
+          "steps": 50,
+          "achieved_goal": [
+            1.202908123459381,
+            0.5905016169759874,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.012378161274040156,
+          "steps": 50,
+          "achieved_goal": [
+            1.194106199968203,
+            0.6106030556218953,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T4_016",
+      "tier": "T4",
+      "instruction": "push it to the side",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.24444949489732132,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3633333333333333,
+        0.6566666666666667,
+        0.42
+      ],
+      "reasoning": "The instruction 'push it to the side' is ambiguous regarding direction. In the robot's frame, 'side' typically refers to the y-axis. Given the workspace y-range [0.60, 0.90], moving to the side implies moving toward one of the boundaries. I will select the left boundary (y_max = 0.90) at the center of the x-range (1.34) to represent a clear 'side' position.",
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 135,
+        "total_tokens": 505
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02761235958176095,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.020985976959613722,
+          "steps": 50,
+          "achieved_goal": [
+            1.355031454480835,
+            0.9138033606439825,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04466630491024158,
+          "steps": 50,
+          "achieved_goal": [
+            1.3182721670577326,
+            0.8612824809635362,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.017184796875427556,
+          "steps": 50,
+          "achieved_goal": [
+            1.3321669907378746,
+            0.9144922672573939,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_017",
+      "tier": "T4",
+      "instruction": "move it to the edge",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.22676468468926586,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3966666666666665,
+        0.6566666666666667,
+        0.42
+      ],
+      "reasoning": "The instruction 'move it to the edge' is ambiguous. In the context of a workspace defined by x in [1.19, 1.49] and y in [0.60, 0.90], the 'edge' typically refers to the boundary of the workspace. Without a specific direction, the most common interpretation for a robot task is the front edge (closest to the robot) or the center of the workspace boundary. I will select the center of the near edge (x_min) at y=0.75 to represent a neutral 'edge' position.",
+      "usage": {
+        "prompt_tokens": 370,
+        "completion_tokens": 156,
+        "total_tokens": 526
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.024461793155563072,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.023755235681218137,
+          "steps": 50,
+          "achieved_goal": [
+            1.2115032274335655,
+            0.7411687652209007,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0233254106743509,
+          "steps": 50,
+          "achieved_goal": [
+            1.176705968439082,
+            0.7685312655063591,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.026304733111120172,
+          "steps": 50,
+          "achieved_goal": [
+            1.168431782384796,
+            0.7642412892438767,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_018",
+      "tier": "T4",
+      "instruction": "get it to the side of the table",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.2346865521877591,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.2933333333333332,
+        0.67,
+        0.42
+      ],
+      "reasoning": "The instruction 'side of the table' refers to the lateral boundary of the workspace. Given the workspace bounds x in [1.19, 1.49] and y in [0.60, 0.90], the 'side' corresponds to the maximum y-boundary (left side) at y = 0.90. I will place the goal at the midpoint of the x-range (1.34) and the maximum y-boundary (0.90) at the table surface height (0.42).",
+      "usage": {
+        "prompt_tokens": 373,
+        "completion_tokens": 150,
+        "total_tokens": 523
+      },
+      "policy_success_rate": 0.6666666666666666,
+      "policy_mean_distance_m": 0.031195621711565782,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0072912531527973175,
+          "steps": 50,
+          "achieved_goal": [
+            1.334968737020282,
+            0.901978421042421,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.034269365239902726,
+          "steps": 50,
+          "achieved_goal": [
+            1.373883544303971,
+            0.8984628047352426,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": false,
+          "final_distance": 0.052026246741997295,
+          "steps": 50,
+          "achieved_goal": [
+            1.3511450207607827,
+            0.9505824377528231,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T4_019",
+      "tier": "T4",
+      "instruction": "push it off to one side",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.09219544457292879,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.41,
+        0.84,
+        0.42
+      ],
+      "reasoning": "The instruction 'push it off to one side' is ambiguous regarding direction. Given the workspace bounds [1.19, 1.49] for x and [0.60, 0.90] for y, I will select a point towards the left boundary (y_max) to satisfy the 'side' requirement. I will choose the center of the x-range (1.34) and the maximum y-range (0.90) to represent 'off to the side'.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 141,
+        "total_tokens": 512
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.016159982363580554,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.010958243894196014,
+          "steps": 50,
+          "achieved_goal": [
+            1.3327068720919195,
+            0.8934456857802049,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.017493639736587577,
+          "steps": 50,
+          "achieved_goal": [
+            1.3555804047146034,
+            0.8937273949563577,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02002806345995807,
+          "steps": 50,
+          "achieved_goal": [
+            1.3225584971973596,
+            0.8914570284079952,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T4_020",
+      "tier": "T4",
+      "instruction": "slide it to the nearest edge",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.157091622239309,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3399999999999999,
+        0.7033333333333333,
+        0.42
+      ],
+      "reasoning": "The instruction 'nearest edge' refers to the edge closest to the robot base. In the robot coordinate frame, the robot base is at x=0, and the workspace x-range is [1.19, 1.49]. Therefore, the 'nearest edge' corresponds to the minimum x-coordinate, which is x = 1.19. Since no specific y-coordinate is provided, I will maintain the current center y-coordinate of the workspace, which is 0.75. The z-coordinate remains at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 154,
+        "total_tokens": 525
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.022917923362797382,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.023329906077087823,
+          "steps": 50,
+          "achieved_goal": [
+            1.2037083948778748,
+            0.7682327126589326,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.015244530039241259,
+          "steps": 50,
+          "achieved_goal": [
+            1.190938014572223,
+            0.7355923025159886,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03017933397206306,
+          "steps": 50,
+          "achieved_goal": [
+            1.2022428228706528,
+            0.7771472411655207,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    }
+  ]
+}
