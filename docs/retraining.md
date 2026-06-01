@@ -23,7 +23,6 @@ The grounder is consistently predicting a goal about 6cm off on the Y-axis based
 replace this with our own shaped reward. This will punish rewards for runs that aren't as close to the target vs.
 getting closer to the target. This should hopefully push the policy to find the right region even if the goal is slightly off. 
 
-
 Concretely, for episodes where the cube is more than 4cm from the goal add a distance-proportionality penalty to the reward:
 
 `r_shaped = r_sparse + alpha * (1 - d_block_to_true_goal / d_threshold)`

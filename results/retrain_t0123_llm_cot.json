@@ -1,0 +1,6530 @@
+{
+  "run_timestamp": "2026-05-31T23:56:36.615151+00:00",
+  "grounder": "llm",
+  "prompt_variant": "cot",
+  "tiers": [
+    "T0",
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "n_episodes": 3,
+  "device": "auto",
+  "skip_policy": false,
+  "summary": {
+    "T0": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": 1.0,
+      "e2e_success_rate": 1.0,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.0
+    },
+    "T1": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": 1.0,
+      "e2e_success_rate": 1.0,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.0
+    },
+    "T2": {
+      "n": 20,
+      "grounder_success_rate": 0.65,
+      "policy_success_rate": 1.0,
+      "e2e_success_rate": 0.5333333333333333,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.03237170454987261
+    },
+    "T3": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": 1.0,
+      "e2e_success_rate": 0.8166666666666667,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.05899999999999998
+    }
+  },
+  "results": [
+    {
+      "id": "T0_001",
+      "tier": "T0",
+      "instruction": "push to (1.30, 0.85)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.30, 0.85). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided coordinates (1.30, 0.85) fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02000752612208213,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.010802345587711384,
+          "steps": 50,
+          "achieved_goal": [
+            1.3062013922255447,
+            0.8580394314623023,
+            0.42368790477659
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.021193813767368237,
+          "steps": 50,
+          "achieved_goal": [
+            1.2793816151894752,
+            0.8503574182994621,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.028026419011166766,
+          "steps": 50,
+          "achieved_goal": [
+            1.317930355326158,
+            0.8709773121594689,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_002",
+      "tier": "T0",
+      "instruction": "move to [1.30, 0.85]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates [1.30, 0.85]. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided x=1.30 and y=0.85 are within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03078429697757715,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03471375488779079,
+          "steps": 50,
+          "achieved_goal": [
+            1.280326480112853,
+            0.8781791843073088,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03870914824735333,
+          "steps": 50,
+          "achieved_goal": [
+            1.3165722895079583,
+            0.8846384650987652,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.018929987797587325,
+          "steps": 50,
+          "achieved_goal": [
+            1.2968435744442823,
+            0.8319654109753237,
+            0.4248098159380133
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_003",
+      "tier": "T0",
+      "instruction": "go to 1.30, 0.85",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.30, 0.85). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided coordinates (1.30, 0.85) fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03131094208883295,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.030083777502031835,
+          "steps": 50,
+          "achieved_goal": [
+            1.3061550661559707,
+            0.8790381721485155,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02611687465446922,
+          "steps": 50,
+          "achieved_goal": [
+            1.2809123317000033,
+            0.8671411934516999,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0377321741099978,
+          "steps": 50,
+          "achieved_goal": [
+            1.3087178631739753,
+            0.8863838225441887,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_004",
+      "tier": "T0",
+      "instruction": "place it at x=1.30, y=0.85",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates. The workspace bounds are x in [1.19, 1.49], y in [0.60, 0.90], and z = 0.42. The requested coordinates x=1.30 and y=0.85 fall within these bounds. Therefore, the goal position is (1.30, 0.85, 0.42).",
+      "usage": {
+        "prompt_tokens": 381,
+        "completion_tokens": 126,
+        "total_tokens": 507
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.019951529951469024,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.014378631119605587,
+          "steps": 50,
+          "achieved_goal": [
+            1.2891761895269431,
+            0.8418942035952343,
+            0.4248874064600445
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0258904250765046,
+          "steps": 50,
+          "achieved_goal": [
+            1.291877088804618,
+            0.8740914956457998,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.019585533658296884,
+          "steps": 50,
+          "achieved_goal": [
+            1.2869337272177155,
+            0.8637453032141006,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_005",
+      "tier": "T0",
+      "instruction": "push to (1.45, 0.65)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.45, 0.65). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided coordinates (1.45, 0.65) fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03232223185226014,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.045498279172813245,
+          "steps": 50,
+          "achieved_goal": [
+            1.4233142308972633,
+            0.686524302364033,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04593652957876521,
+          "steps": 50,
+          "achieved_goal": [
+            1.4950403601466564,
+            0.6575894964096887,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.005531886805201952,
+          "steps": 50,
+          "achieved_goal": [
+            1.4524672982025457,
+            0.6510357520394806,
+            0.42484164102854366
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_006",
+      "tier": "T0",
+      "instruction": "move to [1.45, 0.65]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates [1.45, 0.65]. I verify these against the workspace bounds: x=1.45 is within [1.19, 1.49] and y=0.65 is within [0.60, 0.90]. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 118,
+        "total_tokens": 496
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02819528289898897,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.028992326877997597,
+          "steps": 50,
+          "achieved_goal": [
+            1.434779333415195,
+            0.6741857300149872,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.042057445408080076,
+          "steps": 50,
+          "achieved_goal": [
+            1.419852663970797,
+            0.6789141557969777,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.013536076410889239,
+          "steps": 50,
+          "achieved_goal": [
+            1.4586613003313742,
+            0.6591801869983589,
+            0.4248920003890066
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_007",
+      "tier": "T0",
+      "instruction": "go to 1.45, 0.65",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.45, 0.65). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided x=1.45 and y=0.65 are within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.029711002217753635,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.042775491440076044,
+          "steps": 50,
+          "achieved_goal": [
+            1.4177676834683661,
+            0.677692631857736,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01648848846230673,
+          "steps": 50,
+          "achieved_goal": [
+            1.446985273927865,
+            0.665454658479039,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.029869026750878137,
+          "steps": 50,
+          "achieved_goal": [
+            1.4225014326757024,
+            0.6605853786707024,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_008",
+      "tier": "T0",
+      "instruction": "place it at x=1.45, y=0.65",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The requested x=1.45 and y=0.65 are within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 381,
+        "completion_tokens": 111,
+        "total_tokens": 492
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026199452199789756,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0343653105354235,
+          "steps": 50,
+          "achieved_goal": [
+            1.426067026188126,
+            0.6258286943353898,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.024771870787892652,
+          "steps": 50,
+          "achieved_goal": [
+            1.449195084686238,
+            0.6257292986717756,
+            0.42489200398195287
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.019461175276053122,
+          "steps": 50,
+          "achieved_goal": [
+            1.4674043197229294,
+            0.6572037579828156,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_009",
+      "tier": "T0",
+      "instruction": "push to (1.25, 0.80)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.25, 0.80). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided coordinates (1.25, 0.80) fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02365829822174395,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.026577508139040897,
+          "steps": 50,
+          "achieved_goal": [
+            1.2551749743139948,
+            0.8256056635314126,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.022785496886890858,
+          "steps": 50,
+          "achieved_goal": [
+            1.2460420019703256,
+            0.8218993026548042,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02161188963930009,
+          "steps": 50,
+          "achieved_goal": [
+            1.2334089965232964,
+            0.8129567936233612,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_010",
+      "tier": "T0",
+      "instruction": "move to [1.25, 0.80]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates [1.25, 0.80]. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided x=1.25 and y=0.80 are within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.033579173528977845,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03197317621277094,
+          "steps": 50,
+          "achieved_goal": [
+            1.2649743865509817,
+            0.8278229801166817,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03350673786827883,
+          "steps": 50,
+          "achieved_goal": [
+            1.2418888164312463,
+            0.8321399558903063,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03525760650588376,
+          "steps": 50,
+          "achieved_goal": [
+            1.228214073943528,
+            0.8272862365966305,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_011",
+      "tier": "T0",
+      "instruction": "go to 1.25, 0.80",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.25, 0.80). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided x=1.25 and y=0.80 are within these bounds. The z-coordinate is fixed at the table surface, which is 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 123,
+        "total_tokens": 501
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.013520717110734612,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.025356341821010167,
+          "steps": 50,
+          "achieved_goal": [
+            1.2408085740315862,
+            0.7768801595451402,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.007530904452124695,
+          "steps": 50,
+          "achieved_goal": [
+            1.2503695493822096,
+            0.8057147502222973,
+            0.42489076609565374
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.007674905059068973,
+          "steps": 50,
+          "achieved_goal": [
+            1.2503057000535176,
+            0.8059114149692993,
+            0.4248852738941784
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_012",
+      "tier": "T0",
+      "instruction": "place it at x=1.25, y=0.80",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates. The workspace bounds are x in [1.19, 1.49], y in [0.60, 0.90], and z = 0.42. The requested coordinates x=1.25 and y=0.80 fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42.",
+      "usage": {
+        "prompt_tokens": 381,
+        "completion_tokens": 119,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020544762165738688,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.018771839536970467,
+          "steps": 50,
+          "achieved_goal": [
+            1.2331163885201653,
+            0.8065872296694891,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02847557217638554,
+          "steps": 50,
+          "achieved_goal": [
+            1.2235284164516835,
+            0.8092832920461988,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.014386874783860063,
+          "steps": 50,
+          "achieved_goal": [
+            1.2365170895549662,
+            0.8011221111364542,
+            0.42489224457931046
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_013",
+      "tier": "T0",
+      "instruction": "push to (1.40, 0.70)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.40, 0.70). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided coordinates (1.40, 0.70) fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.023569737778463096,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.024454047396554733,
+          "steps": 50,
+          "achieved_goal": [
+            1.3818491822590337,
+            0.7156401584608867,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.033316152942256025,
+          "steps": 50,
+          "achieved_goal": [
+            1.3805810390707218,
+            0.7266258541482489,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.012939012996578542,
+          "steps": 50,
+          "achieved_goal": [
+            1.41181511864625,
+            0.704611821333527,
+            0.4225595687560401
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_014",
+      "tier": "T0",
+      "instruction": "move to [1.40, 0.70]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates [1.40, 0.70]. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided x=1.40 and y=0.70 are within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.025034435244644354,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.016692186991327556,
+          "steps": 50,
+          "achieved_goal": [
+            1.394023810025816,
+            0.7147979730628271,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02035498811571039,
+          "steps": 50,
+          "achieved_goal": [
+            1.4148620790402098,
+            0.7130195600298201,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.038056130626895106,
+          "steps": 50,
+          "achieved_goal": [
+            1.4364599846710067,
+            0.7097469195039008,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_015",
+      "tier": "T0",
+      "instruction": "go to 1.40, 0.70",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.40, 0.70). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided coordinates 1.40 and 0.70 fall within these bounds. The z-coordinate is fixed at the table surface, which is 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.027432875230678593,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02147510516740313,
+          "steps": 50,
+          "achieved_goal": [
+            1.3933846770923148,
+            0.6801635626226569,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02561202541810798,
+          "steps": 50,
+          "achieved_goal": [
+            1.3972706545257014,
+            0.7249918360321874,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03521149510652467,
+          "steps": 50,
+          "achieved_goal": [
+            1.3679333393114632,
+            0.7136983822786557,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_016",
+      "tier": "T0",
+      "instruction": "place it at x=1.40, y=0.70",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates. The workspace bounds are x in [1.19, 1.49], y in [0.60, 0.90], and z = 0.42. The requested coordinates x=1.40 and y=0.70 fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42.",
+      "usage": {
+        "prompt_tokens": 381,
+        "completion_tokens": 119,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01804067645663684,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01712868667126111,
+          "steps": 50,
+          "achieved_goal": [
+            1.4162364842013535,
+            0.7024152579008829,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.006293200912104234,
+          "steps": 50,
+          "achieved_goal": [
+            1.4039677599906164,
+            0.700048408134869,
+            0.4248845262385508
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.030700141786545173,
+          "steps": 50,
+          "achieved_goal": [
+            1.396356746669173,
+            0.730088048822028,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_017",
+      "tier": "T0",
+      "instruction": "push to (1.34, 0.75)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.34, 0.75). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided coordinates (1.34, 0.75) fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 122,
+        "total_tokens": 500
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026625150752156466,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02265534381507567,
+          "steps": 50,
+          "achieved_goal": [
+            1.3522106082842775,
+            0.7684453863748998,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02093081500326678,
+          "steps": 50,
+          "achieved_goal": [
+            1.3308203137536152,
+            0.7318369171401214,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03628929343812695,
+          "steps": 50,
+          "achieved_goal": [
+            1.3101655781512307,
+            0.7700719683686404,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_018",
+      "tier": "T0",
+      "instruction": "move to [1.34, 0.75]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates [1.34, 0.75]. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided x=1.34 and y=0.75 are within these bounds. The z-coordinate is fixed at the table surface, which is 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 116,
+        "total_tokens": 494
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.013709456786848094,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.010522644471573288,
+          "steps": 50,
+          "achieved_goal": [
+            1.3498436376542637,
+            0.7494133769156481,
+            0.42367223073729543
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.020737280354689334,
+          "steps": 50,
+          "achieved_goal": [
+            1.3312368402604569,
+            0.7318531805114428,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.009868445534281655,
+          "steps": 50,
+          "achieved_goal": [
+            1.333178176030528,
+            0.7551878994666661,
+            0.4248922439028543
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_019",
+      "tier": "T0",
+      "instruction": "go to 1.34, 0.75",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates (1.34, 0.75). The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The provided coordinates 1.34 and 0.75 fall within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 378,
+        "completion_tokens": 121,
+        "total_tokens": 499
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.025431949918719485,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.027568504330311893,
+          "steps": 50,
+          "achieved_goal": [
+            1.320971522832762,
+            0.7693391838525959,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.036852131563831554,
+          "steps": 50,
+          "achieved_goal": [
+            1.353540649868042,
+            0.7839234007810393,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.011875213862015012,
+          "steps": 50,
+          "achieved_goal": [
+            1.332928149750122,
+            0.7418100683225665,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_020",
+      "tier": "T0",
+      "instruction": "place it at x=1.34, y=0.75",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": "The instruction provides explicit coordinates. The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The requested x=1.34 and y=0.75 are within these bounds. The z-coordinate is fixed at the table surface height of 0.42 meters.",
+      "usage": {
+        "prompt_tokens": 381,
+        "completion_tokens": 111,
+        "total_tokens": 492
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02588281868608386,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.013269518692630301,
+          "steps": 50,
+          "achieved_goal": [
+            1.3496044390468267,
+            0.7467150242806748,
+            0.4285465916290769
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.029327305514641064,
+          "steps": 50,
+          "achieved_goal": [
+            1.3214876630155619,
+            0.7277862923635439,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03505163185098022,
+          "steps": 50,
+          "achieved_goal": [
+            1.3347553043197768,
+            0.784309991652336,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_001",
+      "tier": "T1",
+      "instruction": "push to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'upper' direction corresponds to the maximum x value (1.49), and the 'left' direction corresponds to the maximum y value (0.90). The z-coordinate is fixed at the table surface (0.42). Therefore, the upper-left corner is (1.49, 0.90, 0.42).",
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 144,
+        "total_tokens": 516
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020382649635991606,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.04166574080685025,
+          "steps": 50,
+          "achieved_goal": [
+            1.5227300644977881,
+            0.9253113630004152,
+            0.42491029801270197
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01145602992436409,
+          "steps": 50,
+          "achieved_goal": [
+            1.4873471844046942,
+            0.9100134148838687,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.00802617817676047,
+          "steps": 50,
+          "achieved_goal": [
+            1.4873846953246728,
+            0.9058041322315138,
+            0.4248878739533076
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_002",
+      "tier": "T1",
+      "instruction": "push the block to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. 'Upper' corresponds to the maximum x value (1.49), and 'left' corresponds to the maximum y value (0.90). The z-coordinate is fixed at the table surface (0.42). Therefore, the upper-left corner is (1.49, 0.90, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 140,
+        "total_tokens": 514
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.027841998187914694,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03670472549623792,
+          "steps": 50,
+          "achieved_goal": [
+            1.4584967671816091,
+            0.9181892149969461,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.015399796150900633,
+          "steps": 50,
+          "achieved_goal": [
+            1.4804946197881954,
+            0.8889154327807772,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03142147291660553,
+          "steps": 50,
+          "achieved_goal": [
+            1.4638101067071543,
+            0.9166572197684413,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_003",
+      "tier": "T1",
+      "instruction": "move the cube to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'upper' direction corresponds to the maximum x value (1.49), and the 'left' direction corresponds to the maximum y value (0.90). The z-coordinate is fixed at the table surface (0.42). Therefore, the upper-left corner is (1.49, 0.90, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 144,
+        "total_tokens": 518
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.022058978554438446,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.025199226906435435,
+          "steps": 50,
+          "achieved_goal": [
+            1.4660956472558564,
+            0.9062966669789879,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.00944418534232401,
+          "steps": 50,
+          "achieved_goal": [
+            1.4942899371436476,
+            0.907040686912711,
+            0.4246062380718556
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.031533523414555904,
+          "steps": 50,
+          "achieved_goal": [
+            1.4712926714726133,
+            0.9249090993092667,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_004",
+      "tier": "T1",
+      "instruction": "send the box to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'upper' direction corresponds to +x (x_max = 1.49), and the 'left' direction corresponds to +y (y_max = 0.90). The table surface is at z = 0.42. Therefore, the upper-left corner is (1.49, 0.90, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 147,
+        "total_tokens": 521
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01974581231694667,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.018668608160852366,
+          "steps": 50,
+          "achieved_goal": [
+            1.473323446457923,
+            0.8931827194365008,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.009764157812647691,
+          "steps": 50,
+          "achieved_goal": [
+            1.484818193371174,
+            0.9066748075180883,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.030804670977339955,
+          "steps": 50,
+          "achieved_goal": [
+            1.5184523185681909,
+            0.9107378269827214,
+            0.424908390341285
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_005",
+      "tier": "T1",
+      "instruction": "push to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. 'Upper' corresponds to the maximum x value (1.49), and 'right' corresponds to the minimum y value (0.60) based on the provided directional convention (left is +y, right is -y). The z-coordinate is fixed at the table surface (0.42). Therefore, the upper-right corner is (1.49, 0.60, 0.42).",
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 157,
+        "total_tokens": 529
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03383332937769037,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02601032628458647,
+          "steps": 50,
+          "achieved_goal": [
+            1.4644776894077385,
+            0.6011018692622498,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03396935957889174,
+          "steps": 50,
+          "achieved_goal": [
+            1.493582047450657,
+            0.633423850810811,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.041520302269592885,
+          "steps": 50,
+          "achieved_goal": [
+            1.4684090048064835,
+            0.6351259377796254,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_006",
+      "tier": "T1",
+      "instruction": "push the block to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. 'Upper' corresponds to the maximum x value (1.49), and 'right' corresponds to the minimum y value (0.60). The z-coordinate is fixed at the table surface (0.42). Therefore, the upper-right corner is (1.49, 0.60, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 140,
+        "total_tokens": 514
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02900927968361079,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01491487615719423,
+          "steps": 50,
+          "achieved_goal": [
+            1.4781626046869827,
+            0.6076416985192107,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03120190785359702,
+          "steps": 50,
+          "achieved_goal": [
+            1.4769636450115042,
+            0.5720773078469714,
+            0.4248922445599101
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.04091105504004111,
+          "steps": 50,
+          "achieved_goal": [
+            1.4592925498379823,
+            0.6265863390811955,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_007",
+      "tier": "T1",
+      "instruction": "move the cube to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. 'Upper' corresponds to the maximum x value (1.49), and 'right' corresponds to the minimum y value (0.60) based on the provided directional convention (left is +y, right is -y). The z-coordinate is fixed at the table surface (0.42). Therefore, the upper-right corner is (1.49, 0.60, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 157,
+        "total_tokens": 531
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.027616056887738053,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0367683297904583,
+          "steps": 50,
+          "achieved_goal": [
+            1.4948516783494132,
+            0.6361170170719048,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02118269616606584,
+          "steps": 50,
+          "achieved_goal": [
+            1.4890073852786552,
+            0.6205861145006815,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02489714470669002,
+          "steps": 50,
+          "achieved_goal": [
+            1.4665247187348238,
+            0.6066966163319509,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_008",
+      "tier": "T1",
+      "instruction": "send the box to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. 'Upper' corresponds to the maximum x value (1.49), and 'right' corresponds to the minimum y value (0.60) based on the provided directional convention. The z-coordinate is fixed at the table surface (0.42). Therefore, the upper-right corner is (1.49, 0.60, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 147,
+        "total_tokens": 521
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.0319350671075855,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03618587663729149,
+          "steps": 50,
+          "achieved_goal": [
+            1.4845366706882968,
+            0.6354349700292521,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.021291306858582694,
+          "steps": 50,
+          "achieved_goal": [
+            1.4825169645732785,
+            0.6193233154995513,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03832801782688232,
+          "steps": 50,
+          "achieved_goal": [
+            1.452024697572262,
+            0.6017258414467407,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_009",
+      "tier": "T1",
+      "instruction": "push to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. 'Lower' corresponds to the minimum x value (1.19), and 'left' corresponds to the maximum y value (0.90). The z-coordinate is fixed at the table surface (0.42). Therefore, the lower-left corner is (1.19, 0.90, 0.42).",
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 140,
+        "total_tokens": 512
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.019737880095841157,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.012402048055869603,
+          "steps": 50,
+          "achieved_goal": [
+            1.1837863317311608,
+            0.9095606927670443,
+            0.4248778049901884
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02611395235113969,
+          "steps": 50,
+          "achieved_goal": [
+            1.168538630608269,
+            0.8859496562388532,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.020697639880514176,
+          "steps": 50,
+          "achieved_goal": [
+            1.208828078083954,
+            0.9070684796528313,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_010",
+      "tier": "T1",
+      "instruction": "push the block to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'lower' edge corresponds to the minimum x value (1.19), and the 'left' edge corresponds to the maximum y value (0.90). The z-coordinate is fixed at the table surface (0.42). Therefore, the lower-left corner is (1.19, 0.90, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 144,
+        "total_tokens": 518
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.024385777288295662,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02834376329120662,
+          "steps": 50,
+          "achieved_goal": [
+            1.1997555151369936,
+            0.9261584503684981,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.018922467680201265,
+          "steps": 50,
+          "achieved_goal": [
+            1.1812671818762044,
+            0.8839418789484115,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02589110089347911,
+          "steps": 50,
+          "achieved_goal": [
+            1.2136530743562615,
+            0.9093246584860788,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_011",
+      "tier": "T1",
+      "instruction": "move the cube to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'lower' edge corresponds to the minimum x value (1.19), and the 'left' side corresponds to the maximum y value (0.90). The z-coordinate is fixed at the table surface (0.42). Therefore, the lower-left corner is (1.19, 0.90, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 144,
+        "total_tokens": 518
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.0363052561820335,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.04380709403151883,
+          "steps": 50,
+          "achieved_goal": [
+            1.1565443719242072,
+            0.9278539601373089,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.037260209782029735,
+          "steps": 50,
+          "achieved_goal": [
+            1.1684836068041773,
+            0.9300238234990766,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02784846473255193,
+          "steps": 50,
+          "achieved_goal": [
+            1.178385144980424,
+            0.9248333532197432,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_012",
+      "tier": "T1",
+      "instruction": "send the box to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. 'Lower' corresponds to the minimum x value (1.19), and 'left' corresponds to the maximum y value (0.90). The table surface is at z = 0.42. Therefore, the lower-left corner is (1.19, 0.90, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 137,
+        "total_tokens": 511
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02767309243168892,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0352396671048293,
+          "steps": 50,
+          "achieved_goal": [
+            1.1840548156165596,
+            0.9343882598401992,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04254974981350789,
+          "steps": 50,
+          "achieved_goal": [
+            1.1482906558825543,
+            0.9068463521259733,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.005229860376729575,
+          "steps": 50,
+          "achieved_goal": [
+            1.1887915567098888,
+            0.9031480364019788,
+            0.42399757150487083
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_013",
+      "tier": "T1",
+      "instruction": "push to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'lower' edge corresponds to x_min (1.19) and the 'right' side corresponds to y_min (0.60). The table surface is at z = 0.42. Therefore, the lower-right corner is (1.19, 0.60, 0.42).",
+      "usage": {
+        "prompt_tokens": 372,
+        "completion_tokens": 139,
+        "total_tokens": 511
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02390057696721389,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.026468470094671237,
+          "steps": 50,
+          "achieved_goal": [
+            1.187983507014048,
+            0.625934156738192,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0410031610021088,
+          "steps": 50,
+          "achieved_goal": [
+            1.1719017269791936,
+            0.6364661104063214,
+            0.42489224457806624
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.004230099804861637,
+          "steps": 50,
+          "achieved_goal": [
+            1.1918602491640427,
+            0.6015629311299336,
+            0.4234627532812064
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_014",
+      "tier": "T1",
+      "instruction": "push the block to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'lower' edge corresponds to the minimum x value (1.19), and the 'right' edge corresponds to the minimum y value (0.60). Therefore, the lower-right corner is (1.19, 0.60). The z-coordinate is fixed at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 138,
+        "total_tokens": 512
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02665330509180243,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03804563536124227,
+          "steps": 50,
+          "achieved_goal": [
+            1.1693433036255796,
+            0.6315727132367801,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.006789435826883117,
+          "steps": 50,
+          "achieved_goal": [
+            1.1875598349664893,
+            0.6055650768340781,
+            0.4230285078778871
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0351248440872819,
+          "steps": 50,
+          "achieved_goal": [
+            1.1577321958548354,
+            0.5870152015209988,
+            0.424892244478365
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_015",
+      "tier": "T1",
+      "instruction": "move the cube to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'lower' edge corresponds to the minimum x value (1.19), and the 'right' side corresponds to the minimum y value (0.60). Therefore, the lower-right corner is (1.19, 0.60). The z-coordinate is fixed at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 138,
+        "total_tokens": 512
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01715271134362475,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.009368574597681456,
+          "steps": 50,
+          "achieved_goal": [
+            1.1825121276568784,
+            0.6027870109277144,
+            0.4248922055887992
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03502613148276875,
+          "steps": 50,
+          "achieved_goal": [
+            1.2210211137703626,
+            0.6155109797067643,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.007063427950424047,
+          "steps": 50,
+          "achieved_goal": [
+            1.1943275000444031,
+            0.6027595662784676,
+            0.42485283950753816
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_016",
+      "tier": "T1",
+      "instruction": "send the box to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The 'lower' edge corresponds to x_min (1.19) and the 'right' side corresponds to y_min (0.60). The z-coordinate is fixed at the table surface (0.42). Therefore, the lower-right corner is (1.19, 0.60, 0.42).",
+      "usage": {
+        "prompt_tokens": 374,
+        "completion_tokens": 142,
+        "total_tokens": 516
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.023995678690737682,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03496291612166346,
+          "steps": 50,
+          "achieved_goal": [
+            1.1565672202009507,
+            0.5910157750015412,
+            0.42489224457977603
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01851197877256115,
+          "steps": 50,
+          "achieved_goal": [
+            1.201370825253746,
+            0.6137646454163298,
+            0.42489224457852653
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.01851214117798844,
+          "steps": 50,
+          "achieved_goal": [
+            1.2011584831863134,
+            0.5860624948059955,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_017",
+      "tier": "T1",
+      "instruction": "push to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The center of the workspace is calculated as the midpoint of these ranges: x_center = (1.19 + 1.49) / 2 = 1.34, y_center = (0.60 + 0.90) / 2 = 0.75. The z-coordinate is fixed at the table surface, which is 0.42.",
+      "usage": {
+        "prompt_tokens": 369,
+        "completion_tokens": 151,
+        "total_tokens": 520
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.018583232936173404,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.00593696200345617,
+          "steps": 50,
+          "achieved_goal": [
+            1.3431818903346033,
+            0.7521316075910175,
+            0.424536456132982
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01940487180393451,
+          "steps": 50,
+          "achieved_goal": [
+            1.3335303018637197,
+            0.7676283135472362,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.030407865001129537,
+          "steps": 50,
+          "achieved_goal": [
+            1.3123628478618514,
+            0.738299998063803,
+            0.42489224457976865
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_018",
+      "tier": "T1",
+      "instruction": "push the block to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The center of the workspace is calculated as the midpoint of these ranges: x_center = (1.19 + 1.49) / 2 = 1.34, y_center = (0.60 + 0.90) / 2 = 0.75. The z-coordinate is fixed at the table surface, which is 0.42.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 151,
+        "total_tokens": 522
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026904367051794057,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.008589911998096382,
+          "steps": 50,
+          "achieved_goal": [
+            1.3366068244186036,
+            0.7438081880070516,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03250040796721148,
+          "steps": 50,
+          "achieved_goal": [
+            1.308325862957993,
+            0.7553934461032487,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03962278119007431,
+          "steps": 50,
+          "achieved_goal": [
+            1.321182074610645,
+            0.7845241224611315,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_019",
+      "tier": "T1",
+      "instruction": "move the cube to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The center of the x-range is (1.19 + 1.49) / 2 = 1.34. The center of the y-range is (0.60 + 0.90) / 2 = 0.75. The z-coordinate is fixed at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 143,
+        "total_tokens": 514
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03008903478331208,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03134878384528303,
+          "steps": 50,
+          "achieved_goal": [
+            1.3381117519389651,
+            0.7809070615952114,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.029541971948019368,
+          "steps": 50,
+          "achieved_goal": [
+            1.3292668857613594,
+            0.7770849305605765,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.029376348556633833,
+          "steps": 50,
+          "achieved_goal": [
+            1.3113867794423215,
+            0.7545074791586885,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_020",
+      "tier": "T1",
+      "instruction": "send the box to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": "The workspace bounds are x in [1.19, 1.49] and y in [0.60, 0.90]. The center of the x-range is (1.19 + 1.49) / 2 = 1.34. The center of the y-range is (0.60 + 0.90) / 2 = 0.75. The z-coordinate is fixed at the table surface, 0.42.",
+      "usage": {
+        "prompt_tokens": 371,
+        "completion_tokens": 143,
+        "total_tokens": 514
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.023505257960526497,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.00888236586113153,
+          "steps": 50,
+          "achieved_goal": [
+            1.3463047897374965,
+            0.7539212986916782,
+            0.42487542400754547
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.040371540231379274,
+          "steps": 50,
+          "achieved_goal": [
+            1.353384781558817,
+            0.7877726831383908,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.021261867789068693,
+          "steps": 50,
+          "achieved_goal": [
+            1.3267826353101815,
+            0.7659195877113169,
+            0.42489223966892475
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_001",
+      "tier": "T2",
+      "instruction": "push it 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.03378076945867324,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.469,
+        0.6,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.4692491368482739,
+        0.5662203211895689,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.469, 0.616, 0.425]. The instruction is to push it 5 cm (0.05 m) to the right. In the robot frame, 'right' corresponds to the negative y-direction (-y). Therefore, the new y-coordinate is 0.616 - 0.05 = 0.566. However, the workspace bounds for y are [0.60, 0.90]. Since 0.566 is outside the workspace, I must clamp the value to the nearest boundary, which is 0.60. The x and z coordinates remain unchanged.",
+      "usage": {
+        "prompt_tokens": 398,
+        "completion_tokens": 186,
+        "total_tokens": 584
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.0282446343554395,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01622256878691228,
+          "steps": 50,
+          "achieved_goal": [
+            1.4692491368482739,
+            0.6162203211895689,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.468999981880188,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03265465442177572,
+          "steps": 50,
+          "achieved_goal": [
+            1.4664759938283412,
+            0.6325568100149419,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.468999981880188,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0358566798576305,
+          "steps": 50,
+          "achieved_goal": [
+            1.46955589292019,
+            0.6358522321354678,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.468999981880188,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_002",
+      "tier": "T2",
+      "instruction": "move the block 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.03475493395280493,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.418,
+        0.6,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.4178322280400415,
+        0.5652456380993938,
+        0.42489222470145815
+      ],
+      "reasoning": "The current position of the cube is [1.418, 0.615, 0.425]. The instruction is to move the block 5 cm (0.05 meters) to the right. In the robot frame, 'right' corresponds to the negative y-direction (-y). Therefore, the new y-coordinate is 0.615 - 0.05 = 0.565. However, the workspace bounds for y are [0.60, 0.90]. Since 0.565 is outside the workspace, I must clamp the value to the nearest valid boundary, which is 0.60. The x and z coordinates remain unchanged at 1.418 and 0.425.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 203,
+        "total_tokens": 602
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02704457782980547,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.015583323622243465,
+          "steps": 50,
+          "achieved_goal": [
+            1.4207065022025445,
+            0.6153461345611221,
+            0.4248922445111764
+          ],
+          "desired_goal": [
+            1.4179999828338623,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03393838480036096,
+          "steps": 50,
+          "achieved_goal": [
+            1.4007187941499426,
+            0.629208975667083,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4179999828338623,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03161202506681199,
+          "steps": 50,
+          "achieved_goal": [
+            1.4445654201523155,
+            0.6171343769111823,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4179999828338623,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_003",
+      "tier": "T2",
+      "instruction": "slide the cube 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.00038902532112846923,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.215,
+        0.832,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.2149794918561962,
+        0.831626764683422,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.215, 0.882, 0.425]. The instruction is to slide the cube 5 cm (0.05 meters) to the right. In the robot frame, 'right' corresponds to the negative y-direction (-y). Therefore, the new y-coordinate is 0.882 - 0.05 = 0.832. The x and z coordinates remain unchanged at 1.215 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 152,
+        "total_tokens": 551
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.019696461646921508,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.04024824661315921,
+          "steps": 50,
+          "achieved_goal": [
+            1.2165994506795634,
+            0.872216327364007,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.215000033378601,
+            0.8320000171661377,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.014163053466599372,
+          "steps": 50,
+          "achieved_goal": [
+            1.202115068163977,
+            0.8261213998868907,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.215000033378601,
+            0.8320000171661377,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.004678084861005941,
+          "steps": 50,
+          "achieved_goal": [
+            1.2161294105817282,
+            0.8364981549756527,
+            0.4243870344772647
+          ],
+          "desired_goal": [
+            1.215000033378601,
+            0.8320000171661377,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_004",
+      "tier": "T2",
+      "instruction": "push the box 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0004675019450271851,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.483,
+        0.817,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.4825650168249354,
+        0.8168668377266677,
+        0.42489222470145815
+      ],
+      "reasoning": "The current position of the cube is [1.483, 0.867, 0.425]. The instruction is to push the box 5 cm (0.05 meters) to the right. In the robot frame, 'right' corresponds to the negative y-direction (-y). Therefore, the new y-coordinate is 0.867 - 0.05 = 0.817. The x and z coordinates remain unchanged at 1.483 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 154,
+        "total_tokens": 553
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.0257550504885664,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.034193306275890886,
+          "steps": 50,
+          "achieved_goal": [
+            1.4841871449201813,
+            0.8511724953659706,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8169999718666077,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.003688644055275318,
+          "steps": 50,
+          "achieved_goal": [
+            1.483791056511801,
+            0.8133987534490364,
+            0.4248922443958581
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8169999718666077,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.039383201134532995,
+          "steps": 50,
+          "achieved_goal": [
+            1.4533309072444582,
+            0.8428991509291566,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8169999718666077,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_005",
+      "tier": "T2",
+      "instruction": "push it 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.011583318839799739,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.256,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.2559070663989602,
+        0.9104990845391729,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.256, 0.840, 0.425]. The instruction is to push it 7 cm (0.07 m) to the left. In the robot frame, 'left' corresponds to the +y direction. Therefore, the new y-coordinate is 0.840 + 0.07 = 0.910. However, the workspace y-bound is [0.60, 0.90]. Since 0.910 exceeds the boundary, I must clamp the value to the maximum allowed y-coordinate of 0.90. The x and z coordinates remain unchanged.",
+      "usage": {
+        "prompt_tokens": 398,
+        "completion_tokens": 181,
+        "total_tokens": 579
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03434526474304619,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.027410357859618678,
+          "steps": 50,
+          "achieved_goal": [
+            1.2371824359141284,
+            0.9193207223988822,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25600004196167,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04435890161244964,
+          "steps": 50,
+          "achieved_goal": [
+            1.2857116677807263,
+            0.9325729290196583,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25600004196167,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03126653475707024,
+          "steps": 50,
+          "achieved_goal": [
+            1.282058764527709,
+            0.9165711857883553,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25600004196167,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_006",
+      "tier": "T2",
+      "instruction": "move the block 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.06523622945861793,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.483,
+        0.9,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.483352548845418,
+        0.9652351878036238,
+        0.42489222470145815
+      ],
+      "reasoning": "The current position of the cube is [1.483, 0.895, 0.425]. The instruction is to move the block 7 cm (0.07 meters) to the left. In the robot frame, 'left' corresponds to the +y direction. Therefore, the new y-coordinate is 0.895 + 0.07 = 0.965. However, the workspace bound for y is [0.60, 0.90]. Since 0.965 exceeds the boundary, I must clamp the value to the maximum allowed y-coordinate of 0.90. The x and z coordinates remain unchanged at 1.483 and 0.425.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 199,
+        "total_tokens": 598
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.014959133785812817,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.00238324991278516,
+          "steps": 50,
+          "achieved_goal": [
+            1.4808561436044638,
+            0.9010353372127401,
+            0.42489223601591886
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8999999761581421,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.011120996574898748,
+          "steps": 50,
+          "achieved_goal": [
+            1.4896305793372353,
+            0.9085521076145602,
+            0.42243611621540816
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8999999761581421,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03137315486975454,
+          "steps": 50,
+          "achieved_goal": [
+            1.4909658216723676,
+            0.9303448201336082,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8999999761581421,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.3333333333333333
+    },
+    {
+      "id": "T2_007",
+      "tier": "T2",
+      "instruction": "slide the cube 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.05086112132082247,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.381,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3812698411675057,
+        0.9506245689880535,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.381, 0.881, 0.425]. The instruction is to slide the cube 7 cm (0.07 m) to the left. In the robot frame, 'left' corresponds to the +y direction. Therefore, the new y-coordinate is 0.881 + 0.07 = 0.951. However, the workspace y-bound is [0.60, 0.90]. Since 0.951 exceeds the boundary, I must clamp the value to the maximum allowed y-coordinate of 0.90. The x and z coordinates remain unchanged at 1.381 and 0.425 (or 0.42 for the table surface).",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 207,
+        "total_tokens": 606
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.018827703029360873,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.012353866169819991,
+          "steps": 50,
+          "achieved_goal": [
+            1.3745703894456496,
+            0.8906542074614408,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.38100004196167,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.019598986329412857,
+          "steps": 50,
+          "achieved_goal": [
+            1.368499500348175,
+            0.8857198312295681,
+            0.42489224457936486
+          ],
+          "desired_goal": [
+            1.38100004196167,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.024530256588849775,
+          "steps": 50,
+          "achieved_goal": [
+            1.3626861207094392,
+            0.8844307889170211,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.38100004196167,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_008",
+      "tier": "T2",
+      "instruction": "push the box 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.06830839543931923,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.434,
+        0.9,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.434015621282025,
+        0.9683083086304659,
+        0.42489222470145815
+      ],
+      "reasoning": "The current position of the cube is [1.434, 0.898, 0.425]. The instruction is to push the box 7 cm (0.07 meters) to the left. In the robot frame, 'left' corresponds to the +y direction. Therefore, the new y-coordinate is 0.898 + 0.07 = 0.968. However, the workspace y-bound is [0.60, 0.90]. Since 0.968 exceeds the boundary, I must clamp the value to the maximum allowed y-coordinate of 0.90. The x and z coordinates remain unchanged at 1.434 and 0.425.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 198,
+        "total_tokens": 597
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.016967825440562773,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0036676190893605576,
+          "steps": 50,
+          "achieved_goal": [
+            1.4345679530302478,
+            0.9036217523283974,
+            0.42489224437032336
+          ],
+          "desired_goal": [
+            1.434000015258789,
+            0.8999999761581421,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.030770676504542814,
+          "steps": 50,
+          "achieved_goal": [
+            1.450859060109298,
+            0.9257409070946084,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.434000015258789,
+            0.8999999761581421,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.016465180727784946,
+          "steps": 50,
+          "achieved_goal": [
+            1.4206219694724578,
+            0.9095978120359651,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.434000015258789,
+            0.8999999761581421,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.3333333333333333
+    },
+    {
+      "id": "T2_009",
+      "tier": "T2",
+      "instruction": "push it 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.040955363247647654,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.617,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.53095522106537,
+        0.6170055424235734,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.451, 0.617, 0.425]. The instruction is to push it 8 cm (0.08 m) forward. Forward corresponds to the +x direction in the robot frame. Therefore, the new x-coordinate is 1.451 + 0.08 = 1.531. However, the workspace bound for x is [1.19, 1.49]. Since 1.531 exceeds the maximum bound of 1.49, I must clamp the value to the maximum allowed x-coordinate of 1.49. The y and z coordinates remain unchanged at 0.617 and 0.425.",
+      "usage": {
+        "prompt_tokens": 396,
+        "completion_tokens": 198,
+        "total_tokens": 594
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.036393044662056555,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03904493759083918,
+          "steps": 50,
+          "achieved_goal": [
+            1.45095522106537,
+            0.6170055424235734,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6169999837875366,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.039877279012962806,
+          "steps": 50,
+          "achieved_goal": [
+            1.4733892601281342,
+            0.653252828803649,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6169999837875366,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03025691738236768,
+          "steps": 50,
+          "achieved_goal": [
+            1.4844585115617737,
+            0.6467449200940244,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6169999837875366,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_010",
+      "tier": "T2",
+      "instruction": "move the block 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.0999730826282685,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.834,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.5899726734588169,
+        0.8337350543821949,
+        0.42489222470145815
+      ],
+      "reasoning": "The current position of the block is [1.510, 0.834, 0.425]. The instruction is to move the block 8 cm (0.08 m) forward. Forward corresponds to the +x direction. Therefore, the new x-coordinate is 1.510 + 0.08 = 1.590. However, the workspace bounds for x are [1.19, 1.49]. Since 1.590 exceeds the maximum x-bound of 1.49, I must clamp the value to the maximum allowed workspace boundary of 1.49. The y and z coordinates remain unchanged at 0.834 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 199,
+        "total_tokens": 596
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02148137811511476,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.021936324026912143,
+          "steps": 50,
+          "achieved_goal": [
+            1.5010745923987439,
+            0.8529352577854443,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8339999914169312,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0327543045235611,
+          "steps": 50,
+          "achieved_goal": [
+            1.4591155822091335,
+            0.8230919668630554,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8339999914169312,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.009753505794871041,
+          "steps": 50,
+          "achieved_goal": [
+            1.4814836680562236,
+            0.8292469724523207,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8339999914169312,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_011",
+      "tier": "T2",
+      "instruction": "slide the cube 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0005533733122205109,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.295,
+        0.878,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.294573282282582,
+        0.8783354377697036,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.215, 0.878, 0.425]. The instruction is to slide the cube 8 cm (0.08 m) forward. Forward corresponds to the +x direction in the robot frame. Therefore, the new x-coordinate is 1.215 + 0.08 = 1.295. The y and z coordinates remain unchanged at 0.878 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 144,
+        "total_tokens": 541
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02590839817479748,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.025119382684004807,
+          "steps": 50,
+          "achieved_goal": [
+            1.2715190417305995,
+            0.886922934561124,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.2949999570846558,
+            0.878000020980835,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02175281627081828,
+          "steps": 50,
+          "achieved_goal": [
+            1.2741319478178332,
+            0.8841400202603111,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2949999570846558,
+            0.878000020980835,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03085299556956935,
+          "steps": 50,
+          "achieved_goal": [
+            1.2995943265689003,
+            0.9085088310339703,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2949999570846558,
+            0.878000020980835,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_012",
+      "tier": "T2",
+      "instruction": "push the box 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.08368095955851679,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.762,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.5736803015068939,
+        0.7623138739149422,
+        0.42489222470145815
+      ],
+      "reasoning": "The current position of the cube is [1.494, 0.762, 0.425]. The instruction is to push the box 8 cm (0.08 m) forward. Forward corresponds to the +x direction. Therefore, the new x-coordinate is 1.494 + 0.08 = 1.574. However, the workspace bound for x is [1.19, 1.49]. Since 1.574 exceeds the maximum bound of 1.49, the goal must be clamped to the boundary at 1.49. The y and z coordinates remain unchanged at 0.762 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 397,
+        "completion_tokens": 195,
+        "total_tokens": 592
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02356892514132825,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0028678967746926056,
+          "steps": 50,
+          "achieved_goal": [
+            1.4905401452032487,
+            0.7647866087493328,
+            0.42459009414504184
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7620000243186951,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03208081424944395,
+          "steps": 50,
+          "achieved_goal": [
+            1.468667188115904,
+            0.7859599441711088,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7620000243186951,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.035758064399848195,
+          "steps": 50,
+          "achieved_goal": [
+            1.4569572304855545,
+            0.748332460219771,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7620000243186951,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_013",
+      "tier": "T2",
+      "instruction": "push it 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0005190531644521955,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.195,
+        0.6,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.1947427003353217,
+        0.6004377185798072,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.255, 0.600, 0.425]. The instruction is to push it 6 cm (0.06 m) to the back. In the robot frame, 'back' corresponds to the negative x-direction (-x). Therefore, the new x-coordinate is 1.255 - 0.06 = 1.195. The y and z coordinates remain unchanged at 0.600 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 398,
+        "completion_tokens": 151,
+        "total_tokens": 549
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.0201100588093963,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03442529478700439,
+          "steps": 50,
+          "achieved_goal": [
+            1.2294100095245275,
+            0.6010218661218423,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.1950000524520874,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.008740757269554233,
+          "steps": 50,
+          "achieved_goal": [
+            1.2033310886176034,
+            0.5973574757809303,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.1950000524520874,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.017164124371630275,
+          "steps": 50,
+          "achieved_goal": [
+            1.1780031108661664,
+            0.5976126553387224,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.1950000524520874,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_014",
+      "tier": "T2",
+      "instruction": "move the block 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.00022254241745695393,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.714,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.4501926732655326,
+        0.7140280468419041,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.510, 0.714, 0.425]. The instruction is to move the block 6 cm (0.06 m) to the back. 'Back' corresponds to the -x direction in the robot frame. Therefore, the new x-coordinate is 1.510 - 0.06 = 1.450. The y and z coordinates remain unchanged at 0.714 and 0.425 respectively. The resulting position [1.450, 0.714, 0.425] is within the workspace bounds.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 178,
+        "total_tokens": 577
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.028462480192973472,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02215359049992291,
+          "steps": 50,
+          "achieved_goal": [
+            1.433179136115956,
+            0.7284161890704203,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7139999866485596,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03693100172883515,
+          "steps": 50,
+          "achieved_goal": [
+            1.4661956255928748,
+            0.7471902040489288,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7139999866485596,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.026302848350162358,
+          "steps": 50,
+          "achieved_goal": [
+            1.4241576719272375,
+            0.7188989490685832,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7139999866485596,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_015",
+      "tier": "T2",
+      "instruction": "slide the cube 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.015358749911675428,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.669,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.1746420113699945,
+        0.6691084830633627,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.235, 0.669, 0.425]. The instruction is to slide the cube 6 cm (0.06 m) to the 'back'. According to the coordinate frame, 'back' corresponds to the negative x direction (-x). Therefore, the new x coordinate is 1.235 - 0.06 = 1.175. However, the workspace bounds for x are [1.19, 1.49]. To remain within the workspace, I must clamp the value to the minimum bound of 1.19. The y and z coordinates remain unchanged at 0.669 and 0.425.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 192,
+        "total_tokens": 591
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.033142397997055366,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.035950308366671894,
+          "steps": 50,
+          "achieved_goal": [
+            1.158825564471375,
+            0.686904332390216,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6690000295639038,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03466258059325495,
+          "steps": 50,
+          "achieved_goal": [
+            1.1932258067794277,
+            0.7035120190656247,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6690000295639038,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.028814305031239256,
+          "steps": 50,
+          "achieved_goal": [
+            1.2119562682592013,
+            0.687659540743345,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6690000295639038,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_016",
+      "tier": "T2",
+      "instruction": "push the box 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0004234013909066917,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.384,
+        0.882,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.3843931514029044,
+        0.8818856094530123,
+        0.42489222470145815
+      ],
+      "reasoning": "The current position of the cube is [1.444, 0.882, 0.425]. The instruction is to push the box 6 cm (0.06 m) to the back. In the robot frame, 'back' corresponds to the negative x-direction (-x). Therefore, the new x-coordinate is 1.444 - 0.06 = 1.384. The y and z coordinates remain unchanged at 0.882 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 154,
+        "total_tokens": 553
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026488021912675453,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.026785492423749543,
+          "steps": 50,
+          "achieved_goal": [
+            1.365189983805883,
+            0.901069281776018,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.3839999437332153,
+            0.8820000290870667,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.016468247173012686,
+          "steps": 50,
+          "achieved_goal": [
+            1.3739263057281246,
+            0.8689726207302977,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.3839999437332153,
+            0.8820000290870667,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03621032614126413,
+          "steps": 50,
+          "achieved_goal": [
+            1.3879309803388427,
+            0.9179961824463093,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.3839999437332153,
+            0.8820000290870667,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_017",
+      "tier": "T2",
+      "instruction": "push it 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.08925493601674674,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.294,
+        0.6,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.2941940426962457,
+        0.510745339980085,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.294, 0.611, 0.425]. The instruction is to push it 10 cm (0.1 meters) to the right. In the robot frame, 'right' corresponds to the negative y-direction (-y). Therefore, the new y-coordinate is 0.611 - 0.1 = 0.511. However, the workspace bounds for y are [0.60, 0.90]. Since 0.511 is outside the workspace, I must clamp the value to the nearest boundary, which is 0.60. The x and z coordinates remain unchanged at 1.294 and 0.425.",
+      "usage": {
+        "prompt_tokens": 399,
+        "completion_tokens": 198,
+        "total_tokens": 597
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.014333823426459122,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.006792545846565518,
+          "steps": 50,
+          "achieved_goal": [
+            1.2998471066302937,
+            0.60345469787844,
+            0.4248751273407844
+          ],
+          "desired_goal": [
+            1.2940000295639038,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.00892572686192907,
+          "steps": 50,
+          "achieved_goal": [
+            1.2854899278509035,
+            0.597310199489166,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2940000295639038,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.027283197570882784,
+          "steps": 50,
+          "achieved_goal": [
+            1.2765183590073423,
+            0.6209464424007395,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2940000295639038,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_018",
+      "tier": "T2",
+      "instruction": "move the block 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.000256232827265477,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.244,
+        0.727,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.2438749692128064,
+        0.7268040228353955,
+        0.42489222470145815
+      ],
+      "reasoning": "The current position of the block is [1.244, 0.827, 0.425]. The instruction is to move the block 10 cm (0.1 meters) to the right. In the robot frame, 'right' corresponds to the negative y-direction (-y). Therefore, the new y-coordinate is 0.827 - 0.1 = 0.727. The x and z coordinates remain unchanged at 1.244 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 400,
+        "completion_tokens": 153,
+        "total_tokens": 553
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.028253667539728394,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01736891085605513,
+          "steps": 50,
+          "achieved_goal": [
+            1.2322099656610073,
+            0.7397539594485769,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.24399995803833,
+            0.7269999980926514,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.041283509054310094,
+          "steps": 50,
+          "achieved_goal": [
+            1.2213440743274668,
+            0.761511263489871,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.24399995803833,
+            0.7269999980926514,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.026108582708819956,
+          "steps": 50,
+          "achieved_goal": [
+            1.2336185921197613,
+            0.7509556596140591,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.24399995803833,
+            0.7269999980926514,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_019",
+      "tier": "T2",
+      "instruction": "slide the cube 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0004039348318317253,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.489,
+        0.749,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.4893520215639036,
+        0.7488337813129095,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.489, 0.849, 0.425]. The instruction is to slide the cube 10 cm (0.1 meters) to the right. In the robot frame, 'right' corresponds to the negative y-direction (-y). Therefore, the new y-coordinate is 0.849 - 0.1 = 0.749. The x and z coordinates remain unchanged at 1.489 and 0.425 respectively.",
+      "usage": {
+        "prompt_tokens": 400,
+        "completion_tokens": 151,
+        "total_tokens": 551
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02003590034560751,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03880717279766135,
+          "steps": 50,
+          "achieved_goal": [
+            1.4604885887781407,
+            0.7753265507736744,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4889999628067017,
+            0.7490000128746033,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.016888527610067285,
+          "steps": 50,
+          "achieved_goal": [
+            1.4721129063415952,
+            0.7488048847615766,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4889999628067017,
+            0.7490000128746033,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.004412000629093898,
+          "steps": 50,
+          "achieved_goal": [
+            1.4877678271539496,
+            0.7532348093433743,
+            0.42488130997306434
+          ],
+          "desired_goal": [
+            1.4889999628067017,
+            0.7490000128746033,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_020",
+      "tier": "T2",
+      "instruction": "push the box 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.05045116595427021,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.459,
+        0.6,
+        0.425
+      ],
+      "ground_truth_goal": [
+        1.4593733407145508,
+        0.5495503305527063,
+        0.42489222470145815
+      ],
+      "reasoning": "The current cube position is [1.459, 0.650, 0.425]. The instruction is to push the box 10 cm (0.1 meters) to the right. In the robot frame, 'right' corresponds to the negative y-direction (-y). Therefore, the new y-coordinate is 0.650 - 0.100 = 0.550. However, the workspace bounds for y are [0.60, 0.90]. Since 0.550 is outside the workspace, I must clamp the value to the nearest valid boundary, which is 0.60. The x and z coordinates remain unchanged at 1.459 and 0.425.",
+      "usage": {
+        "prompt_tokens": 400,
+        "completion_tokens": 202,
+        "total_tokens": 602
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02737085572369134,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.031637968815292045,
+          "steps": 50,
+          "achieved_goal": [
+            1.4547269890775356,
+            0.631347925015064,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4589999914169312,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02191427968763282,
+          "steps": 50,
+          "achieved_goal": [
+            1.4413749398222788,
+            0.6130223737340172,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4589999914169312,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.028560318668149145,
+          "steps": 50,
+          "achieved_goal": [
+            1.4519664172285187,
+            0.6276805047401824,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4589999914169312,
+            0.6000000238418579,
+            0.42500001192092896
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T3_001",
+      "tier": "T3",
+      "instruction": "push it next to the marker",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.74,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.68,
+        0.42
+      ],
+      "reasoning": "The instruction 'push it next to the marker' implies placing the object adjacent to the marker's current position [1.400, 0.680, 0.420]. 'Next to' is ambiguous, but typically implies a small offset. I will choose a position 0.06 meters to the left (+y) of the marker to ensure it remains within the workspace bounds (y_max = 0.90). New y = 0.680 + 0.06 = 0.740. The x and z coordinates remain the same as the marker.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 167,
+        "total_tokens": 644
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.029181097863714645,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03875364783860366,
+          "steps": 50,
+          "achieved_goal": [
+            1.4041700550170848,
+            0.778216779125183,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.014106342617813059,
+          "steps": 50,
+          "achieved_goal": [
+            1.4093367751972479,
+            0.7493733026382383,
+            0.4248943164823309
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.034683303134727214,
+          "steps": 50,
+          "achieved_goal": [
+            1.3721343465108629,
+            0.7199375068174103,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_002",
+      "tier": "T3",
+      "instruction": "push the block beside the marker",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.74,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.68,
+        0.42
+      ],
+      "reasoning": "The instruction is to push the block 'beside' the marker. The marker is at [1.400, 0.680, 0.420]. 'Beside' typically implies a lateral offset. Given the workspace bounds (y in [0.60, 0.90]), moving to the left (+y) by 0.06m results in [1.400, 0.740, 0.420], which is well within the workspace. Moving to the right (-y) by 0.06m results in [1.400, 0.620, 0.420], which is also within the workspace. I will choose the left side (+y) as the target position.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 206,
+        "total_tokens": 683
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.034893074390404726,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03626649743400906,
+          "steps": 50,
+          "achieved_goal": [
+            1.3758377516740101,
+            0.7665990989718457,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.042953630514100505,
+          "steps": 50,
+          "achieved_goal": [
+            1.4361317953143786,
+            0.7627062164738357,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.025459095223104602,
+          "steps": 50,
+          "achieved_goal": [
+            1.3887422749583749,
+            0.7176954022112811,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.3333333333333333
+    },
+    {
+      "id": "T3_003",
+      "tier": "T3",
+      "instruction": "move the cube close to the marker",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.74,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.68,
+        0.42
+      ],
+      "reasoning": "The instruction is to move the cube close to the marker. The marker is located at [1.400, 0.680, 0.420]. To place the cube 'close to' the marker, I will position it slightly offset from the marker's coordinates while ensuring it remains within the workspace bounds. A position of [1.400, 0.740, 0.420] (0.06m to the left of the marker) is within the workspace bounds (x: 1.19-1.49, y: 0.60-0.90).",
+      "usage": {
+        "prompt_tokens": 478,
+        "completion_tokens": 176,
+        "total_tokens": 654
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.029754156312127963,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01759394955084918,
+          "steps": 50,
+          "achieved_goal": [
+            1.411408301067199,
+            0.752468489726255,
+            0.42489224457959507
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.032954086182446614,
+          "steps": 50,
+          "achieved_goal": [
+            1.4300581607988143,
+            0.7525914013142458,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.038714433203088094,
+          "steps": 50,
+          "achieved_goal": [
+            1.3628285449421014,
+            0.7496518411895804,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_004",
+      "tier": "T3",
+      "instruction": "place the box near the marker",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.46,
+        0.68,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.68,
+        0.42
+      ],
+      "reasoning": "The instruction is to place the box 'near the marker'. The marker is located at [1.400, 0.680, 0.420]. To place it 'near', I will apply a small offset to the marker's position. Adding 0.06 meters to the x-coordinate (forward) keeps the point within the workspace bounds [1.19, 1.49] for x and [0.60, 0.90] for y. Thus, [1.460, 0.680, 0.420] is a valid position near the marker.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 176,
+        "total_tokens": 653
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.022326647279875243,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01861817270303017,
+          "steps": 50,
+          "achieved_goal": [
+            1.4421904589412635,
+            0.6776503139847976,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4600000381469727,
+            0.6800000071525574,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.008260108613081915,
+          "steps": 50,
+          "achieved_goal": [
+            1.4553087082413967,
+            0.6847208791783748,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4600000381469727,
+            0.6800000071525574,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.040101660523513646,
+          "steps": 50,
+          "achieved_goal": [
+            1.4388628349708585,
+            0.7137257782082648,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4600000381469727,
+            0.6800000071525574,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_005",
+      "tier": "T3",
+      "instruction": "push it next to the cup",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.76,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.82,
+        0.42
+      ],
+      "reasoning": "The instruction 'next to the cup' implies placing the object adjacent to the reference object. The cup is at [1.250, 0.820, 0.420]. 'Next to' typically implies a lateral shift. Using the side rule, I will place the goal 0.06 meters to the right of the cup (y - 0.06). 1.250 - 0 = 1.250 (x), 0.820 - 0.06 = 0.760 (y), 0.420 (z). This point [1.250, 0.760, 0.420] is within the workspace bounds.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 199,
+        "total_tokens": 676
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.019323939314542477,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02126150012882985,
+          "steps": 50,
+          "achieved_goal": [
+            1.2531940812463869,
+            0.7804429610738823,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.015129388438497617,
+          "steps": 50,
+          "achieved_goal": [
+            1.2604756025269317,
+            0.7697612582126498,
+            0.4248864782811533
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.021580929376299966,
+          "steps": 50,
+          "achieved_goal": [
+            1.236448769935026,
+            0.7760675506743834,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_006",
+      "tier": "T3",
+      "instruction": "push the block beside the cup",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.76,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.82,
+        0.42
+      ],
+      "reasoning": "The instruction is to push the block 'beside' the cup. The cup is located at [1.250, 0.820, 0.420]. 'Beside' typically implies a lateral offset. Given the workspace bounds, moving to the right side of the cup (y - 0.06) is safer to stay within the y-range [0.60, 0.90]. 0.820 - 0.06 = 0.760. The x and z coordinates remain the same as the cup to maintain proximity.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 164,
+        "total_tokens": 641
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.017281016271481795,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.004874641475281391,
+          "steps": 50,
+          "achieved_goal": [
+            1.2512984654092418,
+            0.7614658889889434,
+            0.42446398269857183
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02848579634347966,
+          "steps": 50,
+          "achieved_goal": [
+            1.2773885372470926,
+            0.7661134539213965,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.018482610995684334,
+          "steps": 50,
+          "achieved_goal": [
+            1.2442186090030882,
+            0.7431403272985965,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_007",
+      "tier": "T3",
+      "instruction": "move the cube close to the cup",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.31,
+        0.82,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.82,
+        0.42
+      ],
+      "reasoning": "The instruction is to move the cube close to the cup. The cup is located at [1.250, 0.820, 0.420]. To place the cube 'close to' the cup, I will position it slightly in front of the cup (+x direction) to ensure it is within the workspace and near the object. Adding 0.06m to the x-coordinate of the cup: 1.250 + 0.06 = 1.310. The y and z coordinates remain the same as the cup to maintain proximity.",
+      "usage": {
+        "prompt_tokens": 478,
+        "completion_tokens": 162,
+        "total_tokens": 640
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.022638768328037333,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03289680665901412,
+          "steps": 50,
+          "achieved_goal": [
+            1.3245520811416394,
+            0.8490946826055082,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.309999942779541,
+            0.8199999928474426,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02172715563562268,
+          "steps": 50,
+          "achieved_goal": [
+            1.3006549540481356,
+            0.8389948945921651,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.309999942779541,
+            0.8199999928474426,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.013292342689475196,
+          "steps": 50,
+          "achieved_goal": [
+            1.2979523417041765,
+            0.817241823677412,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.309999942779541,
+            0.8199999928474426,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_008",
+      "tier": "T3",
+      "instruction": "place the box near the cup",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.31,
+        0.82,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.82,
+        0.42
+      ],
+      "reasoning": "The instruction is to place the box 'near the cup'. The cup is located at [1.250, 0.820, 0.420]. To place the box near the cup while staying within the workspace bounds [x: 1.19-1.49, y: 0.60-0.90], I will shift the position slightly forward (+x) by 0.06 meters to ensure it is adjacent to the cup without overlapping. New x = 1.250 + 0.06 = 1.310. The y and z coordinates remain the same as the cup to maintain proximity.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 180,
+        "total_tokens": 657
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020121266468772676,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0309162828992453,
+          "steps": 50,
+          "achieved_goal": [
+            1.3291226057595524,
+            0.8437950789688723,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.309999942779541,
+            0.8199999928474426,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.005042601605816643,
+          "steps": 50,
+          "achieved_goal": [
+            1.3111328282149695,
+            0.8206918647813536,
+            0.42486472889167326
+          ],
+          "desired_goal": [
+            1.309999942779541,
+            0.8199999928474426,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.024404914901256083,
+          "steps": 50,
+          "achieved_goal": [
+            1.2942802457044764,
+            0.8380154531488877,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.309999942779541,
+            0.8199999928474426,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_009",
+      "tier": "T3",
+      "instruction": "push it next to the can",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.78,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.72,
+        0.42
+      ],
+      "reasoning": "The instruction 'push it next to the can' implies placing the object adjacent to the reference object 'can' located at [1.450, 0.720, 0.420]. 'Next to' typically implies a lateral offset. Using the reference-object side rule, I will place the goal at a distance of 0.06 meters to the left (+y) of the can. Calculation: y = 0.720 + 0.06 = 0.780. The x and z coordinates remain the same as the can to maintain alignment.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 163,
+        "total_tokens": 640
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02678129427844635,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03611470142966128,
+          "steps": 50,
+          "achieved_goal": [
+            1.4168175914326668,
+            0.7666110924382411,
+            0.4248922437201883
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.006676894273901989,
+          "steps": 50,
+          "achieved_goal": [
+            1.454205775520095,
+            0.7822102988887639,
+            0.42469117254290395
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03755228713177579,
+          "steps": 50,
+          "achieved_goal": [
+            1.438267510758811,
+            0.8153353313115297,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_010",
+      "tier": "T3",
+      "instruction": "push the block beside the can",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.78,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.72,
+        0.42
+      ],
+      "reasoning": "The instruction is to push the block 'beside' the can. The can is located at [1.450, 0.720, 0.420]. 'Beside' typically implies a lateral offset. I will choose the left side (+y) of the can, which is 0.06 meters away. The new y-coordinate is 0.720 + 0.06 = 0.780. The x and z coordinates remain the same as the can's position to maintain the 'beside' relationship. The resulting coordinate [1.450, 0.780, 0.420] is within the workspace bounds [1.19, 1.49] for x and [0.60, 0.90] for y.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 217,
+        "total_tokens": 694
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02110637882408455,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.010609653388073848,
+          "steps": 50,
+          "achieved_goal": [
+            1.4587391385894084,
+            0.7835669514950159,
+            0.42484453930034843
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0289408799353741,
+          "steps": 50,
+          "achieved_goal": [
+            1.4747466750746752,
+            0.7941860483271745,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.023768603148805707,
+          "steps": 50,
+          "achieved_goal": [
+            1.4453284518266964,
+            0.8027856796838149,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_011",
+      "tier": "T3",
+      "instruction": "move the cube close to the can",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.040000000000000036,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.72,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.72,
+        0.42
+      ],
+      "reasoning": "The instruction is to move the cube close to the can. The can is located at [1.450, 0.720, 0.420]. To be 'close to' the can, I will place the goal at a position slightly offset from the can's coordinates while ensuring it remains within the workspace bounds. I will choose a position 0.06 meters in front of the can (+x direction) to maintain proximity.",
+      "usage": {
+        "prompt_tokens": 478,
+        "completion_tokens": 132,
+        "total_tokens": 610
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.030393546207874236,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01917749735857007,
+          "steps": 50,
+          "achieved_goal": [
+            1.5027137965857524,
+            0.7334982447322803,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7200000286102295,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03651445492732223,
+          "steps": 50,
+          "achieved_goal": [
+            1.4538621964799483,
+            0.7218519737440765,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7200000286102295,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.035488686337730405,
+          "steps": 50,
+          "achieved_goal": [
+            1.4574567245512087,
+            0.7332833743858722,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7200000286102295,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_012",
+      "tier": "T3",
+      "instruction": "place the box near the can",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.39,
+        0.72,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.72,
+        0.42
+      ],
+      "reasoning": "The instruction is to place the box 'near the can'. The can is located at [1.450, 0.720, 0.420]. To place an object 'near' it, I will choose a position slightly offset from the can's center. Adding 0.06 meters to the x-coordinate (forward) keeps the object within the workspace bounds [1.19, 1.49] and [0.60, 0.90]. 1.450 + 0.06 = 1.51, which is outside the workspace, so I will subtract 0.06 from the x-coordinate instead. 1.450 - 0.06 = 1.39. The y and z coordinates remain the same.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 213,
+        "total_tokens": 690
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020965623624458363,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.022236885265325017,
+          "steps": 50,
+          "achieved_goal": [
+            1.390326192919473,
+            0.7416896221937211,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.3899999856948853,
+            0.7200000286102295,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.033120996783717944,
+          "steps": 50,
+          "achieved_goal": [
+            1.4183423939495472,
+            0.7364248311034198,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.3899999856948853,
+            0.7200000286102295,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0075389888243321225,
+          "steps": 50,
+          "achieved_goal": [
+            1.3844411780062864,
+            0.7185851702279996,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.3899999856948853,
+            0.7200000286102295,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_013",
+      "tier": "T3",
+      "instruction": "push it next to the pen",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.71,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.65,
+        0.42
+      ],
+      "reasoning": "The instruction 'next to the pen' implies placing the object adjacent to the reference object. The pen is located at [1.280, 0.650, 0.420]. 'Next to' typically implies a lateral shift. I will choose a position 0.06 meters to the left (+y) of the pen to ensure it remains within the workspace bounds. New y = 0.650 + 0.06 = 0.710. The x and z coordinates remain the same as the pen.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 154,
+        "total_tokens": 631
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01807132336117462,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.031622893407605136,
+          "steps": 50,
+          "achieved_goal": [
+            1.3065626429133383,
+            0.7264467923269787,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.009225947682837677,
+          "steps": 50,
+          "achieved_goal": [
+            1.2869268462475296,
+            0.7136596678200291,
+            0.42487268529156685
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.013365128993081052,
+          "steps": 50,
+          "achieved_goal": [
+            1.2681678170359336,
+            0.7138330727253426,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_014",
+      "tier": "T3",
+      "instruction": "push the block beside the pen",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.71,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.65,
+        0.42
+      ],
+      "reasoning": "The instruction is to push the block 'beside' the pen. The pen is located at [1.280, 0.650, 0.420]. 'Beside' typically implies a lateral shift. Given the workspace bounds and the pen's position, moving to the left side (+y) of the pen is a valid interpretation. Adding 0.06 meters to the y-coordinate of the pen: 0.650 + 0.06 = 0.710. The x and z coordinates remain the same as the pen to stay aligned with the object.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 167,
+        "total_tokens": 644
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02488658452092403,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.025973385307851763,
+          "steps": 50,
+          "achieved_goal": [
+            1.3006534102250933,
+            0.7249705504516738,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.037871275313560056,
+          "steps": 50,
+          "achieved_goal": [
+            1.2648826381174745,
+            0.7443767954874289,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.010815092941360266,
+          "steps": 50,
+          "achieved_goal": [
+            1.2744977686474799,
+            0.7179219615630227,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_015",
+      "tier": "T3",
+      "instruction": "move the cube close to the pen",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.65,
+        0.42
+      ],
+      "reasoning": "The instruction is to move the cube close to the pen. The pen is located at [1.280, 0.650, 0.420]. To place the cube 'close to' the pen, I will position it slightly offset from the pen's coordinates. Adding 0.06 meters to the x-coordinate (forward) places the cube at [1.340, 0.650, 0.420], which is within the workspace bounds [1.19, 1.49] for x and [0.60, 0.90] for y.",
+      "usage": {
+        "prompt_tokens": 478,
+        "completion_tokens": 174,
+        "total_tokens": 652
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020266820874848362,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0205908328952687,
+          "steps": 50,
+          "achieved_goal": [
+            1.359795473708773,
+            0.6471383758851007,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02374019238906841,
+          "steps": 50,
+          "achieved_goal": [
+            1.361139890718612,
+            0.6596316416933001,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.01646943734020798,
+          "steps": 50,
+          "achieved_goal": [
+            1.325107296882572,
+            0.6449487801977715,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_016",
+      "tier": "T3",
+      "instruction": "place the box near the pen",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.65,
+        0.42
+      ],
+      "reasoning": "The instruction is to place the box near the pen. The pen is located at [1.280, 0.650, 0.420]. 'Near' implies a small offset from the object's position. I will apply a small offset of 0.06 meters in the +x direction (forward) to place the box near the pen while remaining within the workspace bounds [1.19, 1.49] for x and [0.60, 0.90] for y.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 151,
+        "total_tokens": 628
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.017061480822541473,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.006244833909315207,
+          "steps": 50,
+          "achieved_goal": [
+            1.343740424387164,
+            0.6510363007835652,
+            0.42489217013464337
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0052851373485995005,
+          "steps": 50,
+          "achieved_goal": [
+            1.3384951511645524,
+            0.6513167225204706,
+            0.42489224457977154
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03965447120970972,
+          "steps": 50,
+          "achieved_goal": [
+            1.3079243776755656,
+            0.6727968007793302,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_017",
+      "tier": "T3",
+      "instruction": "push it next to the cone",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.79,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.85,
+        0.42
+      ],
+      "reasoning": "The instruction 'next to the cone' implies placing the object adjacent to the reference object. The cone is located at [1.340, 0.850, 0.420]. 'Next to' typically implies a lateral shift. Since the cone is at y=0.850 (near the workspace boundary y_max=0.90), moving to the 'right' (negative y) is the most feasible direction to stay within the workspace. Applying a 0.06m offset to the right (-y) results in y = 0.850 - 0.06 = 0.790. The x and z coordinates remain the same as the cone to maintain proximity.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 191,
+        "total_tokens": 668
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01803060679498595,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0051299242776954085,
+          "steps": 50,
+          "achieved_goal": [
+            1.3408058459103789,
+            0.7863753049889111,
+            0.42353950942252033
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.033382280015760234,
+          "steps": 50,
+          "achieved_goal": [
+            1.3470381929745185,
+            0.8222631078447524,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.015579616091502208,
+          "steps": 50,
+          "achieved_goal": [
+            1.3325026011873742,
+            0.777249383718181,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_018",
+      "tier": "T3",
+      "instruction": "push the block beside the cone",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.79,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.85,
+        0.42
+      ],
+      "reasoning": "The instruction is to push the block 'beside' the cone. The cone is at [1.340, 0.850, 0.420]. 'Beside' typically implies a lateral shift. Since the cone is already near the left boundary (y=0.850, y_max=0.90), moving to the 'right' side of the cone (y - 0.06) is safer to stay within workspace bounds. 0.850 - 0.06 = 0.790. The x and z coordinates remain the same as the cone.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 171,
+        "total_tokens": 648
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03634266636491371,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0391422918757367,
+          "steps": 50,
+          "achieved_goal": [
+            1.3354156350188267,
+            0.8285638402471988,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.031347675912453334,
+          "steps": 50,
+          "achieved_goal": [
+            1.3271978572652605,
+            0.8181930504993059,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03853803130655112,
+          "steps": 50,
+          "achieved_goal": [
+            1.3018053756761874,
+            0.7915536606202034,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_019",
+      "tier": "T3",
+      "instruction": "move the cube close to the cone",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999983,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.85,
+        0.42
+      ],
+      "reasoning": "The instruction is to move the cube close to the cone. The cone is located at [1.340, 0.850, 0.420]. To be 'close' to the cone while remaining within the workspace bounds, I will place the cube slightly in front of the cone (along the +x axis) to ensure it is near but not colliding. Adding 0.06m to the x-coordinate: 1.340 + 0.06 = 1.400. The y and z coordinates remain the same as the cone to maintain proximity.",
+      "usage": {
+        "prompt_tokens": 478,
+        "completion_tokens": 164,
+        "total_tokens": 642
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.014273202021280027,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02297777716191052,
+          "steps": 50,
+          "achieved_goal": [
+            1.3778005442247747,
+            0.8533510356003261,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.007626055332605844,
+          "steps": 50,
+          "achieved_goal": [
+            1.404986366376493,
+            0.8531614448701099,
+            0.4248267922081431
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.012215773569323716,
+          "steps": 50,
+          "achieved_goal": [
+            1.4066105068347312,
+            0.8590328430439702,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_020",
+      "tier": "T3",
+      "instruction": "place the box near the cone",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "cot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999983,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.85,
+        0.42
+      ],
+      "reasoning": "The instruction is to place the box 'near' the cone. The cone is located at [1.340, 0.850, 0.420]. 'Near' implies a position adjacent to the object. I will place the box slightly in front of the cone (+x direction) to ensure it remains within the workspace bounds. Adding 0.06m to the x-coordinate: 1.340 + 0.06 = 1.400. The y and z coordinates remain the same as the cone to keep it close.",
+      "usage": {
+        "prompt_tokens": 477,
+        "completion_tokens": 160,
+        "total_tokens": 637
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02409503194743869,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.027811479054825044,
+          "steps": 50,
+          "achieved_goal": [
+            1.3918865475931512,
+            0.8761479962069372,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0062036746082585114,
+          "steps": 50,
+          "achieved_goal": [
+            1.4025016452746737,
+            0.8547803425993628,
+            0.42306197690217917
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.038269942179232526,
+          "steps": 50,
+          "achieved_goal": [
+            1.4214769156833096,
+            0.8812953167419297,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    }
+  ]
+}

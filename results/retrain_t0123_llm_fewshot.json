@@ -1,0 +1,6532 @@
+{
+  "run_timestamp": "2026-05-31T23:43:00.629997+00:00",
+  "grounder": "llm",
+  "prompt_variant": "few-shot",
+  "tiers": [
+    "T0",
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "n_episodes": 3,
+  "device": "auto",
+  "skip_policy": false,
+  "summary": {
+    "T0": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": 1.0,
+      "e2e_success_rate": 1.0,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.0
+    },
+    "T1": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": 1.0,
+      "e2e_success_rate": 1.0,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.0
+    },
+    "T2": {
+      "n": 20,
+      "grounder_success_rate": 0.45,
+      "policy_success_rate": 1.0,
+      "e2e_success_rate": 0.8,
+      "failure_mode_counts": {
+        "out_of_workspace": 8
+      },
+      "mean_grounder_distance_m": 0.033735650324342115
+    },
+    "T3": {
+      "n": 20,
+      "grounder_success_rate": 1.0,
+      "policy_success_rate": 1.0,
+      "e2e_success_rate": 0.8333333333333333,
+      "failure_mode_counts": {},
+      "mean_grounder_distance_m": 0.059999999999999984
+    }
+  },
+  "results": [
+    {
+      "id": "T0_001",
+      "tier": "T0",
+      "instruction": "push to (1.30, 0.85)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 20,
+        "total_tokens": 458
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02000752612208213,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.010802345587711384,
+          "steps": 50,
+          "achieved_goal": [
+            1.3062013922255447,
+            0.8580394314623023,
+            0.42368790477659
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.021193813767368237,
+          "steps": 50,
+          "achieved_goal": [
+            1.2793816151894752,
+            0.8503574182994621,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.028026419011166766,
+          "steps": 50,
+          "achieved_goal": [
+            1.317930355326158,
+            0.8709773121594689,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_002",
+      "tier": "T0",
+      "instruction": "move to [1.30, 0.85]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 20,
+        "total_tokens": 458
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03078429697757715,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03471375488779079,
+          "steps": 50,
+          "achieved_goal": [
+            1.280326480112853,
+            0.8781791843073088,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03870914824735333,
+          "steps": 50,
+          "achieved_goal": [
+            1.3165722895079583,
+            0.8846384650987652,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.018929987797587325,
+          "steps": 50,
+          "achieved_goal": [
+            1.2968435744442823,
+            0.8319654109753237,
+            0.4248098159380133
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_003",
+      "tier": "T0",
+      "instruction": "go to 1.30, 0.85",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 20,
+        "total_tokens": 458
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03131094208883295,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.030083777502031835,
+          "steps": 50,
+          "achieved_goal": [
+            1.3061550661559707,
+            0.8790381721485155,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02611687465446922,
+          "steps": 50,
+          "achieved_goal": [
+            1.2809123317000033,
+            0.8671411934516999,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0377321741099978,
+          "steps": 50,
+          "achieved_goal": [
+            1.3087178631739753,
+            0.8863838225441887,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_004",
+      "tier": "T0",
+      "instruction": "place it at x=1.30, y=0.85",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 441,
+        "completion_tokens": 20,
+        "total_tokens": 461
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.019951529951469024,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.014378631119605587,
+          "steps": 50,
+          "achieved_goal": [
+            1.2891761895269431,
+            0.8418942035952343,
+            0.4248874064600445
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0258904250765046,
+          "steps": 50,
+          "achieved_goal": [
+            1.291877088804618,
+            0.8740914956457998,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.019585533658296884,
+          "steps": 50,
+          "achieved_goal": [
+            1.2869337272177155,
+            0.8637453032141006,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2999999523162842,
+            0.8500000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_005",
+      "tier": "T0",
+      "instruction": "push to (1.45, 0.65)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 21,
+        "total_tokens": 459
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03232223185226014,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.045498279172813245,
+          "steps": 50,
+          "achieved_goal": [
+            1.4233142308972633,
+            0.686524302364033,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04593652957876521,
+          "steps": 50,
+          "achieved_goal": [
+            1.4950403601466564,
+            0.6575894964096887,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.005531886805201952,
+          "steps": 50,
+          "achieved_goal": [
+            1.4524672982025457,
+            0.6510357520394806,
+            0.42484164102854366
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_006",
+      "tier": "T0",
+      "instruction": "move to [1.45, 0.65]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 21,
+        "total_tokens": 459
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02819528289898897,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.028992326877997597,
+          "steps": 50,
+          "achieved_goal": [
+            1.434779333415195,
+            0.6741857300149872,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.042057445408080076,
+          "steps": 50,
+          "achieved_goal": [
+            1.419852663970797,
+            0.6789141557969777,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.013536076410889239,
+          "steps": 50,
+          "achieved_goal": [
+            1.4586613003313742,
+            0.6591801869983589,
+            0.4248920003890066
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_007",
+      "tier": "T0",
+      "instruction": "go to 1.45, 0.65",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 21,
+        "total_tokens": 459
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.029711002217753635,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.042775491440076044,
+          "steps": 50,
+          "achieved_goal": [
+            1.4177676834683661,
+            0.677692631857736,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01648848846230673,
+          "steps": 50,
+          "achieved_goal": [
+            1.446985273927865,
+            0.665454658479039,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.029869026750878137,
+          "steps": 50,
+          "achieved_goal": [
+            1.4225014326757024,
+            0.6605853786707024,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_008",
+      "tier": "T0",
+      "instruction": "place it at x=1.45, y=0.65",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 441,
+        "completion_tokens": 21,
+        "total_tokens": 462
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026199452199789756,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0343653105354235,
+          "steps": 50,
+          "achieved_goal": [
+            1.426067026188126,
+            0.6258286943353898,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.024771870787892652,
+          "steps": 50,
+          "achieved_goal": [
+            1.449195084686238,
+            0.6257292986717756,
+            0.42489200398195287
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.019461175276053122,
+          "steps": 50,
+          "achieved_goal": [
+            1.4674043197229294,
+            0.6572037579828156,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.6499999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_009",
+      "tier": "T0",
+      "instruction": "push to (1.25, 0.80)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 20,
+        "total_tokens": 458
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02365829822174395,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.026577508139040897,
+          "steps": 50,
+          "achieved_goal": [
+            1.2551749743139948,
+            0.8256056635314126,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.022785496886890858,
+          "steps": 50,
+          "achieved_goal": [
+            1.2460420019703256,
+            0.8218993026548042,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02161188963930009,
+          "steps": 50,
+          "achieved_goal": [
+            1.2334089965232964,
+            0.8129567936233612,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_010",
+      "tier": "T0",
+      "instruction": "move to [1.25, 0.80]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 20,
+        "total_tokens": 458
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.033579173528977845,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03197317621277094,
+          "steps": 50,
+          "achieved_goal": [
+            1.2649743865509817,
+            0.8278229801166817,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03350673786827883,
+          "steps": 50,
+          "achieved_goal": [
+            1.2418888164312463,
+            0.8321399558903063,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03525760650588376,
+          "steps": 50,
+          "achieved_goal": [
+            1.228214073943528,
+            0.8272862365966305,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_011",
+      "tier": "T0",
+      "instruction": "go to 1.25, 0.80",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 20,
+        "total_tokens": 458
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.013520717110734612,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.025356341821010167,
+          "steps": 50,
+          "achieved_goal": [
+            1.2408085740315862,
+            0.7768801595451402,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.007530904452124695,
+          "steps": 50,
+          "achieved_goal": [
+            1.2503695493822096,
+            0.8057147502222973,
+            0.42489076609565374
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.007674905059068973,
+          "steps": 50,
+          "achieved_goal": [
+            1.2503057000535176,
+            0.8059114149692993,
+            0.4248852738941784
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_012",
+      "tier": "T0",
+      "instruction": "place it at x=1.25, y=0.80",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.8,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 441,
+        "completion_tokens": 20,
+        "total_tokens": 461
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020544762165738688,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.018771839536970467,
+          "steps": 50,
+          "achieved_goal": [
+            1.2331163885201653,
+            0.8065872296694891,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02847557217638554,
+          "steps": 50,
+          "achieved_goal": [
+            1.2235284164516835,
+            0.8092832920461988,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.014386874783860063,
+          "steps": 50,
+          "achieved_goal": [
+            1.2365170895549662,
+            0.8011221111364542,
+            0.42489224457931046
+          ],
+          "desired_goal": [
+            1.25,
+            0.800000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_013",
+      "tier": "T0",
+      "instruction": "push to (1.40, 0.70)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 19,
+        "total_tokens": 457
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.023569737778463096,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.024454047396554733,
+          "steps": 50,
+          "achieved_goal": [
+            1.3818491822590337,
+            0.7156401584608867,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.033316152942256025,
+          "steps": 50,
+          "achieved_goal": [
+            1.3805810390707218,
+            0.7266258541482489,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.012939012996578542,
+          "steps": 50,
+          "achieved_goal": [
+            1.41181511864625,
+            0.704611821333527,
+            0.4225595687560401
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_014",
+      "tier": "T0",
+      "instruction": "move to [1.40, 0.70]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 19,
+        "total_tokens": 457
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.025034435244644354,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.016692186991327556,
+          "steps": 50,
+          "achieved_goal": [
+            1.394023810025816,
+            0.7147979730628271,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02035498811571039,
+          "steps": 50,
+          "achieved_goal": [
+            1.4148620790402098,
+            0.7130195600298201,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.038056130626895106,
+          "steps": 50,
+          "achieved_goal": [
+            1.4364599846710067,
+            0.7097469195039008,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_015",
+      "tier": "T0",
+      "instruction": "go to 1.40, 0.70",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 19,
+        "total_tokens": 457
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.027432875230678593,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02147510516740313,
+          "steps": 50,
+          "achieved_goal": [
+            1.3933846770923148,
+            0.6801635626226569,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02561202541810798,
+          "steps": 50,
+          "achieved_goal": [
+            1.3972706545257014,
+            0.7249918360321874,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03521149510652467,
+          "steps": 50,
+          "achieved_goal": [
+            1.3679333393114632,
+            0.7136983822786557,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_016",
+      "tier": "T0",
+      "instruction": "place it at x=1.40, y=0.70",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.7,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 441,
+        "completion_tokens": 19,
+        "total_tokens": 460
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01804067645663684,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01712868667126111,
+          "steps": 50,
+          "achieved_goal": [
+            1.4162364842013535,
+            0.7024152579008829,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.006293200912104234,
+          "steps": 50,
+          "achieved_goal": [
+            1.4039677599906164,
+            0.700048408134869,
+            0.4248845262385508
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.030700141786545173,
+          "steps": 50,
+          "achieved_goal": [
+            1.396356746669173,
+            0.730088048822028,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.699999988079071,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_017",
+      "tier": "T0",
+      "instruction": "push to (1.34, 0.75)",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 21,
+        "total_tokens": 459
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026625150752156466,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02265534381507567,
+          "steps": 50,
+          "achieved_goal": [
+            1.3522106082842775,
+            0.7684453863748998,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02093081500326678,
+          "steps": 50,
+          "achieved_goal": [
+            1.3308203137536152,
+            0.7318369171401214,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03628929343812695,
+          "steps": 50,
+          "achieved_goal": [
+            1.3101655781512307,
+            0.7700719683686404,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_018",
+      "tier": "T0",
+      "instruction": "move to [1.34, 0.75]",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 21,
+        "total_tokens": 459
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.013709456786848094,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.010522644471573288,
+          "steps": 50,
+          "achieved_goal": [
+            1.3498436376542637,
+            0.7494133769156481,
+            0.42367223073729543
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.020737280354689334,
+          "steps": 50,
+          "achieved_goal": [
+            1.3312368402604569,
+            0.7318531805114428,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.009868445534281655,
+          "steps": 50,
+          "achieved_goal": [
+            1.333178176030528,
+            0.7551878994666661,
+            0.4248922439028543
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_019",
+      "tier": "T0",
+      "instruction": "go to 1.34, 0.75",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 438,
+        "completion_tokens": 21,
+        "total_tokens": 459
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.025431949918719485,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.027568504330311893,
+          "steps": 50,
+          "achieved_goal": [
+            1.320971522832762,
+            0.7693391838525959,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.036852131563831554,
+          "steps": 50,
+          "achieved_goal": [
+            1.353540649868042,
+            0.7839234007810393,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.011875213862015012,
+          "steps": 50,
+          "achieved_goal": [
+            1.332928149750122,
+            0.7418100683225665,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T0_020",
+      "tier": "T0",
+      "instruction": "place it at x=1.34, y=0.75",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 441,
+        "completion_tokens": 21,
+        "total_tokens": 462
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02588281868608386,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.013269518692630301,
+          "steps": 50,
+          "achieved_goal": [
+            1.3496044390468267,
+            0.7467150242806748,
+            0.4285465916290769
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.029327305514641064,
+          "steps": 50,
+          "achieved_goal": [
+            1.3214876630155619,
+            0.7277862923635439,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03505163185098022,
+          "steps": 50,
+          "achieved_goal": [
+            1.3347553043197768,
+            0.784309991652336,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_001",
+      "tier": "T1",
+      "instruction": "push to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 432,
+        "completion_tokens": 20,
+        "total_tokens": 452
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020382649635991606,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.04166574080685025,
+          "steps": 50,
+          "achieved_goal": [
+            1.5227300644977881,
+            0.9253113630004152,
+            0.42491029801270197
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01145602992436409,
+          "steps": 50,
+          "achieved_goal": [
+            1.4873471844046942,
+            0.9100134148838687,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.00802617817676047,
+          "steps": 50,
+          "achieved_goal": [
+            1.4873846953246728,
+            0.9058041322315138,
+            0.4248878739533076
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_002",
+      "tier": "T1",
+      "instruction": "push the block to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.027841998187914694,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03670472549623792,
+          "steps": 50,
+          "achieved_goal": [
+            1.4584967671816091,
+            0.9181892149969461,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.015399796150900633,
+          "steps": 50,
+          "achieved_goal": [
+            1.4804946197881954,
+            0.8889154327807772,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03142147291660553,
+          "steps": 50,
+          "achieved_goal": [
+            1.4638101067071543,
+            0.9166572197684413,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_003",
+      "tier": "T1",
+      "instruction": "move the cube to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.022058978554438446,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.025199226906435435,
+          "steps": 50,
+          "achieved_goal": [
+            1.4660956472558564,
+            0.9062966669789879,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.00944418534232401,
+          "steps": 50,
+          "achieved_goal": [
+            1.4942899371436476,
+            0.907040686912711,
+            0.4246062380718556
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.031533523414555904,
+          "steps": 50,
+          "achieved_goal": [
+            1.4712926714726133,
+            0.9249090993092667,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_004",
+      "tier": "T1",
+      "instruction": "send the box to the upper-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01974581231694667,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.018668608160852366,
+          "steps": 50,
+          "achieved_goal": [
+            1.473323446457923,
+            0.8931827194365008,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.009764157812647691,
+          "steps": 50,
+          "achieved_goal": [
+            1.484818193371174,
+            0.9066748075180883,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.030804670977339955,
+          "steps": 50,
+          "achieved_goal": [
+            1.5184523185681909,
+            0.9107378269827214,
+            0.424908390341285
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_005",
+      "tier": "T1",
+      "instruction": "push to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 432,
+        "completion_tokens": 20,
+        "total_tokens": 452
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03383332937769037,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02601032628458647,
+          "steps": 50,
+          "achieved_goal": [
+            1.4644776894077385,
+            0.6011018692622498,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03396935957889174,
+          "steps": 50,
+          "achieved_goal": [
+            1.493582047450657,
+            0.633423850810811,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.041520302269592885,
+          "steps": 50,
+          "achieved_goal": [
+            1.4684090048064835,
+            0.6351259377796254,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_006",
+      "tier": "T1",
+      "instruction": "push the block to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02900927968361079,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01491487615719423,
+          "steps": 50,
+          "achieved_goal": [
+            1.4781626046869827,
+            0.6076416985192107,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03120190785359702,
+          "steps": 50,
+          "achieved_goal": [
+            1.4769636450115042,
+            0.5720773078469714,
+            0.4248922445599101
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.04091105504004111,
+          "steps": 50,
+          "achieved_goal": [
+            1.4592925498379823,
+            0.6265863390811955,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_007",
+      "tier": "T1",
+      "instruction": "move the cube to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.027616056887738053,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0367683297904583,
+          "steps": 50,
+          "achieved_goal": [
+            1.4948516783494132,
+            0.6361170170719048,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02118269616606584,
+          "steps": 50,
+          "achieved_goal": [
+            1.4890073852786552,
+            0.6205861145006815,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02489714470669002,
+          "steps": 50,
+          "achieved_goal": [
+            1.4665247187348238,
+            0.6066966163319509,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_008",
+      "tier": "T1",
+      "instruction": "send the box to the upper-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.49,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.0319350671075855,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03618587663729149,
+          "steps": 50,
+          "achieved_goal": [
+            1.4845366706882968,
+            0.6354349700292521,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.021291306858582694,
+          "steps": 50,
+          "achieved_goal": [
+            1.4825169645732785,
+            0.6193233154995513,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03832801782688232,
+          "steps": 50,
+          "achieved_goal": [
+            1.452024697572262,
+            0.6017258414467407,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_009",
+      "tier": "T1",
+      "instruction": "push to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 432,
+        "completion_tokens": 20,
+        "total_tokens": 452
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.019737880095841157,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.012402048055869603,
+          "steps": 50,
+          "achieved_goal": [
+            1.1837863317311608,
+            0.9095606927670443,
+            0.4248778049901884
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02611395235113969,
+          "steps": 50,
+          "achieved_goal": [
+            1.168538630608269,
+            0.8859496562388532,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.020697639880514176,
+          "steps": 50,
+          "achieved_goal": [
+            1.208828078083954,
+            0.9070684796528313,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_010",
+      "tier": "T1",
+      "instruction": "push the block to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.024385777288295662,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02834376329120662,
+          "steps": 50,
+          "achieved_goal": [
+            1.1997555151369936,
+            0.9261584503684981,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.018922467680201265,
+          "steps": 50,
+          "achieved_goal": [
+            1.1812671818762044,
+            0.8839418789484115,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02589110089347911,
+          "steps": 50,
+          "achieved_goal": [
+            1.2136530743562615,
+            0.9093246584860788,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_011",
+      "tier": "T1",
+      "instruction": "move the cube to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.0363052561820335,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.04380709403151883,
+          "steps": 50,
+          "achieved_goal": [
+            1.1565443719242072,
+            0.9278539601373089,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.037260209782029735,
+          "steps": 50,
+          "achieved_goal": [
+            1.1684836068041773,
+            0.9300238234990766,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02784846473255193,
+          "steps": 50,
+          "achieved_goal": [
+            1.178385144980424,
+            0.9248333532197432,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_012",
+      "tier": "T1",
+      "instruction": "send the box to the lower-left corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.9,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02767309243168892,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0352396671048293,
+          "steps": 50,
+          "achieved_goal": [
+            1.1840548156165596,
+            0.9343882598401992,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04254974981350789,
+          "steps": 50,
+          "achieved_goal": [
+            1.1482906558825543,
+            0.9068463521259733,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.005229860376729575,
+          "steps": 50,
+          "achieved_goal": [
+            1.1887915567098888,
+            0.9031480364019788,
+            0.42399757150487083
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.8999999761581421,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_013",
+      "tier": "T1",
+      "instruction": "push to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 432,
+        "completion_tokens": 20,
+        "total_tokens": 452
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02390057696721389,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.026468470094671237,
+          "steps": 50,
+          "achieved_goal": [
+            1.187983507014048,
+            0.625934156738192,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0410031610021088,
+          "steps": 50,
+          "achieved_goal": [
+            1.1719017269791936,
+            0.6364661104063214,
+            0.42489224457806624
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.004230099804861637,
+          "steps": 50,
+          "achieved_goal": [
+            1.1918602491640427,
+            0.6015629311299336,
+            0.4234627532812064
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_014",
+      "tier": "T1",
+      "instruction": "push the block to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02665330509180243,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03804563536124227,
+          "steps": 50,
+          "achieved_goal": [
+            1.1693433036255796,
+            0.6315727132367801,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.006789435826883117,
+          "steps": 50,
+          "achieved_goal": [
+            1.1875598349664893,
+            0.6055650768340781,
+            0.4230285078778871
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0351248440872819,
+          "steps": 50,
+          "achieved_goal": [
+            1.1577321958548354,
+            0.5870152015209988,
+            0.424892244478365
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_015",
+      "tier": "T1",
+      "instruction": "move the cube to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01715271134362475,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.009368574597681456,
+          "steps": 50,
+          "achieved_goal": [
+            1.1825121276568784,
+            0.6027870109277144,
+            0.4248922055887992
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03502613148276875,
+          "steps": 50,
+          "achieved_goal": [
+            1.2210211137703626,
+            0.6155109797067643,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.007063427950424047,
+          "steps": 50,
+          "achieved_goal": [
+            1.1943275000444031,
+            0.6027595662784676,
+            0.42485283950753816
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_016",
+      "tier": "T1",
+      "instruction": "send the box to the lower-right corner",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.19,
+        0.6,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 434,
+        "completion_tokens": 20,
+        "total_tokens": 454
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.023995678690737682,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03496291612166346,
+          "steps": 50,
+          "achieved_goal": [
+            1.1565672202009507,
+            0.5910157750015412,
+            0.42489224457977603
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01851197877256115,
+          "steps": 50,
+          "achieved_goal": [
+            1.201370825253746,
+            0.6137646454163298,
+            0.42489224457852653
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.01851214117798844,
+          "steps": 50,
+          "achieved_goal": [
+            1.2011584831863134,
+            0.5860624948059955,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.190000057220459,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_017",
+      "tier": "T1",
+      "instruction": "push to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 429,
+        "completion_tokens": 21,
+        "total_tokens": 450
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.018583232936173404,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.00593696200345617,
+          "steps": 50,
+          "achieved_goal": [
+            1.3431818903346033,
+            0.7521316075910175,
+            0.424536456132982
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01940487180393451,
+          "steps": 50,
+          "achieved_goal": [
+            1.3335303018637197,
+            0.7676283135472362,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.030407865001129537,
+          "steps": 50,
+          "achieved_goal": [
+            1.3123628478618514,
+            0.738299998063803,
+            0.42489224457976865
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_018",
+      "tier": "T1",
+      "instruction": "push the block to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 431,
+        "completion_tokens": 21,
+        "total_tokens": 452
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026904367051794057,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.008589911998096382,
+          "steps": 50,
+          "achieved_goal": [
+            1.3366068244186036,
+            0.7438081880070516,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03250040796721148,
+          "steps": 50,
+          "achieved_goal": [
+            1.308325862957993,
+            0.7553934461032487,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03962278119007431,
+          "steps": 50,
+          "achieved_goal": [
+            1.321182074610645,
+            0.7845241224611315,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_019",
+      "tier": "T1",
+      "instruction": "move the cube to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 431,
+        "completion_tokens": 21,
+        "total_tokens": 452
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03008903478331208,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03134878384528303,
+          "steps": 50,
+          "achieved_goal": [
+            1.3381117519389651,
+            0.7809070615952114,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.029541971948019368,
+          "steps": 50,
+          "achieved_goal": [
+            1.3292668857613594,
+            0.7770849305605765,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.029376348556633833,
+          "steps": 50,
+          "achieved_goal": [
+            1.3113867794423215,
+            0.7545074791586885,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T1_020",
+      "tier": "T1",
+      "instruction": "send the box to the center",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.0,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.75,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 431,
+        "completion_tokens": 21,
+        "total_tokens": 452
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.023505257960526497,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.00888236586113153,
+          "steps": 50,
+          "achieved_goal": [
+            1.3463047897374965,
+            0.7539212986916782,
+            0.42487542400754547
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.040371540231379274,
+          "steps": 50,
+          "achieved_goal": [
+            1.353384781558817,
+            0.7877726831383908,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.021261867789068693,
+          "steps": 50,
+          "achieved_goal": [
+            1.3267826353101815,
+            0.7659195877113169,
+            0.42489223966892475
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.75,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_001",
+      "tier": "T2",
+      "instruction": "push it 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": null,
+      "grounder_failure_mode": "out_of_workspace",
+      "predicted_goal": [
+        1.469,
+        0.566,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4692491368482739,
+        0.5662203211895689,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 458,
+        "completion_tokens": 23,
+        "total_tokens": 481
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.021163980555419435,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.026861020042680386,
+          "steps": 50,
+          "achieved_goal": [
+            1.4615305645574312,
+            0.5913335201687616,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.468999981880188,
+            0.5659999847412109,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.007753617265302342,
+          "steps": 50,
+          "achieved_goal": [
+            1.4690265609609958,
+            0.5722285006197783,
+            0.4246177205518502
+          ],
+          "desired_goal": [
+            1.468999981880188,
+            0.5659999847412109,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02887730435827558,
+          "steps": 50,
+          "achieved_goal": [
+            1.4428336542278113,
+            0.554806780604051,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.468999981880188,
+            0.5659999847412109,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_002",
+      "tier": "T2",
+      "instruction": "move the block 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": null,
+      "grounder_failure_mode": "out_of_workspace",
+      "predicted_goal": [
+        1.418,
+        0.565,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4178322280400415,
+        0.5652456380993938,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.021178784624942926,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.030630328454258286,
+          "steps": 50,
+          "achieved_goal": [
+            1.412533357656352,
+            0.5947388416594475,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4179999828338623,
+            0.5649999976158142,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01352016097944959,
+          "steps": 50,
+          "achieved_goal": [
+            1.4097975143884984,
+            0.5745697457305883,
+            0.42489224457978414
+          ],
+          "desired_goal": [
+            1.4179999828338623,
+            0.5649999976158142,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0193858644411209,
+          "steps": 50,
+          "achieved_goal": [
+            1.4018989991192883,
+            0.5553752442049613,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4179999828338623,
+            0.5649999976158142,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_003",
+      "tier": "T2",
+      "instruction": "slide the cube 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.004906484251993561,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.215,
+        0.832,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.2149794918561962,
+        0.831626764683422,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02143157203025306,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.040377676537430615,
+          "steps": 50,
+          "achieved_goal": [
+            1.2168527012032926,
+            0.8720373772084771,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.215000033378601,
+            0.8320000171661377,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.012826356250265307,
+          "steps": 50,
+          "achieved_goal": [
+            1.2073879532412244,
+            0.8229095020372761,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.215000033378601,
+            0.8320000171661377,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.01109068330306326,
+          "steps": 50,
+          "achieved_goal": [
+            1.2184172274163338,
+            0.8413494999167225,
+            0.42489010072346983
+          ],
+          "desired_goal": [
+            1.215000033378601,
+            0.8320000171661377,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_004",
+      "tier": "T2",
+      "instruction": "push the box 5 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.004913329327776218,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.483,
+        0.817,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4825650168249354,
+        0.8168668377266677,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02631545732902631,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03438918440609069,
+          "steps": 50,
+          "achieved_goal": [
+            1.4841817156435144,
+            0.8510188704611419,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8169999718666077,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0052891846324831255,
+          "steps": 50,
+          "achieved_goal": [
+            1.482002344308088,
+            0.8152547234769421,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8169999718666077,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03926800294850512,
+          "steps": 50,
+          "achieved_goal": [
+            1.4574519932188614,
+            0.8464166197572859,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.8169999718666077,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_005",
+      "tier": "T2",
+      "instruction": "push it 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": null,
+      "grounder_failure_mode": "out_of_workspace",
+      "predicted_goal": [
+        1.256,
+        0.91,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.2559070663989602,
+        0.9104990845391729,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 458,
+        "completion_tokens": 22,
+        "total_tokens": 480
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.0307017953759675,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.022148473772885525,
+          "steps": 50,
+          "achieved_goal": [
+            1.2426818995118223,
+            0.8929927399398383,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25600004196167,
+            0.9100000262260437,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04079419903397862,
+          "steps": 50,
+          "achieved_goal": [
+            1.2741770448423826,
+            0.9461915867860087,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25600004196167,
+            0.9100000262260437,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.029162713321038355,
+          "steps": 50,
+          "achieved_goal": [
+            1.2754426431698898,
+            0.9311781970906482,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25600004196167,
+            0.9100000262260437,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_006",
+      "tier": "T2",
+      "instruction": "move the block 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": null,
+      "grounder_failure_mode": "out_of_workspace",
+      "predicted_goal": [
+        1.483,
+        0.965,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.483352548845418,
+        0.9652351878036238,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.022904301548797263,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01718806989555933,
+          "steps": 50,
+          "achieved_goal": [
+            1.4825242458213035,
+            0.9485297223718178,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.9649999737739563,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03768700912306346,
+          "steps": 50,
+          "achieved_goal": [
+            1.519300868835311,
+            0.9738576704557195,
+            0.42490933469998005
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.9649999737739563,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.013837825627769,
+          "steps": 50,
+          "achieved_goal": [
+            1.4850952389195635,
+            0.9777296828912516,
+            0.42500499094378735
+          ],
+          "desired_goal": [
+            1.4830000400543213,
+            0.9649999737739563,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_007",
+      "tier": "T2",
+      "instruction": "slide the cube 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": null,
+      "grounder_failure_mode": "out_of_workspace",
+      "predicted_goal": [
+        1.381,
+        0.951,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3812698411675057,
+        0.9506245689880535,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.021564344532019775,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.011885561662650045,
+          "steps": 50,
+          "achieved_goal": [
+            1.3749127210698744,
+            0.9599597137645015,
+            0.42489224457978325
+          ],
+          "desired_goal": [
+            1.38100004196167,
+            0.9509999752044678,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.038269204242382455,
+          "steps": 50,
+          "achieved_goal": [
+            1.3710603172466078,
+            0.9876305591556028,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.38100004196167,
+            0.9509999752044678,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.014538267691026832,
+          "steps": 50,
+          "achieved_goal": [
+            1.3898220276707907,
+            0.961469304671176,
+            0.42489150363759237
+          ],
+          "desired_goal": [
+            1.38100004196167,
+            0.9509999752044678,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_008",
+      "tier": "T2",
+      "instruction": "push the box 7 cm to the left",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.14039357384615614,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.434,
+        0.828,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.434015621282025,
+        0.9683083086304659,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.030934226746468268,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03173997786253509,
+          "steps": 50,
+          "achieved_goal": [
+            1.4394355523716937,
+            0.8588860406223395,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.434000015258789,
+            0.828000009059906,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03318329319889611,
+          "steps": 50,
+          "achieved_goal": [
+            1.4067909146626738,
+            0.8463537990483954,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.434000015258789,
+            0.828000009059906,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0278794091779736,
+          "steps": 50,
+          "achieved_goal": [
+            1.4531755663463901,
+            0.8476373589642813,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.434000015258789,
+            0.828000009059906,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_009",
+      "tier": "T2",
+      "instruction": "push it 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.04124638197177238,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.617,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.53095522106537,
+        0.6170055424235734,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 456,
+        "completion_tokens": 22,
+        "total_tokens": 478
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03659515579107634,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03935009177887038,
+          "steps": 50,
+          "achieved_goal": [
+            1.45095522106537,
+            0.6170055424235734,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6169999837875366,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03978568357279962,
+          "steps": 50,
+          "achieved_goal": [
+            1.4738552290412243,
+            0.6530320874559826,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6169999837875366,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03064969202155903,
+          "steps": 50,
+          "achieved_goal": [
+            1.4844585115617737,
+            0.6467449200940244,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.6169999837875366,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_010",
+      "tier": "T2",
+      "instruction": "move the block 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.10009265456172686,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.834,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.5899726734588169,
+        0.8337350543821949,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 457,
+        "completion_tokens": 22,
+        "total_tokens": 479
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.033869247540293745,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.028021499311531223,
+          "steps": 50,
+          "achieved_goal": [
+            1.5000318286753909,
+            0.8597027703153848,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8339999914169312,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04144668285139293,
+          "steps": 50,
+          "achieved_goal": [
+            1.4490866576449097,
+            0.8295288650458537,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8339999914169312,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03213956045795708,
+          "steps": 50,
+          "achieved_goal": [
+            1.4586539283481454,
+            0.8288579728234501,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.8339999914169312,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_011",
+      "tier": "T2",
+      "instruction": "slide the cube 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.004922242277383307,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.295,
+        0.878,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.294573282282582,
+        0.8783354377697036,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 457,
+        "completion_tokens": 23,
+        "total_tokens": 480
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01816321900858799,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02561509890727049,
+          "steps": 50,
+          "achieved_goal": [
+            1.2713216603074946,
+            0.8864579975963806,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2949999570846558,
+            0.878000020980835,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.023061125843368238,
+          "steps": 50,
+          "achieved_goal": [
+            1.2733553196586829,
+            0.8842762467996712,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2949999570846558,
+            0.878000020980835,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.005813432275125233,
+          "steps": 50,
+          "achieved_goal": [
+            1.293851119326236,
+            0.8809231152004618,
+            0.424891989217873
+          ],
+          "desired_goal": [
+            1.2949999570846558,
+            0.878000020980835,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_012",
+      "tier": "T2",
+      "instruction": "push the box 8 cm forward",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": 0.08382377490693618,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.49,
+        0.762,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.5736803015068939,
+        0.7623138739149422,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 457,
+        "completion_tokens": 22,
+        "total_tokens": 479
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01872660198778155,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.009682492954770068,
+          "steps": 50,
+          "achieved_goal": [
+            1.486428038040322,
+            0.7695538291289971,
+            0.4248919928493402
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7620000243186951,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.009034752803313967,
+          "steps": 50,
+          "achieved_goal": [
+            1.4962065162039841,
+            0.7664335475223022,
+            0.4248424971047846
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7620000243186951,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03746256020526062,
+          "steps": 50,
+          "achieved_goal": [
+            1.4560930048710274,
+            0.7468400683029576,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4900000095367432,
+            0.7620000243186951,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.0
+    },
+    {
+      "id": "T2_013",
+      "tier": "T2",
+      "instruction": "push it 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.004918502129928332,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.195,
+        0.6,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.1947427003353217,
+        0.6004377185798072,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 458,
+        "completion_tokens": 21,
+        "total_tokens": 479
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.029936103319789648,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.024801138241494894,
+          "steps": 50,
+          "achieved_goal": [
+            1.2187492617130797,
+            0.5947906733815296,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.1950000524520874,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0399446386113617,
+          "steps": 50,
+          "achieved_goal": [
+            1.169917299785498,
+            0.6307001132086038,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.1950000524520874,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.025062533106512352,
+          "steps": 50,
+          "achieved_goal": [
+            1.2135678061443098,
+            0.5838930407845881,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.1950000524520874,
+            0.6000000238418579,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_014",
+      "tier": "T2",
+      "instruction": "move the block 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.004896097644262141,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.714,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4501926732655326,
+        0.7140280468419041,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 22,
+        "total_tokens": 481
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02385571285075185,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03823787742341174,
+          "steps": 50,
+          "achieved_goal": [
+            1.4126096316114567,
+            0.7076629628630279,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7139999866485596,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.015006979614890784,
+          "steps": 50,
+          "achieved_goal": [
+            1.4407962704057808,
+            0.7032034253604875,
+            0.42489224457978414
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7139999866485596,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.01832228151395303,
+          "steps": 50,
+          "achieved_goal": [
+            1.4512738305901982,
+            0.6963889306992167,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7139999866485596,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_015",
+      "tier": "T2",
+      "instruction": "slide the cube 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": null,
+      "grounder_failure_mode": "out_of_workspace",
+      "predicted_goal": [
+        1.175,
+        0.669,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.1746420113699945,
+        0.6691084830633627,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01671374844276575,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.013229414130194876,
+          "steps": 50,
+          "achieved_goal": [
+            1.1855277626147251,
+            0.6753464020979223,
+            0.4248893799175798
+          ],
+          "desired_goal": [
+            1.1749999523162842,
+            0.6690000295639038,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.031188860903167567,
+          "steps": 50,
+          "achieved_goal": [
+            1.1579201541073683,
+            0.6946338227332152,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.1749999523162842,
+            0.6690000295639038,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0057229702949348135,
+          "steps": 50,
+          "achieved_goal": [
+            1.1712643282021884,
+            0.6728856112446018,
+            0.42192346199144837
+          ],
+          "desired_goal": [
+            1.1749999523162842,
+            0.6690000295639038,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_016",
+      "tier": "T2",
+      "instruction": "push the box 6 cm to the back",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.004909329460568258,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.384,
+        0.882,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.3843931514029044,
+        0.8818856094530123,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.030231048935648708,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03106279342335269,
+          "steps": 50,
+          "achieved_goal": [
+            1.359451289783012,
+            0.9003936839485192,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.3839999437332153,
+            0.8820000290870667,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02242625240978842,
+          "steps": 50,
+          "achieved_goal": [
+            1.3787281057057417,
+            0.9032417412503272,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.3839999437332153,
+            0.8820000290870667,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.037204100973805006,
+          "steps": 50,
+          "achieved_goal": [
+            1.3926189388434926,
+            0.9178598097225541,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.3839999437332153,
+            0.8820000290870667,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_017",
+      "tier": "T2",
+      "instruction": "push it 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": null,
+      "grounder_failure_mode": "out_of_workspace",
+      "predicted_goal": [
+        1.294,
+        0.511,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.2941940426962457,
+        0.510745339980085,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 459,
+        "completion_tokens": 23,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03330882170942314,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03417074916861505,
+          "steps": 50,
+          "achieved_goal": [
+            1.2843833488964678,
+            0.5434225833807881,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2940000295639038,
+            0.5109999775886536,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.021065776705536905,
+          "steps": 50,
+          "achieved_goal": [
+            1.2918114877063072,
+            0.4906273722714077,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2940000295639038,
+            0.5109999775886536,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.04468993925411746,
+          "steps": 50,
+          "achieved_goal": [
+            1.2834924894555542,
+            0.4678392537059924,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2940000295639038,
+            0.5109999775886536,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_018",
+      "tier": "T2",
+      "instruction": "move the block 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.004897744611180759,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.244,
+        0.727,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.2438749692128064,
+        0.7268040228353955,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 460,
+        "completion_tokens": 23,
+        "total_tokens": 483
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03399259731001437,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.032169663085187004,
+          "steps": 50,
+          "achieved_goal": [
+            1.2371839111795802,
+            0.7580563105411852,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.24399995803833,
+            0.7269999980926514,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.04324536049145797,
+          "steps": 50,
+          "achieved_goal": [
+            1.2223358832053606,
+            0.7641065322926388,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.24399995803833,
+            0.7269999980926514,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.026562768353398113,
+          "steps": 50,
+          "achieved_goal": [
+            1.2336185921197613,
+            0.7509556596140591,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.24399995803833,
+            0.7269999980926514,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_019",
+      "tier": "T2",
+      "instruction": "slide the cube 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.004907688902421243,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.489,
+        0.749,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4893520215639036,
+        0.7488337813129095,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 460,
+        "completion_tokens": 23,
+        "total_tokens": 483
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.020432088785065323,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.035067678541768295,
+          "steps": 50,
+          "achieved_goal": [
+            1.4602736783806478,
+            0.7685092024028599,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4889999628067017,
+            0.7490000128746033,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.008986064449892169,
+          "steps": 50,
+          "achieved_goal": [
+            1.4963332909708815,
+            0.74725717983577,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4889999628067017,
+            0.7490000128746033,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.017242523363535506,
+          "steps": 50,
+          "achieved_goal": [
+            1.4877808588348305,
+            0.7325111010816734,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4889999628067017,
+            0.7490000128746033,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T2_020",
+      "tier": "T2",
+      "instruction": "push the box 10 cm to the right",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": false,
+      "grounder_distance_m": null,
+      "grounder_failure_mode": "out_of_workspace",
+      "predicted_goal": [
+        1.459,
+        0.55,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4593733407145508,
+        0.5495503305527063,
+        0.42489222470145815
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 460,
+        "completion_tokens": 22,
+        "total_tokens": 482
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.016372165414993572,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.023701446497381713,
+          "steps": 50,
+          "achieved_goal": [
+            1.4366885333019246,
+            0.5563264024809357,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4589999914169312,
+            0.550000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.017470542008643192,
+          "steps": 50,
+          "achieved_goal": [
+            1.4439933446036397,
+            0.5574890842375836,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4589999914169312,
+            0.550000011920929,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.007944507738955803,
+          "steps": 50,
+          "achieved_goal": [
+            1.4539351425626577,
+            0.5536795023446729,
+            0.4248911891440178
+          ],
+          "desired_goal": [
+            1.4589999914169312,
+            0.550000011920929,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_001",
+      "tier": "T3",
+      "instruction": "push it next to the marker",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.74,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.68,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 20,
+        "total_tokens": 557
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.029181097863714645,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03875364783860366,
+          "steps": 50,
+          "achieved_goal": [
+            1.4041700550170848,
+            0.778216779125183,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.014106342617813059,
+          "steps": 50,
+          "achieved_goal": [
+            1.4093367751972479,
+            0.7493733026382383,
+            0.4248943164823309
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.034683303134727214,
+          "steps": 50,
+          "achieved_goal": [
+            1.3721343465108629,
+            0.7199375068174103,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_002",
+      "tier": "T3",
+      "instruction": "push the block beside the marker",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.74,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.68,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 20,
+        "total_tokens": 557
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.034893074390404726,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03626649743400906,
+          "steps": 50,
+          "achieved_goal": [
+            1.3758377516740101,
+            0.7665990989718457,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.042953630514100505,
+          "steps": 50,
+          "achieved_goal": [
+            1.4361317953143786,
+            0.7627062164738357,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.025459095223104602,
+          "steps": 50,
+          "achieved_goal": [
+            1.3887422749583749,
+            0.7176954022112811,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.3333333333333333
+    },
+    {
+      "id": "T3_003",
+      "tier": "T3",
+      "instruction": "move the cube close to the marker",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.74,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.68,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 538,
+        "completion_tokens": 20,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.029754156312127963,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01759394955084918,
+          "steps": 50,
+          "achieved_goal": [
+            1.411408301067199,
+            0.752468489726255,
+            0.42489224457959507
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.032954086182446614,
+          "steps": 50,
+          "achieved_goal": [
+            1.4300581607988143,
+            0.7525914013142458,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.038714433203088094,
+          "steps": 50,
+          "achieved_goal": [
+            1.3628285449421014,
+            0.7496518411895804,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_004",
+      "tier": "T3",
+      "instruction": "place the box near the marker",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.4,
+        0.74,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.4,
+        0.68,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 20,
+        "total_tokens": 557
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026361023400771313,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.019312539890522607,
+          "steps": 50,
+          "achieved_goal": [
+            1.3901177035712464,
+            0.7241450197793039,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03141738132971481,
+          "steps": 50,
+          "achieved_goal": [
+            1.3734582890890594,
+            0.723917207796661,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.028353148982076515,
+          "steps": 50,
+          "achieved_goal": [
+            1.4278174364156904,
+            0.7424810933093584,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.399999976158142,
+            0.7400000095367432,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_005",
+      "tier": "T3",
+      "instruction": "push it next to the cup",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.76,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.82,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.019323939314542477,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.02126150012882985,
+          "steps": 50,
+          "achieved_goal": [
+            1.2531940812463869,
+            0.7804429610738823,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.015129388438497617,
+          "steps": 50,
+          "achieved_goal": [
+            1.2604756025269317,
+            0.7697612582126498,
+            0.4248864782811533
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.021580929376299966,
+          "steps": 50,
+          "achieved_goal": [
+            1.236448769935026,
+            0.7760675506743834,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_006",
+      "tier": "T3",
+      "instruction": "push the block beside the cup",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.76,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.82,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.017281016271481795,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.004874641475281391,
+          "steps": 50,
+          "achieved_goal": [
+            1.2512984654092418,
+            0.7614658889889434,
+            0.42446398269857183
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02848579634347966,
+          "steps": 50,
+          "achieved_goal": [
+            1.2773885372470926,
+            0.7661134539213965,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.018482610995684334,
+          "steps": 50,
+          "achieved_goal": [
+            1.2442186090030882,
+            0.7431403272985965,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_007",
+      "tier": "T3",
+      "instruction": "move the cube close to the cup",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.76,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.82,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 538,
+        "completion_tokens": 21,
+        "total_tokens": 559
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.028480026645472,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.034992066495586026,
+          "steps": 50,
+          "achieved_goal": [
+            1.2845981986956594,
+            0.7581358071797857,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02735783327832396,
+          "steps": 50,
+          "achieved_goal": [
+            1.2566345156108982,
+            0.7860863865148486,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02309018016250602,
+          "steps": 50,
+          "achieved_goal": [
+            1.2665188141289665,
+            0.7446262786675704,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_008",
+      "tier": "T3",
+      "instruction": "place the box near the cup",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.25,
+        0.76,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.25,
+        0.82,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.024002653413076405,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.029409886206399703,
+          "steps": 50,
+          "achieved_goal": [
+            1.2713604184453466,
+            0.7796147743055596,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.01724660791508282,
+          "steps": 50,
+          "achieved_goal": [
+            1.247393033495344,
+            0.7684061285296341,
+            0.4348319137014282
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.02535146611774669,
+          "steps": 50,
+          "achieved_goal": [
+            1.2486366118417385,
+            0.7848375390886014,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.25,
+            0.7599999904632568,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_009",
+      "tier": "T3",
+      "instruction": "push it next to the can",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.78,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.72,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02678129427844635,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03611470142966128,
+          "steps": 50,
+          "achieved_goal": [
+            1.4168175914326668,
+            0.7666110924382411,
+            0.4248922437201883
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.006676894273901989,
+          "steps": 50,
+          "achieved_goal": [
+            1.454205775520095,
+            0.7822102988887639,
+            0.42469117254290395
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03755228713177579,
+          "steps": 50,
+          "achieved_goal": [
+            1.438267510758811,
+            0.8153353313115297,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_010",
+      "tier": "T3",
+      "instruction": "push the block beside the can",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.78,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.72,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02110637882408455,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.010609653388073848,
+          "steps": 50,
+          "achieved_goal": [
+            1.4587391385894084,
+            0.7835669514950159,
+            0.42484453930034843
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.0289408799353741,
+          "steps": 50,
+          "achieved_goal": [
+            1.4747466750746752,
+            0.7941860483271745,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.023768603148805707,
+          "steps": 50,
+          "achieved_goal": [
+            1.4453284518266964,
+            0.8027856796838149,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_011",
+      "tier": "T3",
+      "instruction": "move the cube close to the can",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.78,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.72,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 538,
+        "completion_tokens": 21,
+        "total_tokens": 559
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02465661124229121,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.04235679769864683,
+          "steps": 50,
+          "achieved_goal": [
+            1.40827679422205,
+            0.7745838614827552,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.011182943115415789,
+          "steps": 50,
+          "achieved_goal": [
+            1.4399910282139994,
+            0.7809713418879066,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.020430092912811015,
+          "steps": 50,
+          "achieved_goal": [
+            1.4496358479116596,
+            0.7601676273624168,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_012",
+      "tier": "T3",
+      "instruction": "place the box near the can",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.06000000000000005,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.45,
+        0.78,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.45,
+        0.72,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02728196303757933,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.01978443363619251,
+          "steps": 50,
+          "achieved_goal": [
+            1.4444775933605403,
+            0.7616426260691493,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.033229853567381444,
+          "steps": 50,
+          "achieved_goal": [
+            1.420292233263163,
+            0.794061790089028,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.028831601909164034,
+          "steps": 50,
+          "achieved_goal": [
+            1.427935247954947,
+            0.762098248113923,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.4500000476837158,
+            0.7799999713897705,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_013",
+      "tier": "T3",
+      "instruction": "push it next to the pen",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.71,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01807132336117462,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.031622893407605136,
+          "steps": 50,
+          "achieved_goal": [
+            1.3065626429133383,
+            0.7264467923269787,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.009225947682837677,
+          "steps": 50,
+          "achieved_goal": [
+            1.2869268462475296,
+            0.7136596678200291,
+            0.42487268529156685
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.013365128993081052,
+          "steps": 50,
+          "achieved_goal": [
+            1.2681678170359336,
+            0.7138330727253426,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_014",
+      "tier": "T3",
+      "instruction": "push the block beside the pen",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.71,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02488658452092403,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.025973385307851763,
+          "steps": 50,
+          "achieved_goal": [
+            1.3006534102250933,
+            0.7249705504516738,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.037871275313560056,
+          "steps": 50,
+          "achieved_goal": [
+            1.2648826381174745,
+            0.7443767954874289,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.010815092941360266,
+          "steps": 50,
+          "achieved_goal": [
+            1.2744977686474799,
+            0.7179219615630227,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_015",
+      "tier": "T3",
+      "instruction": "move the cube close to the pen",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.71,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 538,
+        "completion_tokens": 21,
+        "total_tokens": 559
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02836903706380059,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.03846529692073567,
+          "steps": 50,
+          "achieved_goal": [
+            1.2775211201735779,
+            0.7480722805323381,
+            0.424892244548815
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.030446614298034705,
+          "steps": 50,
+          "achieved_goal": [
+            1.3100450545141935,
+            0.7094040616630652,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.016195199972631382,
+          "steps": 50,
+          "achieved_goal": [
+            1.2918920161623375,
+            0.7198452610648342,
+            0.4248922445797836
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.6666666666666666
+    },
+    {
+      "id": "T3_016",
+      "tier": "T3",
+      "instruction": "place the box near the pen",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.28,
+        0.71,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.28,
+        0.65,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.018477529927086688,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.007484574232472138,
+          "steps": 50,
+          "achieved_goal": [
+            1.2823531889559008,
+            0.7171024056096732,
+            0.4198082884757109
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.03223410900775008,
+          "steps": 50,
+          "achieved_goal": [
+            1.2482329836820467,
+            0.707558239373615,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.015713906541037846,
+          "steps": 50,
+          "achieved_goal": [
+            1.2650856518646671,
+            0.7107454626473089,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.2799999713897705,
+            0.7099999785423279,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_017",
+      "tier": "T3",
+      "instruction": "push it next to the cone",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.79,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.01803060679498595,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0051299242776954085,
+          "steps": 50,
+          "achieved_goal": [
+            1.3408058459103789,
+            0.7863753049889111,
+            0.42353950942252033
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.033382280015760234,
+          "steps": 50,
+          "achieved_goal": [
+            1.3470381929745185,
+            0.8222631078447524,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.015579616091502208,
+          "steps": 50,
+          "achieved_goal": [
+            1.3325026011873742,
+            0.777249383718181,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_018",
+      "tier": "T3",
+      "instruction": "push the block beside the cone",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.79,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.03634266636491371,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.0391422918757367,
+          "steps": 50,
+          "achieved_goal": [
+            1.3354156350188267,
+            0.8285638402471988,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.031347675912453334,
+          "steps": 50,
+          "achieved_goal": [
+            1.3271978572652605,
+            0.8181930504993059,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.03853803130655112,
+          "steps": 50,
+          "achieved_goal": [
+            1.3018053756761874,
+            0.7915536606202034,
+            0.4248922445797835
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_019",
+      "tier": "T3",
+      "instruction": "move the cube close to the cone",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.79,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 538,
+        "completion_tokens": 21,
+        "total_tokens": 559
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.02732448782422382,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.015357680928812508,
+          "steps": 50,
+          "achieved_goal": [
+            1.353819357280921,
+            0.7947923432864461,
+            0.4246816854978926
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.026527577755380546,
+          "steps": 50,
+          "achieved_goal": [
+            1.3205315794305357,
+            0.7726576601101796,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.0400882047884784,
+          "steps": 50,
+          "achieved_goal": [
+            1.3232394533970666,
+            0.8260862090716714,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 1.0
+    },
+    {
+      "id": "T3_020",
+      "tier": "T3",
+      "instruction": "place the box near the cone",
+      "skipped": false,
+      "skip_reason": null,
+      "grounder": "gemini-3.1-flash-lite",
+      "prompt_variant": "few-shot",
+      "grounder_success": true,
+      "grounder_distance_m": 0.05999999999999994,
+      "grounder_failure_mode": null,
+      "predicted_goal": [
+        1.34,
+        0.79,
+        0.42
+      ],
+      "ground_truth_goal": [
+        1.34,
+        0.85,
+        0.42
+      ],
+      "reasoning": null,
+      "usage": {
+        "prompt_tokens": 537,
+        "completion_tokens": 21,
+        "total_tokens": 558
+      },
+      "policy_success_rate": 1.0,
+      "policy_mean_distance_m": 0.026102800678861757,
+      "policy_episodes": [
+        {
+          "episode": 0,
+          "success": true,
+          "final_distance": 0.023590854341635256,
+          "steps": 50,
+          "achieved_goal": [
+            1.3304624912804648,
+            0.768985038375078,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 1,
+          "success": true,
+          "final_distance": 0.02831185768037969,
+          "steps": 50,
+          "achieved_goal": [
+            1.3456207797505297,
+            0.8173136501108502,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        },
+        {
+          "episode": 2,
+          "success": true,
+          "final_distance": 0.026405690014570323,
+          "steps": 50,
+          "achieved_goal": [
+            1.3281746785800668,
+            0.76690267824029,
+            0.42489224457978353
+          ],
+          "desired_goal": [
+            1.340000033378601,
+            0.7900000214576721,
+            0.41999998688697815
+          ]
+        }
+      ],
+      "e2e_success_rate": 0.3333333333333333
+    }
+  ]
+}

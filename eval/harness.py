@@ -56,6 +56,7 @@ from baselines.regex_grounder import ground as regex_ground  # noqa: E402
 # Constants:
 DEFAULT_INSTRUCTIONS_PATH = _PROJECT_ROOT / "instructions" / "instructions.json"
 DEFAULT_MODEL_PATH        = _PROJECT_ROOT / "models" / "sac_her_FetchPush-v4_seed0_best.zip"
+RETRAINED_MODEL_PATH      = _PROJECT_ROOT / "models" / "retrain_best_model.zip" #CURRENTLY SELECTED
 DEFAULT_ENV_ID            = "FetchPush-v4"
 DEFAULT_N_EPISODES        = 3      #per instruction
 DEFAULT_MAX_STEPS         = 50     # FetchPush horizon
@@ -355,7 +356,7 @@ def main():
     )
     parser.add_argument(
         "--model-path", type=Path,
-        default=DEFAULT_MODEL_PATH,
+        default=RETRAINED_MODEL_PATH,
         help="Path to SAC+HER checkpoint"
     )
     parser.add_argument(
