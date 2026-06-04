@@ -7,13 +7,8 @@ and instruction-library ground truth use.
 """
 
 import json
-import sys
-from pathlib import Path
 
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(_PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(_PROJECT_ROOT))
-from workspace import workspace_description, WORKSPACE  # noqa: E402
+from talk_to_robot.workspace import workspace_description, WORKSPACE
 
 
 _OUTPUT_FORMAT_ZS = (

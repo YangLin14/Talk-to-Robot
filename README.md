@@ -50,11 +50,11 @@ In the main experiments, the controller is kept fixed, so end-to-end differences
 
 ## Methods
 
-- **LLM grounder:** Gemini `gemini-3.1-flash-lite` via `grounding/grounder.py`.
-- **Regex baseline:** deterministic parser for simpler tiers in `baselines/regex_grounder.py`.
+- **LLM grounder:** Gemini `gemini-3.1-flash-lite` via `src/talk_to_robot/grounding/grounder.py`.
+- **Regex baseline:** deterministic parser for simpler tiers in `src/talk_to_robot/baselines/regex_grounder.py`.
 - **SAC + HER controller:** goal-conditioned policy (Stable-Baselines3) for `FetchPush-v4`.
 - **Environment:** `FetchPush-v4` in MuJoCo through `gymnasium-robotics`.
-- **Evaluation harness:** unified grounding + rollout + scoring pipeline in `eval/harness.py`.
+- **Evaluation harness:** unified grounding + rollout + scoring pipeline in `src/talk_to_robot/eval/harness.py`.
 
 ## Evaluation Metrics
 
@@ -103,7 +103,10 @@ Full setup notes are in `docs/setup.md`.
 conda create -n spatial-rl-311 python=3.11 -y
 conda activate spatial-rl-311
 pip install -r requirements.txt
+pip install -e .
 ```
+
+The editable install step enables `src`-layout imports such as `talk_to_robot.*` from the repository root.
 
 ### LLM Configuration
 
@@ -125,8 +128,26 @@ The repo includes `requirements.txt`, so a standard venv flow is possible if Con
 
 ```bash
 python -m venv .venv
-# TODO: activate the virtual environment for your OS/shell
+```
+
+Activate the virtual environment:
+
+```bash
+# macOS/Linux
+source .venv/bin/activate
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+# Windows Command Prompt
+.venv\Scripts\activate.bat
+```
+
+Then install dependencies and the editable package:
+
+```bash
 pip install -r requirements.txt
+pip install -e .
 ```
 
 ## How to Run
@@ -136,22 +157,22 @@ pip install -r requirements.txt
 Grounding-only regex baseline:
 
 ```bash
-python eval/harness.py --grounder regex --tier T0 T1 T2 --skip-policy \
+python -m talk_to_robot.eval.harness --grounder regex --tier T0 T1 T2 --skip-policy \
   --output results/regex_grounding_only.json
 ```
 
 LLM grounding (zero-shot) with rollout:
 
 ```bash
-python eval/harness.py --grounder llm --tier T0 T1 T2 T3 \
+python -m talk_to_robot.eval.harness --grounder llm --tier T0 T1 T2 T3 \
   --variant zero-shot --device cpu --n-episodes 1 \
   --output results/llm_zero_shot_t0_t3.json
 ```
 
-T4 run (after annotations are confirmed in `instructions/instructions.json`):
+T4 run (after annotations are confirmed in `data/instructions/instructions.json`):
 
 ```bash
-python eval/harness.py --grounder llm --tier T4 --variant few-shot \
+python -m talk_to_robot.eval.harness --grounder llm --tier T4 --variant few-shot \
   --output results/t4_llm_fewshot.json
 ```
 
@@ -190,10 +211,10 @@ python scripts/record_rollout.py --instruction "push it next to the marker" \
 ### 4) (Optional) Apply T4 annotation CSV
 
 ```bash
-python scripts/apply_t4_annotations.py docs/t4_annotations.csv
+python scripts/apply_t4_annotations.py data/annotations/t4_annotations.csv
 ```
 
-See `docs/t4_annotation_guide.md` for annotation protocol details.
+See `data/annotations/t4_annotation_guide.md` for annotation protocol details.
 
 ## Repository Structure
 
@@ -203,19 +224,33 @@ See `docs/t4_annotation_guide.md` for annotation protocol details.
 ```text
 Talk-to-Robot/
 ├── README.md
+├── pyproject.toml
 ├── requirements.txt
 ├── .env.example
-├── workspace.py
-├── baselines/
-│   └── regex_grounder.py
-├── grounding/
-│   ├── grounder.py
-│   ├── parser.py
-│   ├── classifier.py
-│   ├── client.py
-│   └── prompts.py
-├── eval/
-│   └── harness.py
+├── STRUCTURE.md
+├── src/
+│   └── talk_to_robot/
+│       ├── __init__.py
+│       ├── workspace.py
+│       ├── baselines/
+│       │   ├── __init__.py
+│       │   └── regex_grounder.py
+│       ├── eval/
+│       │   ├── __init__.py
+│       │   └── harness.py
+│       └── grounding/
+│           ├── __init__.py
+│           ├── classifier.py
+│           ├── client.py
+│           ├── grounder.py
+│           ├── parser.py
+│           └── prompts.py
+├── data/
+│   ├── instructions/
+│   │   └── instructions.json
+│   └── annotations/
+│       ├── t4_annotations.csv
+│       └── t4_annotation_guide.md
 ├── scripts/
 │   ├── apply_t4_annotations.py
 │   ├── eval_policy_fetchpush.py
@@ -223,17 +258,12 @@ Talk-to-Robot/
 │   ├── summarize_results.py
 │   ├── train_sac_her_fetchpush.py
 │   └── train_sac_her_retrain.py
-├── instructions/
-│   ├── instructions.json
-│   └── instructions_t4_preview.json
 ├── models/
 │   ├── retrain_best_model.zip
 │   └── sac_her_FetchPush-v4_retrain_seed0.zip
 ├── docs/
 │   ├── setup.md
 │   ├── retraining.md
-│   ├── t4_annotation_guide.md
-│   ├── t4_annotations.csv
 │   ├── milestones/
 │   └── proposal/
 ├── notebooks/
@@ -251,9 +281,9 @@ Talk-to-Robot/
 ## Reproducing Results
 
 1. **Prepare instructions and annotations**  
-   Start from `instructions/instructions.json`; for T4 updates use `scripts/apply_t4_annotations.py`.
+   Start from `data/instructions/instructions.json`; for T4 updates use `scripts/apply_t4_annotations.py`.
 2. **Run a grounding experiment**  
-   Use `eval/harness.py` with `--grounder regex` or `--grounder llm` and select tiers (`--tier T0 ... T4`).
+   Use `python -m talk_to_robot.eval.harness` with `--grounder regex` or `--grounder llm` and select tiers (`--tier T0 ... T4`).
 3. **Run policy rollouts**  
    Keep rollout enabled (default) to collect policy and end-to-end metrics with SAC+HER.
 4. **Aggregate metrics**  

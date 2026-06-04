@@ -5,13 +5,8 @@ followed by trailing prose. Falls back to a regex substring search.
 
 import json
 import re
-import sys
-from pathlib import Path
 
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(_PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(_PROJECT_ROOT))
-from workspace import TABLE_Z  # noqa: E402
+from talk_to_robot.workspace import TABLE_Z
 
 
 _FENCE_RE = re.compile(r"^```(?:json)?\s*|\s*```$", re.IGNORECASE | re.DOTALL)

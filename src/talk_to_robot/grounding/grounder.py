@@ -7,18 +7,12 @@ so importing this module does not require GEMINI_API_KEY.
 
 import argparse
 import json
-import sys
-from pathlib import Path
 from typing import Optional
 
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(_PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(_PROJECT_ROOT))
-
-from grounding.client import GeminiClient  # noqa: E402
-from grounding.prompts import PROMPT_BUILDERS  # noqa: E402
-from grounding.parser import parse_goal  # noqa: E402
-from grounding.classifier import classify  # noqa: E402
+from talk_to_robot.grounding.client import GeminiClient
+from talk_to_robot.grounding.prompts import PROMPT_BUILDERS
+from talk_to_robot.grounding.parser import parse_goal
+from talk_to_robot.grounding.classifier import classify
 
 
 _client_singleton: Optional[GeminiClient] = None

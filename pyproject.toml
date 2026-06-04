@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "talk-to-robot"
+version = "0.1.0"
+description = "Instruction-tier spatial grounding study for goal-conditioned robotic manipulation."
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

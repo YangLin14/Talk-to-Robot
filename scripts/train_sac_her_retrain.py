@@ -30,9 +30,10 @@ from stable_baselines3.her.her_replay_buffer import HerReplayBuffer as _BaseHER
 from stable_baselines3.her.goal_selection_strategy import GoalSelectionStrategy
 
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(_PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(_PROJECT_ROOT))
-from workspace import WORKSPACE, TABLE_Z, in_workspace
+_SRC_ROOT = _PROJECT_ROOT / "src"
+if str(_SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(_SRC_ROOT))
+from talk_to_robot.workspace import WORKSPACE, TABLE_Z, in_workspace
 
 
 WS_X = (WORKSPACE["x_min"], WORKSPACE["x_max"])

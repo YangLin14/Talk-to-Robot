@@ -17,7 +17,7 @@ This avoids choosing the ground truth after seeing LLM outputs.
 
 ## Coordinate Frame
 
-Use the project workspace from `workspace.py`:
+Use the project workspace from `src/talk_to_robot/workspace.py`:
 
 - `x` in `[1.19, 1.49]`
 - `y` in `[0.60, 0.90]`
@@ -32,7 +32,7 @@ the workspace unless the instruction explicitly implies an edge.
 
 ## CSV Format
 
-Start from `docs/t4_annotations_template.csv` or create a CSV like:
+Create `data/annotations/t4_annotations.csv` or another CSV with this format:
 
 ```csv
 id,annotator,x,y,z
@@ -51,20 +51,20 @@ Each `T4_*` id needs at least three annotator rows.
 Run:
 
 ```bash
-python scripts/apply_t4_annotations.py docs/t4_annotations.csv
+python scripts/apply_t4_annotations.py data/annotations/t4_annotations.csv
 ```
 
-This updates `instructions/instructions.json` in place. To write to a separate file first:
+This updates `data/instructions/instructions.json` in place. To write to a separate file first:
 
 ```bash
-python scripts/apply_t4_annotations.py docs/t4_annotations.csv \
+python scripts/apply_t4_annotations.py data/annotations/t4_annotations.csv \
   --output /tmp/instructions_with_t4.json
 ```
 
 After applying, check:
 
 ```bash
-jq -r '.instructions[] | select(.tier=="T4") | [.id,.annotation_status,.ground_truth_goal,.tolerance_m] | @tsv' instructions/instructions.json
+jq -r '.instructions[] | select(.tier=="T4") | [.id,.annotation_status,.ground_truth_goal,.tolerance_m] | @tsv' data/instructions/instructions.json
 ```
 
 ## Annotation Rules

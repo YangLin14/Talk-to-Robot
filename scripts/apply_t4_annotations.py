@@ -1,4 +1,4 @@
-"""Apply T4 human annotation points to instructions/instructions.json.
+"""Apply T4 human annotation points to data/instructions/instructions.json.
 
 Input CSV columns:
   id,annotator,x,y,z
@@ -10,7 +10,7 @@ Each T4 instruction should have at least 3 annotator rows. The script computes:
   - annotation_status: confirmed
 
 Example:
-  python scripts/apply_t4_annotations.py docs/t4_annotations.csv
+  python scripts/apply_t4_annotations.py data/annotations/t4_annotations.csv
 """
 
 import argparse
@@ -22,7 +22,7 @@ from pathlib import Path
 import numpy as np
 
 
-DEFAULT_INSTRUCTIONS = Path("instructions/instructions.json")
+DEFAULT_INSTRUCTIONS = Path("data/instructions/instructions.json")
 
 
 def _load_points(csv_path):

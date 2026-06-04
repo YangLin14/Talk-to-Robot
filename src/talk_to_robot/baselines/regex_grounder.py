@@ -6,23 +6,18 @@ with failure_mode='unsupported_tier' -- per proposal section 8
 (condition F), regex is not a fair baseline for reference-object or
 intent reasoning.
 
-Workspace + axis constants are imported from the project-root
-`workspace.py` (single source of truth shared with the LLM grounder).
+Workspace + axis constants are imported from `talk_to_robot.workspace`
+(single source of truth shared with the LLM grounder).
 """
 
 import argparse
 import json
 import re
-import sys
-from pathlib import Path
 from typing import Optional
 
 import numpy as np
 
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(_PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(_PROJECT_ROOT))
-from workspace import WORKSPACE, DIR_VECTORS as _DIR_TUPLES, REGIONS  # noqa: E402
+from talk_to_robot.workspace import WORKSPACE, DIR_VECTORS as _DIR_TUPLES, REGIONS
 
 DIR_VECTORS = {k: np.array(v) for k, v in _DIR_TUPLES.items()}
 

@@ -14,19 +14,19 @@ Overall workflow:
     3. Write results to json file
 Usage:
   # Run all tiers, zero-shot, default model
-  python eval/harness.py
+  python -m talk_to_robot.eval.harness
 
   # Run only T1 with specified variant ("zero-shot", "few-shot", "cot")
-  python eval/harness.py --tier T1 --variant ARGUMENT
+  python -m talk_to_robot.eval.harness --tier T1 --variant ARGUMENT
 
   # Run T0-T2, write results to file
-  python eval/harness.py --tier T0 T1 T2 --output results/run_001.json
+  python -m talk_to_robot.eval.harness --tier T0 T1 T2 --output results/run_001.json
 
   # Use regex grounder instead of LLM
-  python eval/harness.py --grounder regex
+  python -m talk_to_robot.eval.harness --grounder regex
 
   # Grounding-only regex baseline, no SAC model rollout
-  python eval/harness.py --grounder regex --tier T0 T1 T2 --skip-policy
+  python -m talk_to_robot.eval.harness --grounder regex --tier T0 T1 T2 --skip-policy
 
 Some Design Decisions/Notes:
   - T2: Before grounding, the harness resets the env to get the live cube position,
@@ -44,17 +44,17 @@ import numpy as np
 from datetime import datetime, timezone
 from pathlib import Path
 
-#path setup
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+# Path setup (repository root)
+_PROJECT_ROOT = Path(__file__).resolve().parents[3]
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
-from grounding.grounder import ground as llm_ground          # noqa: E402
-from baselines.regex_grounder import ground as regex_ground  # noqa: E402
+from talk_to_robot.grounding.grounder import ground as llm_ground
+from talk_to_robot.baselines.regex_grounder import ground as regex_ground
 
 
 # Constants:
-DEFAULT_INSTRUCTIONS_PATH = _PROJECT_ROOT / "instructions" / "instructions.json"
+DEFAULT_INSTRUCTIONS_PATH = _PROJECT_ROOT / "data" / "instructions" / "instructions.json"
 DEFAULT_MODEL_PATH        = _PROJECT_ROOT / "models" / "sac_her_FetchPush-v4_seed0_best.zip"
 RETRAINED_MODEL_PATH      = _PROJECT_ROOT / "models" / "retrain_best_model.zip" #CURRENTLY SELECTED
 DEFAULT_ENV_ID            = "FetchPush-v4"

@@ -19,15 +19,16 @@ from pathlib import Path
 import numpy as np
 
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(_PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(_PROJECT_ROOT))
+_SRC_ROOT = _PROJECT_ROOT / "src"
+if str(_SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(_SRC_ROOT))
 
-from baselines.regex_grounder import ground as regex_ground  # noqa: E402
-from grounding.grounder import ground as llm_ground  # noqa: E402
-from workspace import WORKSPACE  # noqa: E402
+from talk_to_robot.baselines.regex_grounder import ground as regex_ground
+from talk_to_robot.grounding.grounder import ground as llm_ground
+from talk_to_robot.workspace import WORKSPACE
 
 
-DEFAULT_INSTRUCTIONS_PATH = _PROJECT_ROOT / "instructions" / "instructions.json"
+DEFAULT_INSTRUCTIONS_PATH = _PROJECT_ROOT / "data" / "instructions" / "instructions.json"
 DEFAULT_MODEL_PATH = _PROJECT_ROOT / "models" / "sac_her_FetchPush-v4_seed0_best.zip"
 DEFAULT_ENV_ID = "FetchPush-v4"
 DEFAULT_OUTPUT_DIR = _PROJECT_ROOT / "videos"
